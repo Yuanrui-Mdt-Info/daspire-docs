@@ -24,6 +24,11 @@ const sidebars = {
       label: 'Start here',
       id: 'readme'
     },
+    { 
+      type: 'doc',
+      label: 'Key concepts',
+      id: 'core-concepts'
+    },
     {
       type: 'category',
       label: 'Setup guide',
