@@ -1,62 +1,56 @@
-# **Key Concepts**
+# Key Concepts
 
 Daspire enables you to build data pipelines and replicate data from a source to a destination. You can configure how frequently the data is synced, what data is replicated, what format the data is written to in the destination, and if the data is stored in raw tables format or basic normalized (or JSON) format.
 
 This page describes the concepts you need to know to use Daspire.
 
-**Space**
+## Space
 
 When you sign up for Daspire, we automatically create your first space where you are the only user with access. You can set up your sources and destinations to start syncing data and invite other users to join your space.
 
 A space is a grouping of sources, destinations, connections, and other configurations. It lets you collaborate with team members and share resources across your team under a shared billing account.
 
-**Source**
+## Source
 
 A source is an API, file, database, or data warehouse that you want to ingest data from.
 
-**Destination**
+## Destination
 
 A destination is a data warehouse, data lake, database, or an analytics tool where you want to load your ingested data.
 
-**Connection**
+## Connection
 
 A connection is an automated data pipeline that replicates data from a source to a destination.
 
-**Stream**
+## Stream
 
 A stream is a group of related records.
 
 Examples of streams:
+* A table in a relational database
+* A resource or API endpoint for a REST API
+* The records from a directory containing many files in a filesystem
 
-1. A table in a relational database
-
-1. A resource or API endpoint for a REST API
-
-1. The records from a directory containing many files in a filesystem
-
-**Field**
+## Field
 
 A field is an attribute of a record in a stream.
 
 Examples of fields:
+* A column in the table in a relational database
+* A field in an API response
 
-1. A column in the table in a relational database
-
-1. A field in an API response
-
-**Namespace**
+## Namespace
 
 Namespace is a group of streams in a source or destination. Common use cases for namespaces are enforcing permissions, segregating test and production data, and general data organization.
 
 Examples of namespace:
+* A schema in a relational database system is an example of a namespace.
 
-1. A schema in a relational database system is an example of a namespace.
+### Daspire namespaces
 
-**Daspire namespaces**
+* In a source, the namespace is the location from where the data is replicated to the destination.
 
-1. In a source, the namespace is the location from where the data is replicated to the destination.
-
-1. In a destination, the namespace is the location where the replicated data is stored in the destination.
+* In a destination, the namespace is the location where the replicated data is stored in the destination.
 
 Daspire supports the following configuration options for destination namespaces:
 
@@ -66,7 +60,7 @@ Daspire supports the following configuration options for destination namespaces:
 | Destination default | All streams will be replicated and stored in the default namespace defined on the destination settings page. For settings for popular destinations, see ​​Destination Connector Settings. |
 | Custom format | All streams will be replicated and stored in a user-defined custom format. See Custom format for more details. |
 
-**Connection configurations**
+## Connection configurations
 
 Setting up a connection involves configuring the following parameters:
 
@@ -78,42 +72,31 @@ Setting up a connection involves configuring the following parameters:
 | Sync mode | How should the data be replicated? |
 | Transformations | How should Daspire protocol messages (raw JSON blob) data be converted into other data representations? |
 
-**Connection sync modes**
+## Connection sync modes
 
 A sync mode governs how Daspire reads from a source and writes to a destination. Daspire provides different sync modes to account for various use cases.
 
-1. **Full Refresh | Overwrite:** Sync all records from the source and replace data in destination by overwriting it.
+* **Full Refresh | Overwrite:** Sync all records from the source and replace data in destination by overwriting it.
+* **Full Refresh | Append:** Sync all records from the source and add them to the destination without deleting any data.
+* **Incremental Sync | Append:** Sync new records from the source and add them to the destination without deleting any data.
+* **Incremental Sync | Deduped History:** Sync new records from the source and add them to the destination. Also provides a de-duplicated view mirroring the state of the stream in the source.
 
-1. **Full Refresh | Append:** Sync all records from the source and add them to the destination without deleting any data.
-
-1. **Incremental Sync | Append:** Sync new records from the source and add them to the destination without deleting any data.
-
-1. **Incremental Sync | Deduped History:** Sync new records from the source and add them to the destination. Also provides a de-duplicated view mirroring the state of the stream in the source.
-
-**Normalization**
+## Normalization
 
 Normalization is the process of structuring data from the source into a format appropriate for consumption in the destination. For example, when writing data from a nested, dynamically typed source like a JSON API to a relational destination like Postgres, normalization is the process which un-nests JSON from the source into a relational table format which uses the appropriate column types in the destination.
 
 Note that normalization is only relevant for the following relational database & warehouse destinations:
-
-1. BigQuery
-
-1. Snowflake
-
-1. Redshift
-
-1. Postgres
-
-1. Oracle
-
-1. MySQL
-
-1. MSSQL
+* BigQuery
+* Snowflake
+* Redshift
+* Postgres
+* Oracle
+* MySQL
+* MSSQL
 
 Other destinations do not support normalization as described in this section, though they may normalize data in a format that makes sense for them. For example, the S3 destination connector offers the option of writing JSON files in S3, but also offers the option of writing statically typed files such as Parquet or Avro.
 
 After a sync is complete, Daspire normalizes the data. When setting up a connection, you can choose one of the following normalization options:
 
-1. Raw data (no normalization): Daspire places the JSON blob version of your data in a table called \_airbyte\_raw\_\<stream name\>
-
-1. Basic Normalization: Daspire converts the raw JSON blob version of your data to the format of your destination. _Note: Not all destinations support normalization._
+* Raw data (no normalization): Daspire places the JSON blob version of your data in a table called \_daspire\_raw\_\<stream name\>
+* Basic Normalization: Daspire converts the raw JSON blob version of your data to the format of your destination. _Note: Not all destinations support normalization._
