@@ -7,7 +7,6 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ### Clone the repo first
 ```
 $ git clone git@github.com:Yuanrui-Mdt-Info/daspire-docs.git
-$ git checkout main
 ```
 
 ### Build
