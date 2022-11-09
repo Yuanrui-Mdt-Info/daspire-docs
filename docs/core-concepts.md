@@ -98,5 +98,5 @@ Other destinations do not support normalization as described in this section, th
 
 After a sync is complete, Daspire normalizes the data. When setting up a connection, you can choose one of the following normalization options:
 
-* Raw data (no normalization): Daspire places the JSON blob version of your data in a table called \_daspire\_raw\_\<stream name\>
+* Raw data (no normalization): Daspire places the JSON blob version of your data in a table called `\_daspire\_raw\_\<stream name\>`
 * Basic Normalization: Daspire converts the raw JSON blob version of your data to the format of your destination. _Note: Not all destinations support normalization._

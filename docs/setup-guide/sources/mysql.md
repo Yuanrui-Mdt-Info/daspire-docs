@@ -62,7 +62,7 @@ Your database user should now be ready for use with Daspire.
 
 * If the limitations prevent you from using CDC and your goal is to maintain a snapshot of your table in the destination, consider using non-CDC incremental and occasionally reset the data and re-sync.
 
-* If your table has a primary key but doesn't have a reasonable cursor field for incremental syncing (i.e. updated\_at), CDC allows you to sync your table incrementally.
+* If your table has a primary key but doesn't have a reasonable cursor field for incremental syncing (i.e. `updated\_at`), CDC allows you to sync your table incrementally.
 
 ### CDC Limitations
 
@@ -191,8 +191,8 @@ Note: If you do not see a type in this list, assume that it is coerced into a st
 
 ## Troubleshooting
 
-There may be problems with mapping values in MySQL's datetime field to other relational data stores. MySQL permits zero values for date/time instead of NULL which may not be accepted by other data stores. To work around this problem, you can pass the following key value pair in the JDBC connector of the source setting zerodatetimebehavior=Converttonull.
+There may be problems with mapping values in MySQL's datetime field to other relational data stores. MySQL permits zero values for date/time instead of NULL which may not be accepted by other data stores. To work around this problem, you can pass the following key value pair in the JDBC connector of the source setting `zerodatetimebehavior=Converttonull`.
 
-Some users reported that they could not connect to Amazon RDS MySQL or MariaDB. This can be diagnosed with the error message: Cannot create a PoolableConnectionFactory. To solve this issue add enabledTLSProtocols=TLSv1.2 in the JDBC parameters.
+Some users reported that they could not connect to Amazon RDS MySQL or MariaDB. This can be diagnosed with the error message: `Cannot create a PoolableConnectionFactory`. To solve this issue add `enabledTLSProtocols=TLSv1.2` in the JDBC parameters.
 
-Another error that users have reported when trying to connect to Amazon RDS MySQL is Error: HikariPool-1 - Connection is not available, request timed out after 30001ms.. Many times this can be due to the VPC not allowing public traffic. However, we recommend going through [this AWS troubleshooting checklist](https://aws.amazon.com/premiumsupport/knowledge-center/rds-cannot-connect/) to the correct permissions/settings have been granted to allow connection to your database.
+Another error that users have reported when trying to connect to Amazon RDS MySQL is `Error: HikariPool-1 - Connection is not available, request timed out after 30001ms.`. Many times this can be due to the VPC not allowing public traffic. However, we recommend going through [this AWS troubleshooting checklist](https://aws.amazon.com/premiumsupport/knowledge-center/rds-cannot-connect/) to the correct permissions/settings have been granted to allow connection to your database.

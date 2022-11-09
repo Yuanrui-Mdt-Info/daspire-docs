@@ -29,7 +29,7 @@ This page contains the setup guide and reference information for the Amazon Sell
 
 3. Paste all data to required fields using your IAM user and developer account.
 
-4. Click **Save & Test**.
+4. Click **Set up source**.
 
 ## Supported sync modes
 
