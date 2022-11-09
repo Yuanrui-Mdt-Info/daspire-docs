@@ -85,7 +85,7 @@ Information about expected report generation waiting time you may find [here](ht
 
 ## Data type mapping
 
-| **Integration Type** | **Daspire Type** |
+| Integration Type | Daspire Type |
 | --- | --- |
 | string | string |
 | int, float, number | number |

@@ -21,11 +21,11 @@ There are two types of connection for this destination:
 
 Each stream will be output into its own table in MySQL. Each table will contain 3 columns:
 
-* `\_daspire\_ab\_id`: a uuid assigned by Daspire to each event that is processed. The column type in MySQL is `VARCHAR(256)`.
+* `_daspire_ab_id`: a uuid assigned by Daspire to each event that is processed. The column type in MySQL is `VARCHAR(256)`.
 
-* `\_daspire\_emitted\_at`: a timestamp representing when the event was pulled from the data source. The column type in MySQL is `TIMESTAMP(6)`.
+* `_daspire_emitted_at`: a timestamp representing when the event was pulled from the data source. The column type in MySQL is `TIMESTAMP(6)`.
 
-* `\_daspire\_data`: a json blob representing with the event data. The column type in MySQL is `JSON`.
+* `_daspire_data`: a json blob representing with the event data. The column type in MySQL is `JSON`.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ MySQL doesn't differentiate between a database and schema. A database is essenti
 
 ## Setup guide
 
-Before setting up MySQL destination in Daspire, you need to set the [local\_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile) system variable to true. You can do this by running the query `SET GLOBAL local\_infile = true` with a user with [SYSTEM\_VARIABLES\_ADMIN](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_system-variables-admin) permission. This is required cause Daspire uses `LOAD DATA LOCAL INFILE` to load data into table.
+Before setting up MySQL destination in Daspire, you need to set the [local_infile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile) system variable to true. You can do this by running the query `SET GLOBAL local_infile = true` with a user with [SYSTEM\_VARIABLES\_ADMIN](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_system-variables-admin) permission. This is required cause Daspire uses `LOAD DATA LOCAL INFILE` to load data into table.
 
 You should now have all the requirements needed to configure MySQL as a destination in the UI. You'll need the following information to configure the MySQL destination:
 
@@ -59,7 +59,7 @@ You should now have all the requirements needed to configure MySQL as a destinat
 
 ### Default JDBC URL Parameters
 
-The following JDBC URL parameters are set by Daspire and cannot be overridden by the `jdbc\_url\_params` field:
+The following JDBC URL parameters are set by Daspire and cannot be overridden by the `jdbc_url_params` field:
 
 * `useSSL=true` (unless `ssl` is set to false)
 * `requireSSL=true` (unless `ssl` is set to false)
@@ -68,7 +68,7 @@ The following JDBC URL parameters are set by Daspire and cannot be overridden by
 
 ## Limitations
 
-Note that MySQL documentation discusses identifiers case sensitivity using the `lower\_case\_table\_names` system variable. One of their recommendations is:
+Note that MySQL documentation discusses identifiers case sensitivity using the `lower_case_table_names` system variable. One of their recommendations is:
 
 ```
 "It is best to adopt a consistent convention, such as always creating and referring to databases and tables using lowercase names.

@@ -72,7 +72,7 @@ Make sure to configure the [required parameters](https://developer-docs.amazon.c
 
 ## Data type mapping
 
-| **Integration Type** | **Daspire Type** |
+| Integration Type | Daspire Type |
 | --- | --- |
 | string | string |
 | int, float, number | number |

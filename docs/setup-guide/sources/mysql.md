@@ -34,15 +34,21 @@ This step is optional but highly recommended to allow for better permission cont
 
 To create a dedicated database user, run the following commands against your database:
 
-```CREATE USER 'daspire'@'%' IDENTIFIED BY 'your\_password\_here'; ```
+```
+CREATE USER 'daspire'@'%' IDENTIFIED BY 'your_password_here'; 
+```
 
 The right set of permissions differ between the `STANDARD` and `CDC` replication method. For `STANDARD` replication method, only `SELECT` permission is required.
 
-```GRANT SELECT ON \<database name\>.\* TO 'daspire'@'%';``` 
+```
+GRANT SELECT ON <database name>.* TO 'daspire'@'%';
+``` 
 
 For `CDC` replication method, `SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT` permissions are required.
 
-```GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON \*.\* TO 'daspire'@'%'; ```
+```
+GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'daspire'@'%'; 
+```
 
 Your database user should now be ready for use with Daspire.
 
@@ -62,7 +68,7 @@ Your database user should now be ready for use with Daspire.
 
 * If the limitations prevent you from using CDC and your goal is to maintain a snapshot of your table in the destination, consider using non-CDC incremental and occasionally reset the data and re-sync.
 
-* If your table has a primary key but doesn't have a reasonable cursor field for incremental syncing (i.e. `updated\_at`), CDC allows you to sync your table incrementally.
+* If your table has a primary key but doesn't have a reasonable cursor field for incremental syncing (i.e. `updated_at`), CDC allows you to sync your table incrementally.
 
 ### CDC Limitations
 
@@ -94,21 +100,21 @@ binlog_expire_log_seconds  = 864000
 
 * `server-id`: The value for the server-id must be unique for each server and replication client in the MySQL cluster. The `server-id` should be a non-zero value. If the `server-id` is already set to a non-zero value, you don't need to make any change. You can set the `server-id` to any value between 1 and 4294967295. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options.html#sysvar_server_id).
 
-* `log\_bin`: The value of `log\_bin` is the base name of the sequence of binlog files. If the `log\_bin` is already set, you don't need to make any change. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#option_mysqld_log-bin).
+* `log_bin`: The value of `log_bin` is the base name of the sequence of binlog files. If the `log_bin` is already set, you don't need to make any change. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#option_mysqld_log-bin).
 
-* `binlog\_format`: The `binlog\_format` must be set to `ROW`. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_format).
+* `binlog_format`: The `binlog_format` must be set to `ROW`. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_format).
 
-* `binlog\_row\_image`: The `binlog\_row\_image` must be set to `FULL`. It determines how row images are written to the binary log. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_row_image).
+* `binlog_row_image`: The `binlog_row_image` must be set to `FULL`. It determines how row images are written to the binary log. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_row_image).
 
-* `binlog\_expire\_log\_seconds`: This is the number of seconds for automatic binlog file removal. We recommend 864000 seconds (10 days) so that in case of a failure in sync or if the sync is paused, we still have some bandwidth to start from the last point in incremental sync. We also recommend setting frequent syncs for CDC.
+* `binlog_expire_log_seconds`: This is the number of seconds for automatic binlog file removal. We recommend 864000 seconds (10 days) so that in case of a failure in sync or if the sync is paused, we still have some bandwidth to start from the last point in incremental sync. We also recommend setting frequent syncs for CDC.
 
 **2. Enable GTIDs (optional)**
 
 Global transaction identifiers (GTIDs) uniquely identify transactions that occur on a server within a cluster. Though not required for Daspire MySQL setup, using GTIDs simplifies replication and enables you to more easily confirm if primary and replica servers are consistent. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-gtids.html#option_mysqld_gtid-mode).
 
-* Enable `gtid\_mode`: Boolean that specifies whether GTID mode of the MySQL server is enabled or not. Enable it via `mysql\> gtid\_mode=ON`
+* Enable `gtid_mode`: Boolean that specifies whether GTID mode of the MySQL server is enabled or not. Enable it via `mysql> gtid_mode=ON`
 
-* Enable `enforce\_gtid\_consistency`: Boolean that specifies whether the server enforces GTID consistency by allowing the execution of statements that can be logged in a transactionally safe manner. Required when using GTIDs. Enable it via `mysql\> enforce\_gtid\_consistency=ON`
+* Enable `enforce_gtid_consistency`: Boolean that specifies whether the server enforces GTID consistency by allowing the execution of statements that can be logged in a transactionally safe manner. Required when using GTIDs. Enable it via `mysql> enforce_gtid_consistency=ON`
 
 **Note**
 
@@ -144,13 +150,13 @@ Using this feature requires additional configuration, when creating the source. 
 
 The connector expects an RSA key in PEM format. To generate this key:
 
-```ssh-keygen -t rsa -m PEM -f myuser\_rsa```
+```ssh-keygen -t rsa -m PEM -f myuser_rsa```
 
-This produces the private key in pem format, and the public key remains in the standard format used by the `authorized\_keys` file on your bastion host. The public key should be added to your bastion host to whichever user you want to use with Daspire. The private key is provided via copy-and-paste to the Daspire connection configuration screen, so it may log in to the bastion.
+This produces the private key in pem format, and the public key remains in the standard format used by the `authorized_keys` file on your bastion host. The public key should be added to your bastion host to whichever user you want to use with Daspire. The private key is provided via copy-and-paste to the Daspire connection configuration screen, so it may log in to the bastion.
 
 ## Data type mapping
 
-| **MySQL Type** | **Daspire Type** | **Note** |
+| MySQL Type | Daspire Type | Note |
 | --- | --- | --- |
 | bit(1) | boolean |
 | bit(\>1) | base64 binary string |
