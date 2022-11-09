@@ -27,7 +27,7 @@ const sidebars = {
     { 
       type: 'doc',
       label: 'Key concepts',
-      id: 'core-concepts'
+      id: 'key-concepts'
     },
     {
       type: 'category',
@@ -38,7 +38,7 @@ const sidebars = {
           label: 'Sources',
           items: [
             'setup-guide/sources/amazon-ads', 
-            'setup-guide/sources/amazon-seller-partner', 
+            'setup-guide/sources/amazon-selling-partner', 
             'setup-guide/sources/mysql'
           ],  
         },
