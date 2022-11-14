@@ -40,6 +40,7 @@ const sidebars = {
             'setup-guide/sources/amazon-ads', 
             'setup-guide/sources/amazon-selling-partner', 
             'setup-guide/sources/bigcommerce',
+            'setup-guide/sources/magento',
             'setup-guide/sources/mysql',
             'setup-guide/sources/shopify'
           ],  
