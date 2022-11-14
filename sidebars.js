@@ -42,7 +42,9 @@ const sidebars = {
             'setup-guide/sources/bigcommerce',
             'setup-guide/sources/magento',
             'setup-guide/sources/mysql',
-            'setup-guide/sources/shopify'
+            'setup-guide/sources/netsuite',
+            'setup-guide/sources/shopify',
+            'setup-guide/sources/woocommerce'
           ],  
         },
         {
