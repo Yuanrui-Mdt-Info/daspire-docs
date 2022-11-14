@@ -49,6 +49,11 @@ const sidebars = {
         }    
       ]  
     },
+    { 
+      type: 'doc',
+      label: 'Sync Log',
+      id: 'sync-log'
+    },
   ],
 };
 
