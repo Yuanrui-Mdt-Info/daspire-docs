@@ -20,7 +20,7 @@ $ npm run build
 ### Check the pages locally
 If the operations above ran smoothly, please run the command as below to check the build locally
 ```
-npm run server
+npm run serve
 ```
 
 ### The generated pages
