@@ -21,11 +21,9 @@ If you have any issues connecting with Daspire, please make sure that the list o
 To determine whether a network policy is set on your account or for a specific user, execute the SHOW PARAMETERS command.
 
 **Account**
-
 ```SHOW PARAMETERS LIKE 'network_policy' IN ACCOUNT;```
 
 **User**
-
 ```SHOW PARAMETERS LIKE 'network_policy' IN USER <username>;```
 
 To read more please check official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/network-policies.html#)
