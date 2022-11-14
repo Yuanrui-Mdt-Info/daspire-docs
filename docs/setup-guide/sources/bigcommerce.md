@@ -34,11 +34,11 @@ Daspire can sync data for the [BigCommerce API](https://developer.bigcommerce.co
 
 This Source is capable of syncing the following core Streams:
 
-1. [Customers](https://developer.bigcommerce.com/api-reference/store-management/customers-v3/customers/customersget)
-2. [Orders](https://developer.bigcommerce.com/api-reference/store-management/orders/orders/getallorders)
-3. [Transactions](https://developer.bigcommerce.com/api-reference/store-management/order-transactions/transactions/gettransactions)
-4. [Pages](https://developer.bigcommerce.com/api-reference/store-management/store-content/pages/getallpages)
-5. [Products](https://developer.bigcommerce.com/api-reference/store-management/catalog/products/getproducts)
+* [Customers](https://developer.bigcommerce.com/api-reference/store-management/customers-v3/customers/customersget)
+* [Orders](https://developer.bigcommerce.com/api-reference/store-management/orders/orders/getallorders)
+* [Transactions](https://developer.bigcommerce.com/api-reference/store-management/order-transactions/transactions/gettransactions)
+* [Pages](https://developer.bigcommerce.com/api-reference/store-management/store-content/pages/getallpages)
+* [Products](https://developer.bigcommerce.com/api-reference/store-management/catalog/products/getproducts)
 
 ## Data type mapping
 
