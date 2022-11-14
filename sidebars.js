@@ -51,6 +51,11 @@ const sidebars = {
     },
     { 
       type: 'doc',
+      label: 'Configurations',
+      id: 'configurations'
+    },
+    { 
+      type: 'doc',
       label: 'Sync Log',
       id: 'sync-log'
     },
