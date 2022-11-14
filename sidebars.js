@@ -39,6 +39,7 @@ const sidebars = {
           items: [
             'setup-guide/sources/amazon-ads', 
             'setup-guide/sources/amazon-selling-partner', 
+            'setup-guide/sources/bigcommerce',
             'setup-guide/sources/mysql'
           ],  
         },
