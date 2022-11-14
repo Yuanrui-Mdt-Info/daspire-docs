@@ -50,7 +50,10 @@ const sidebars = {
         {
           type: 'category',
           label: 'Destinations',
-          items: ['setup-guide/destinations/mysql'],  
+          items: [
+            'setup-guide/destinations/mysql',
+            'setup-guide/destinations/snowflake',
+          ],  
         }    
       ]  
     },
