@@ -27,7 +27,7 @@ const sidebars = {
     { 
       type: 'doc',
       label: 'Key concepts',
-      id: 'core-concepts'
+      id: 'key-concepts'
     },
     {
       type: 'category',
@@ -38,16 +38,34 @@ const sidebars = {
           label: 'Sources',
           items: [
             'setup-guide/sources/amazon-ads', 
-            'setup-guide/sources/amazon-seller-partner', 
-            'setup-guide/sources/mysql'
+            'setup-guide/sources/amazon-selling-partner', 
+            'setup-guide/sources/bigcommerce',
+            'setup-guide/sources/magento',
+            'setup-guide/sources/mysql',
+            'setup-guide/sources/netsuite',
+            'setup-guide/sources/shopify',
+            'setup-guide/sources/woocommerce'
           ],  
         },
         {
           type: 'category',
           label: 'Destinations',
-          items: ['setup-guide/destinations/mysql'],  
+          items: [
+            'setup-guide/destinations/mysql',
+            'setup-guide/destinations/snowflake',
+          ],  
         }    
       ]  
+    },
+    { 
+      type: 'doc',
+      label: 'Configurations',
+      id: 'configurations'
+    },
+    { 
+      type: 'doc',
+      label: 'Sync Log',
+      id: 'sync-log'
     },
   ],
 };

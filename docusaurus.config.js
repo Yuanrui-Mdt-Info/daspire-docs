@@ -35,10 +35,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Yuanrui-Mdt-Info/daspire-docs/tree/main/docs/',
           path: './docs'
         },
         blog: false,
@@ -60,7 +56,7 @@ const config = {
         },
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         //links: [
         //   {
         //     title: 'Community',
@@ -89,7 +85,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Daspire Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Sictec Infotech, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
