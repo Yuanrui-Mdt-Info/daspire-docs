@@ -150,7 +150,9 @@ Using this feature requires additional configuration, when creating the source. 
 
 The connector expects an RSA key in PEM format. To generate this key:
 
-```ssh-keygen -t rsa -m PEM -f myuser_rsa```
+```
+ssh-keygen -t rsa -m PEM -f myuser_rsa
+```
 
 This produces the private key in pem format, and the public key remains in the standard format used by the `authorized_keys` file on your bastion host. The public key should be added to your bastion host to whichever user you want to use with Daspire. The private key is provided via copy-and-paste to the Daspire connection configuration screen, so it may log in to the bastion.
 

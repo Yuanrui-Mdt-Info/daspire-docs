@@ -82,6 +82,8 @@ If child streams are synced alone from the parent stream - the full sync will ta
 
 Shopify has some [rate limit restrictions](https://shopify.dev/concepts/about-apis/rate-limits). Typically, there should not be issues with throttling or exceeding the rate limits but in some edge cases, user can receive the warning message as follows:
 
-```Caught retryable error '<some_error> or null' after <some_number> tries. Waiting <some_number> seconds then retrying..."```
+```
+Caught retryable error '<some_error> or null' after <some_number> tries. Waiting <some_number> seconds then retrying..."
+```
 
 This is expected when the source hits the 429 - Rate Limit Exceeded HTTP Error. With the given error message, the sync operation still goes on, but will require more time to finish.
