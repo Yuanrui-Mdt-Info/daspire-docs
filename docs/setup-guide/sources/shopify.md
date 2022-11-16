@@ -26,7 +26,7 @@ This source supports API PASSWORD authentication method.
 
 4. Select the resources you want to allow access to. Daspire only needs read-level access.
 
-**Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
+  > **Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
 
 5. The password under the Admin API section is what you'll use as the api\_password for the integration.
 
@@ -59,6 +59,7 @@ This Source is capable of syncing the following core Streams:
 * [Shop](https://shopify.dev/api/admin-rest/2021-07/resources/shop)
 
 **NOTE**
+
 For better experience with Incremental Refresh the following is recommended:
 
 1. Order Refunds, Order Risks, Transactions should be synced along with Orders stream.

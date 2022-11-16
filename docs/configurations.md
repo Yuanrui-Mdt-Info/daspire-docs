@@ -14,7 +14,7 @@ The **Transfer** and **Streams** settings include the following parameters:
 | Destination Namespace | Where the replicated data is written |
 | Destination Stream Prefix | Helps you identify streams from different connectors |
 
-**NOTE:** These parameters apply to all streams in the connection.
+  > **NOTE:** These parameters apply to all streams in the connection.
 
 3. In the **Activate the streams you want to sync** section, you can make changes to any stream you choose.
 
@@ -32,7 +32,7 @@ The **Transfer** and **Streams** settings include the following parameters:
 
 2. Click the dropdown arrow in the **Sync mode** column and select the sync mode you want to apply.
 
-**NOTE:** Depending on the sync mode you select, you may need to choose a cursor or primary key.
+  > **NOTE:** Depending on the sync mode you select, you may need to choose a cursor or primary key.
 
 3. If there is a dropdown arrow in the **Cursor** or **Primary key** fields, click the dropdown arrow and choose the cursor or primary key.
 
@@ -56,7 +56,7 @@ The **Transfer** and **Streams** settings include the following parameters:
 
 2. The **Stream configuration changed** dialog displays. This gives you the option to reset streams when you save the changes.
 
-**CAUTION:** Daspire recommends that you reset the streams. A reset will delete data in the destination of the affected streams and then re-sync that data. Skipping the reset is discouraged and might lead to unexpected behavior.
+  > **CAUTION:** Daspire recommends that you reset the streams. A reset will delete data in the destination of the affected streams and then re-sync that data. Skipping the reset is discouraged and might lead to unexpected behavior.
 
 3. Click **Save connection** , or click **Cancel** to close the dialog.
 
