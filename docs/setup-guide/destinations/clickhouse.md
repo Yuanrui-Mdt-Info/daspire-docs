@@ -1,4 +1,5 @@
 # ClickHouse
+This page contains the setup guide and reference information for ClickHouse.
 
 ## Features
 
