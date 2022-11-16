@@ -51,6 +51,7 @@ const sidebars = {
           type: 'category',
           label: 'Destinations',
           items: [
+            'setup-guide/destinations/bigquery',
             'setup-guide/destinations/mysql',
             'setup-guide/destinations/snowflake',
           ],  
@@ -64,7 +65,7 @@ const sidebars = {
     },
     { 
       type: 'doc',
-      label: 'Sync Log',
+      label: 'Sync log',
       id: 'sync-log'
     },
   ],
