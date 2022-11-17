@@ -86,7 +86,7 @@ Your database user should now be ready for use with Daspire.
 
 * Our CDC implementation uses at least once delivery for all change records.
 
-**1. Enable binary logging**
+#### 1. Enable binary logging
 
 You must enable binary logging for MySQL replication. The binary logs record transaction updates for replication tools to propagate changes. You can configure your MySQL server configuration file with the following properties, which are described in below:
 
@@ -108,7 +108,7 @@ binlog_expire_log_seconds  = 864000
 
 * `binlog_expire_log_seconds`: This is the number of seconds for automatic binlog file removal. We recommend 864000 seconds (10 days) so that in case of a failure in sync or if the sync is paused, we still have some bandwidth to start from the last point in incremental sync. We also recommend setting frequent syncs for CDC.
 
-**2. Enable GTIDs (optional)**
+#### 2. Enable GTIDs (optional)
 
 Global transaction identifiers (GTIDs) uniquely identify transactions that occur on a server within a cluster. Though not required for Daspire MySQL setup, using GTIDs simplifies replication and enables you to more easily confirm if primary and replica servers are consistent. For more information refer [MySQL doc](https://dev.mysql.com/doc/refman/8.0/en/replication-options-gtids.html#option_mysqld_gtid-mode).
 
@@ -150,7 +150,9 @@ Using this feature requires additional configuration, when creating the source. 
 
 The connector expects an RSA key in PEM format. To generate this key:
 
-```ssh-keygen -t rsa -m PEM -f myuser_rsa```
+```
+ssh-keygen -t rsa -m PEM -f myuser_rsa
+```
 
 This produces the private key in pem format, and the public key remains in the standard format used by the `authorized_keys` file on your bastion host. The public key should be added to your bastion host to whichever user you want to use with Daspire. The private key is provided via copy-and-paste to the Daspire connection configuration screen, so it may log in to the bastion.
 

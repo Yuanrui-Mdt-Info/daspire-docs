@@ -18,7 +18,7 @@ This page contains the setup guide and reference information for WooCommerce.
 
 3. Choose the level of access for this REST API key, which can be Read access, Write access or Read/Write access. Daspire only needs read-level access.
 
-**Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
+  > **Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
 
 4. The two keys, Consumer Key and Consumer Secret are what you'll use respectively as api\_key and api\_secret for the integration.
 

@@ -40,7 +40,7 @@ You can use the following script in a new [Snowflake worksheet](https://docs.sno
 
 2. Edit the following script to change the password to a more secure password and to change the names of other resources if you so desire.
 
-**Note:** Make sure you follow the [Snowflake identifier requirements](https://docs.snowflake.com/en/sql-reference/identifiers-syntax.html) while renaming the resources.
+  > **Note:** Make sure you follow the [Snowflake identifier requirements](https://docs.snowflake.com/en/sql-reference/identifiers-syntax.html) while renaming the resources.
 
 ```
  set variables (these need to be uppercase)
@@ -216,7 +216,8 @@ Navigate to the Daspire to set up Snowflake as a destination. You can authentica
  and replace <user_name> with your user name and <public_key_value> with your public key. 
 ```
 
-To use AWS S3 as the cloud storage, enter the information for the S3 bucket you created in Step 2:
+
+To use **AWS S3** as the cloud storage, enter the information for the S3 bucket you created in Step 2:
 
 | Field | Description |
 | --- | --- |
@@ -229,7 +230,7 @@ To use AWS S3 as the cloud storage, enter the information for the S3 bucket you 
 | Encryption | Whether files on S3 are encrypted. You probably don't need to enable this, but it can provide an additional layer of security if you are sharing your data storage with other applications. If you do use encryption, you must choose between ephemeral keys (Daspire will automatically generate a new key for each sync, and nobody but Daspire and Snowflake will be able to read the data on S3) or providing your own key (if you have the "Purge staging files and tables" option disabled, and you want to be able to decrypt the data yourself) |
 | S3 Filename pattern (Optional) | The pattern allows you to set the file-name format for the S3 staging file(s), next placeholders combinations are currently supported: {date}, {date:yyyy\_MM}, {timestamp}, {timestamp:millis}, {timestamp:micros}, {part\_number}, {sync\_id}, {format\_extension}. Please, don't use empty space and not supportable placeholders, as they won't recognized. |
 
-To use a Google Cloud Storage bucket, enter the information for the bucket you created in Step 2:
+To use a **Google Cloud Storage** bucket, enter the information for the bucket you created in Step 2:
 
 | Field | Description |
 | --- | --- |
@@ -237,7 +238,7 @@ To use a Google Cloud Storage bucket, enter the information for the bucket you c
 | GCP Bucket Name | The name of the staging bucket. Daspire will write files to this bucket and read them via statements on Snowflake. (Example: daspire-staging) |
 | Google Application Credentials | The contents of the JSON key file that has read/write permissions to the staging GCS bucket. You will separately need to grant bucket access to your Snowflake GCP service account. See the Google Cloud docs for more information on how to generate a JSON key for your service account. |
 
-To use Azure Blob storage, enter the information for the storage you created in Step 2:
+To use **Azure Blob** storage, enter the information for the storage you created in Step 2:
 
 | Field | Description |
 | --- | --- |

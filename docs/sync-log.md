@@ -27,7 +27,7 @@ The log summary for a successful sync shows the following data.
 | xh xm xs | Total time (hours, minutes, seconds) for the sync and basic normalization, if enabled, to complete. |
 | Sync or Reset | The action that was performed (either a sync or a reset). |
 
-NOTE: In a successful sync, the number of emitted records and committed records should be the same.
+**NOTE:** In a successful sync, the number of emitted records and committed records should be the same.
 
 ### Cancelled
 
@@ -41,7 +41,7 @@ The log summary for a cancelled sync may show the following data.
 | Sync or Reset | The action that was performed (either a sync or a reset). |
 | Failure Origin | The cause of the sync cancellation. |
 
-NOTE: Daspire will try to sync your data three times. After a third failure, it will stop attempting to sync.
+**NOTE:** Daspire will try to sync your data three times. After a third failure, it will stop attempting to sync.
 
 ### Failed
 

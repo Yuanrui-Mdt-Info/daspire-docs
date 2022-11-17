@@ -18,7 +18,7 @@ This page contains the setup guide and reference information for BigCommerce.
 
 3. Select the resources you want to allow access to. Daspire only needs read-level access.
 
-**Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
+  > **Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
 
 4. The generated Access Token is what you'll use as the access\_token for the integration.
 
