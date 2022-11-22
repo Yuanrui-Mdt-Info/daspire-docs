@@ -38,8 +38,9 @@ const sidebars = {
           label: 'Sources',
           items: [
             'setup-guide/sources/amazon-ads', 
-            'setup-guide/sources/amazon-selling-partner', 
+            'setup-guide/sources/amazon-seller-partner', 
             'setup-guide/sources/bigcommerce',
+            'setup-guide/sources/cart.com',
             'setup-guide/sources/magento',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
