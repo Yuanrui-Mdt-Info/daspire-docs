@@ -46,6 +46,7 @@ const sidebars = {
             'setup-guide/sources/netsuite',
             'setup-guide/sources/prestashop',
             'setup-guide/sources/shopify',
+            'setup-guide/sources/spree-commerce',
             'setup-guide/sources/woocommerce',
             'setup-guide/sources/zencart'
           ],  
