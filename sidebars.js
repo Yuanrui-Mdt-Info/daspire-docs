@@ -44,8 +44,10 @@ const sidebars = {
             'setup-guide/sources/magento',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
+            'setup-guide/sources/prestashop',
             'setup-guide/sources/shopify',
-            'setup-guide/sources/woocommerce'
+            'setup-guide/sources/woocommerce',
+            'setup-guide/sources/zencart'
           ],  
         },
         {
