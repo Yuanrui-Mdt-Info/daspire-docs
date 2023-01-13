@@ -10,7 +10,7 @@ This page contains the setup guide and reference information for Walmart.
 
 ### Step 1: Get your Walmart API keys
 
-1. Log in to your [Walmart seller dashboard](https://www.seller.walmart.com).
+1. Log in to your [Walmart seller dashboard](https://seller.walmart.com).
 
 2. Click on **Settings** -> **API Key Management**  
 
