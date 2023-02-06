@@ -40,6 +40,7 @@ const sidebars = {
             'setup-guide/sources/amazon-ads', 
             'setup-guide/sources/amazon-seller-partner', 
             'setup-guide/sources/bigcommerce',
+            'setup-guide/sources/ebay',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
             'setup-guide/sources/shopify',
