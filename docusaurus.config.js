@@ -24,7 +24,15 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      zh: {
+        htmlLang: 'zh-CN',
+      },
+    },
   },
 
   presets: [
@@ -54,6 +62,12 @@ const config = {
           alt: 'Daspire logo',
           src: 'img/logo-dark.png',
         },
+        items: [
+          {
+            type: 'localeDropdown',
+            position: 'left',
+          },
+        ],
       },
       footer: {
         style: 'light',
