@@ -21,7 +21,7 @@ Daspire can sync data for the [Shopify API](https://help.shopify.com/en/api/refe
 
 ## Setup guide
 
-This source supports API PASSWORD authentication method.
+### Using API password to set up
 
 1. Go to https://YOURSTORE.myshopify.com/admin/apps/private
 
@@ -36,6 +36,20 @@ This source supports API PASSWORD authentication method.
 5. The password under the Admin API section is what you'll use as the api\_password for the integration.
 
 6. You're ready to set up Shopify in Daspire!
+
+### Set up Shopify in Daspire
+
+1. Select **Shopify** from the Source list.
+
+2. Enter a **Source Name**.
+
+3. Enter your Shopify **Store Name**.
+
+4. Using OAuth 2.0, **Authenticate your Shopify account** or using API password, enter your **API password**.
+
+5. Enter **Replication Start Date** - the date you would like to replicate data from. 
+
+6. Click **Set up source**.
 
 ## Output schema
 
@@ -76,11 +90,11 @@ If child streams are synced alone from the parent stream - the full sync will ta
 
 | Integration Type | Daspire Type |
 | --- | --- |
-| string | string |
-| number | number |
-| array | array |
-| object | object |
-| boolean | boolean |
+| `string` | `string` |
+| `number` | `number` |
+| `array` | `array` |
+| `object` | `object` |
+| `boolean` | `boolean` |
 
 ## Performance considerations
 

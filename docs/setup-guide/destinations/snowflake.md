@@ -21,9 +21,11 @@ If you have any issues connecting with Daspire, please make sure that the list o
 To determine whether a network policy is set on your account or for a specific user, execute the SHOW PARAMETERS command.
 
 **Account**
+
 ```SHOW PARAMETERS LIKE 'network_policy' IN ACCOUNT;```
 
 **User**
+
 ```SHOW PARAMETERS LIKE 'network_policy' IN USER <username>;```
 
 To read more please check official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/network-policies.html#)
@@ -175,7 +177,7 @@ Navigate to the Daspire to set up Snowflake as a destination. You can authentica
 | Schema | The default schema used as the target schema for all statements issued from the connection that do not explicitly specify a schema name. |
 | Username | The username you created in Step 1 to allow Daspire to access the database. Example: DASPIRE\_USER |
 | Password | The password associated with the username. |
-| JDBC URL Params (Optional) | Additional properties to pass to the JDBC URL string when connecting to the database formatted as key=value pairs separated by the symbol &. Example: key1=value1&key2=value2&key3=value3 |
+| JDBC URL Params (optional) | Additional properties to pass to the JDBC URL string when connecting to the database formatted as key=value pairs separated by the symbol &. Example: key1=value1&key2=value2&key3=value3 |
 
 #### OAuth 2.0
 
@@ -188,7 +190,7 @@ Navigate to the Daspire to set up Snowflake as a destination. You can authentica
 | Schema | The default schema used as the target schema for all statements issued from the connection that do not explicitly specify a schema name. |
 | Username | The username you created in Step 1 to allow Daspire to access the database. Example: DASPIRE\_USER |
 | OAuth2 | The Login name and password to obtain auth token. |
-| JDBC URL Params (Optional) | Additional properties to pass to the JDBC URL string when connecting to the database formatted as key=value pairs separated by the symbol &. Example: key1=value1&key2=value2&key3=value3 |
+| JDBC URL Params (optional) | Additional properties to pass to the JDBC URL string when connecting to the database formatted as key=value pairs separated by the symbol &. Example: key1=value1&key2=value2&key3=value3 |
 
 #### Key pair authentication
 
@@ -225,10 +227,10 @@ To use **AWS S3** as the cloud storage, enter the information for the S3 bucket 
 | S3 Bucket Region | The S3 staging bucket region used. |
 | S3 Key Id \* | The Access Key ID granting access to the S3 staging bucket. Daspire requires Read and Write permissions for the bucket. |
 | S3 Access Key \* | The corresponding secret to the S3 Key ID. |
-| Stream Part Size (Optional) | Increase this if syncing tables larger than 100GB. Files are streamed to S3 in parts. This determines the size of each part, in MBs. As S3 has a limit of 10,000 parts per file, part size affects the table size. This is 10MB by default, resulting in a default limit of 100GB tables. Note, a larger part size will result in larger memory requirements. A rule of thumb is to multiply the part size by 10 to get the memory requirement. Modify this with care. (e.g. 5) |
+| Stream Part Size (optional) | Increase this if syncing tables larger than 100GB. Files are streamed to S3 in parts. This determines the size of each part, in MBs. As S3 has a limit of 10,000 parts per file, part size affects the table size. This is 10MB by default, resulting in a default limit of 100GB tables. Note, a larger part size will result in larger memory requirements. A rule of thumb is to multiply the part size by 10 to get the memory requirement. Modify this with care. (e.g. 5) |
 | Purge Staging Files and Tables | Determines whether to delete the staging files from S3 after completing the sync. Specifically, the connector will create CSV files named bucketPath/namespace/streamName/syncDate\_epochMillis\_randomUuid.csv containing three columns (ab\_id, data, emitted\_at). Normally these files are deleted after sync; if you want to keep them for other purposes, set purge\_staging\_data to false. |
 | Encryption | Whether files on S3 are encrypted. You probably don't need to enable this, but it can provide an additional layer of security if you are sharing your data storage with other applications. If you do use encryption, you must choose between ephemeral keys (Daspire will automatically generate a new key for each sync, and nobody but Daspire and Snowflake will be able to read the data on S3) or providing your own key (if you have the "Purge staging files and tables" option disabled, and you want to be able to decrypt the data yourself) |
-| S3 Filename pattern (Optional) | The pattern allows you to set the file-name format for the S3 staging file(s), next placeholders combinations are currently supported: {date}, {date:yyyy\_MM}, {timestamp}, {timestamp:millis}, {timestamp:micros}, {part\_number}, {sync\_id}, {format\_extension}. Please, don't use empty space and not supportable placeholders, as they won't recognized. |
+| S3 Filename pattern (optional) | The pattern allows you to set the file-name format for the S3 staging file(s), next placeholders combinations are currently supported: {date}, {date:yyyy\_MM}, {timestamp}, {timestamp:millis}, {timestamp:micros}, {part\_number}, {sync\_id}, {format\_extension}. Please, don't use empty space and not supportable placeholders, as they won't recognized. |
 
 To use a **Google Cloud Storage** bucket, enter the information for the bucket you created in Step 2:
 
@@ -244,10 +246,10 @@ To use **Azure Blob** storage, enter the information for the storage you created
 | --- | --- |
 | Endpoint Domain Name | Leave default value blob.core.windows.net or map a custom domain to an Azure Blob Storage endpoint. |
 | Azure Blob Storage Account Name | The Azure storage account you created in Step 2. |
-| Azure blob storage container (Bucket) Name | The Azure blob storage container you created in Step 2. |
+| Azure Blob Storage Container (Bucket) Name | The Azure blob storage container you created in Step 2. |
 | SAS Token | The SAS Token you provided in Step 2. |
 
-## Output schema
+## Output schema 
 
 Daspire outputs each stream into its own table with the following columns in Snowflake:
 

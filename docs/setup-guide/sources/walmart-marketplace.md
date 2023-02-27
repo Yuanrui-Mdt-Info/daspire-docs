@@ -1,8 +1,9 @@
-# Walmart
+# Walmart Marketplace
 
-This page contains the setup guide and reference information for Walmart.
+This page contains the setup guide and reference information for Walmart Marketplace.
 
 ## Prerequisites
+
 * Client ID
 * Client Secret
 
@@ -30,7 +31,7 @@ This page contains the setup guide and reference information for Walmart.
 
 5. Enter your Walmart account **Client Secret**.
 
-6. In Acquisition Method, enter the  **Start Time**, which is used for generating reports starting from the specified start date. Should be in YYYY-MM-DD format and not more than 60 days in the past. The date for a specific profile is calculated according to its timezone, this parameter should be specified in the UTC timezone. Since it doesn't make sense to generate reports for the current day (metrics could be changed), it generates reports for the day before (e.g. if **Start Date** is 2022-10-11 it would use 20221010 as reportDate parameter for request).
+6. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
 7. Click **Set up source**.
 
@@ -65,7 +66,7 @@ This source is capable of syncing the following streams:
 | Integration Type | Daspire Type |
 | --- | --- |
 | `string` | `string` |
-| `int`, `float`, `number` | `number` |
+| `int, float, number` | `number` |
 | `date` | `date` |
 | `datetime` | `datetime` |
 | `array` | `array` |

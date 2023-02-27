@@ -5,8 +5,8 @@ This page contains the setup guide and reference information for Amazon Seller P
 ## Prerequisites
 
 * Store Name
-* App Id
-* Amazon SP account
+* App ID
+* Amazon SP Account
 * AWS Access Key
 * AWS Secret Access Key
 * Role ARN
@@ -29,7 +29,7 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 4. Enter your Amazon **App ID**.
 
-5. **Authenticate your Amazon Seller Partner account**.
+5. **Authenticate your Amazon Seller Partner Account**.
 
 6. Enter your **AWS Access Key**.
 
@@ -45,7 +45,7 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 12. Select your **AWS Region**.
 
-13. **End Date (Optional)** - any data after this date will not be replicated.
+13. **End Date (optional)** - any data after this date will not be replicated.
 
 14. **Start Date** - Any data before this date will not be replicated.
 
