@@ -44,10 +44,10 @@ This Source is capable of syncing the following core Streams:
 
 | Integration Type | Daspire Type |
 | --- | --- |
-| string | string |
-| number | number |
-| array | array |
-| object | object |
+| `string` | `string` |
+| `number` | `number` |
+| `array` | `array` |
+| `object` | `object` |
 
 ## Performance considerations
 

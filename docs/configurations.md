@@ -4,7 +4,7 @@
 
 1. On the Daspire dashboard, click a **Connection** in the list you want to change.
 
-2. Click **Replication**.
+2. Click **Configurations**.
 
 The **Transfer** and **Streams** settings include the following parameters:
 

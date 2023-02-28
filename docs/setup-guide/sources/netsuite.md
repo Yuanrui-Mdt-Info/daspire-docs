@@ -24,7 +24,7 @@ Daspire implements the [SuiteTalk REST Web Services](https://docs.oracle.com/en/
 
 2. Go to **Setup** » **Company** » **Company Information**
 
-3. Copy your Account ID. Your account ID is your Realm. It will looks like **1234567** if you use regular account or **1234567\_SB2** if it is a Sandbox
+3. Copy your **Account ID**. Your account ID is your Realm. It will looks like **1234567** if you use regular account or **1234567\_SB2** if it is a Sandbox
 
 #### Step 1.2: Enable features
 
