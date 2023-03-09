@@ -17,10 +17,10 @@
 
 ### 第1步：设置亚马逊卖家合作伙伴
 
-[注册](https://developer-docs.amazon.com/sp-api/docs/registering-your-application)亚马逊卖家合作伙伴申请。
+[注册](https://developer-docs.amazon.com/sp-api/docs/registering-your-application)亚马逊卖家合作伙伴。
 [创建](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)IAM用户.
 
-### 第1步：在Daspire中设置亚马逊卖家合作伙伴数据源
+### 第2步：在Daspire中设置亚马逊卖家合作伙伴数据源
 
 1. 从数据源列表中选择**亚马逊卖家合作伙伴（Amazon Seller Partner）**。
 
