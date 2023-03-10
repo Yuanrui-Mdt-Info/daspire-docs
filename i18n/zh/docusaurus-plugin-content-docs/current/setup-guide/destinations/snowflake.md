@@ -117,7 +117,7 @@
 
 3. 使用 [Worksheet page](https://docs.snowflake.com/en/user-guide/ui-worksheet.html)或[Snowlight](https://docs.snowflake.com/en/user-guide/ui-snowsight-gs.html)运行脚本。确保选中**All Queries**勾选框。
 
-### 第二步：设置数据加载方式
+### 第2步：设置数据加载方式
 
 默认情况下，Daspire使用Snowflake的[内部暂存](https://docs.snowflake.com/en/user-guide/data-load-local-file-system-create-stage.html)加载数据。您还可以使用[Amazon S3存储桶](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)、 [谷歌云存储桶](https://cloud.google.com/storage/docs/introduction) 或 [Azure Blob存储](https://docs.microsoft.com/en-us/azure/storage/blobs/)。
 

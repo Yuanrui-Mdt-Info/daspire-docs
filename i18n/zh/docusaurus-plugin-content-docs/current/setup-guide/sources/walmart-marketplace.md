@@ -5,7 +5,7 @@
 ## 前提条件
 
 * 客户ID（Client ID）
-* 客户秘密（Client Secret）
+* 客户端密码（Client Secret）
 
 ## 设置指南
 
@@ -17,7 +17,7 @@
 
 3. 点击**Walmart Developer Portal**，您将被重定向到沃尔玛开发人员界面。
 
-4. 记下**Production keys**选项卡内的**Client ID**和**Client secret**。这些将用于在Daspire中创建该数据源。
+4. 记下**Production keys**选项卡内的客户端ID（**Client ID**）和客户端密码（**Client secret**）。这些将用于在Daspire中创建该数据源。
 
 ### 第2步：在Daspire中设置沃尔玛数据源
 
@@ -27,9 +27,9 @@
 
 3. 填写沃尔玛**店铺名称**。
 
-4. 填写沃尔玛**Client Id**.
+4. 填写沃尔玛**客户端ID**.
 
-5. 填写沃尔玛**Client Secret**.
+5. 填写沃尔玛**客户端密码**.
 
 6. 在**数据复制方式**中，在**根据开始日期复制**或**周期性复制**中选择。
 

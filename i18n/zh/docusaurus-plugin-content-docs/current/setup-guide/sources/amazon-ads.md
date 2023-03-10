@@ -24,7 +24,7 @@
 
 4. 填写亚马逊**店铺名称**。
 
-5. 在**区域**中选择从**北美（NA）**、**欧洲（EU）**或**远东（FE）**提取数据。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
+5. 在**区域**中选择从北美（**NA**）、欧洲（**EU**）或远东（**FE**）提取数据。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
 
 6. **报告等待时限**是接口等待为数据流品牌报告、品牌视频报告、显示报告、产品报告生成报告的最大分钟数。
 
