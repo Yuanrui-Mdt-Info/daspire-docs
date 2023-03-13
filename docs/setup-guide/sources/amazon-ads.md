@@ -22,19 +22,17 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 3. **Authenticate your Amazon Ads account**.
 
-4. Enter your Amazon **Store Name**.
+4. Select **Region** to pull data from **North America (NA)**, **Europe (EU)** or **Far East (FE)**. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints) for more details.
 
-5. Select **Region** to pull data from **North America (NA)**, **Europe (EU)** or **Far East (FE)**. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints) for more details.
+5. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams.
 
-6. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams.
+6. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams.
 
-7. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams.
+7. **Start Date (optional)** is used for generating reports starting from the specified start date. Should be in YYYY-MM-DD format and not more than 60 days in the past. If not specified today's date is used. The date for a specific profile is calculated according to its timezone, this parameter should be specified in the UTC timezone. Since it doesn't make sense to generate reports for the current day (metrics could be changed), it generates reports for the day before (e.g. if **Start Date** is 2022-10-11 it would use 20221010 as reportDate parameter for request).
 
-8. **Start Date (optional)** is used for generating reports starting from the specified start date. Should be in YYYY-MM-DD format and not more than 60 days in the past. If not specified today's date is used. The date for a specific profile is calculated according to its timezone, this parameter should be specified in the UTC timezone. Since it doesn't make sense to generate reports for the current day (metrics could be changed), it generates reports for the day before (e.g. if **Start Date** is 2022-10-11 it would use 20221010 as reportDate parameter for request).
+8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
-9. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
-
-10. Click **Set up source**.
+9. Click **Set up source**.
 
 ## Supported sync modes
 

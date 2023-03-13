@@ -53,6 +53,7 @@ const sidebars = {
           label: 'Destinations',
           items: [
             'setup-guide/destinations/bigquery',
+            'setup-guide/destinations/clickhouse',
             'setup-guide/destinations/mysql',
             'setup-guide/destinations/redshift',
             'setup-guide/destinations/snowflake',
