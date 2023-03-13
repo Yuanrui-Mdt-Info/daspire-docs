@@ -5,7 +5,6 @@ This page contains the setup guide and reference information for Amazon Ads.
 ## Prerequisites
 
 * Amazon Ads account login (username and password)
-* Store Name
 * Region
 
 ## Setup guide
