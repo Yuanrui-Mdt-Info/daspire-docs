@@ -51,7 +51,7 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 15. **Report Options** is additional information passed to reports. Must be a valid json string.
 
-16. Click **Set up source**.
+16. Click **Save & Test**.
 
 ## Supported sync modes
 

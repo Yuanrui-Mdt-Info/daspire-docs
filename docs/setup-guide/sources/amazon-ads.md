@@ -31,7 +31,7 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
-9. Click **Set up source**.
+9. Click **Save & Test**.
 
 ## Supported sync modes
 

@@ -49,7 +49,7 @@ Daspire can sync data for the [Shopify API](https://help.shopify.com/en/api/refe
 
 5. Enter **Replication Start Date** - the date you would like to replicate data from. 
 
-6. Click **Set up source**.
+6. Click **Save & Test**.
 
 ## Output schema
 

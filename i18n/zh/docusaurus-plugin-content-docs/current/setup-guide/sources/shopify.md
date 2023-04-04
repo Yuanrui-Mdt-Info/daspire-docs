@@ -49,7 +49,7 @@ Daspire可以为[Shopify API](https://help.shopify.com/en/api/reference) 同步�
 
 5. 输入**复制开始日期** - 您希望复制数据的开始日期。
 
-6. 单击**设置数据源**。
+6. 单击**保存并测试**。
 
 ## 支持的数据流
 

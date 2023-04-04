@@ -16,7 +16,7 @@ This page contains the setup guide and reference information for eBay.
 
 4. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
-5. Click **Set up source**.
+5. Click **Save & Test**.
 
 ## Supported sync modes
 

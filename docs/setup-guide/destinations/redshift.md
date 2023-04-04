@@ -72,9 +72,9 @@ Optional parameters:
 
 3. On the destination setup page, select **Redshift** from the Destination type dropdown and enter a name for this connector.
 
-4. Fill in all the required fields to use the INSERT or COPY strategy
+4. Fill in all the required fields to use the INSERT or COPY strategy.
 
-5. Click Set up destination.
+5. Click **Save & Test**.
 
 ## Supported sync modes
 

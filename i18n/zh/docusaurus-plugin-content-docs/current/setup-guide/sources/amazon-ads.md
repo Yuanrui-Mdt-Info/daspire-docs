@@ -31,7 +31,7 @@
 
 8. 您要为其获取数据的**档案ID**（可选）。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles)。
 
-9. 点击**设置数据源**。
+9. 点击**保存并测试**。
 
 ## 支持的同步模式
 

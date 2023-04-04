@@ -135,7 +135,11 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 
 9. 添加**语言**
 
-10. 点击设置数据源
+10. 添加**对象类型**
+
+11. 添加**开始日期**
+
+12. 点击**保存并测试**
 
 ## 支持的同步模式
 

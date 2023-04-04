@@ -135,7 +135,11 @@ You have obtained the following parameters:
 
 9. Add **Language**
 
-10. Click Set up source
+10. Add **Object Types**
+
+11. Add **Start Date**
+
+12. Click **Save & Test**
 
 ## Supported sync modes
 

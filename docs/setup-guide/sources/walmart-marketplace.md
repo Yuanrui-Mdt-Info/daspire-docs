@@ -33,7 +33,7 @@ This page contains the setup guide and reference information for Walmart Marketp
 
 6. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
-7. Click **Set up source**.
+7. Click **Save & Test**.
 
 ## Supported sync modes
 
