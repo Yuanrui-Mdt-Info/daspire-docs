@@ -39,6 +39,10 @@ This source is capable of syncing the following streams:
 * [Promotions](https://developer.ebay.com/api-docs/sell/marketing/resources/promotion/methods/getPromotions)
 * [Promotion Reports](https://developer.ebay.com/api-docs/sell/marketing/resources/promotion_report/methods/getPromotionReports)
 
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+
 ## Data type mapping
 
 | Integration Type | Daspire Type |

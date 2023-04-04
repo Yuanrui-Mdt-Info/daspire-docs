@@ -157,3 +157,7 @@ The NetSuite source connector supports the following sync modes:
 2. If sync fails due to concurrency limit, you can try resync to see if it works.
 
 3. You can also contact NetSuite customer support to [change your Concurrency Limits](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_164095787873.html#:~:text=By%20default%2C%20NetSuite%20Connector%20limits,limit%2C%20contact%20NetSuite%20Customer%20Support).
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

@@ -52,3 +52,7 @@ Daspire可以为[BigCommerce API](https://developer.bigcommerce.com/api-docs/get
 ## 性能考虑
 
 BigCommerce有一些[速率限制](https://developer.bigcommerce.com/api-docs/getting-started/best-practices).
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

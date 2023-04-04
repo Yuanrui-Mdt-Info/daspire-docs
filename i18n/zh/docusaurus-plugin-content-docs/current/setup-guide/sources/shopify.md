@@ -106,3 +106,7 @@ Caught retryable error '<some_error> or null' after <some_number> tries. Waiting
 ```
 
 当数据源命中429 - 超出速率限制HTTP错误时，这是预期中的。对于给定的错误消息，同步操作仍在继续，但需要更多时间才能完成。
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

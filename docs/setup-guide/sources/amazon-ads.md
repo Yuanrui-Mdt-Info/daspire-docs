@@ -70,6 +70,10 @@ All the reports are generated for the day before relatively to the target profil
 
 Information about expected report generation waiting time you may find [here](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes).
 
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+
 ## Data type mapping
 
 | Integration Type | Daspire Type |

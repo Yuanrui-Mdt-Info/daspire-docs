@@ -61,6 +61,10 @@ This source is capable of syncing the following streams:
 * [Get Inbound Shipment Items](https://developer.walmart.com/api/us/mp/fulfillment#operation/getInboundShipmentItems)
 * [All Departments](https://developer.walmart.com/api/us/mp/utilities#operation/getDepartmentList)
 
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+
 ## Data type mapping
 
 | Integration Type | Daspire Type |

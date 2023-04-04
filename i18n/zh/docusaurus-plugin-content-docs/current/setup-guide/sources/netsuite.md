@@ -157,3 +157,7 @@ NetSuite数据源支持以下同步模式：
 2. 如果由于并发限制导致同步失败，您可以尝试重新同步至同步成功。
 
 3. 您也可以联系NetSuite客户支持[更改您的并发限制](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_164095787873.html#:~:text=By%20default%2C%20NetSuite%20Connector%20limits,limit%2C%20contact%20NetSuite%20Customer%20Support)。
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

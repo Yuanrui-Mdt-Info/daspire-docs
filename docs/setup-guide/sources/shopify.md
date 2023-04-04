@@ -105,3 +105,7 @@ Caught retryable error '<some_error> or null' after <some_number> tries. Waiting
 ```
 
 This is expected when the source hits the 429 - Rate Limit Exceeded HTTP Error. With the given error message, the sync operation still goes on, but will require more time to finish.
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
