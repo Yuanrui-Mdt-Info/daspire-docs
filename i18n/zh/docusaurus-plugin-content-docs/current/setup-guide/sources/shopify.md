@@ -49,7 +49,7 @@ Daspire可以为[Shopify API](https://help.shopify.com/en/api/reference) 同步�
 
 5. 输入**复制开始日期** - 您希望复制数据的开始日期。
 
-6. 单击**设置数据源**。
+6. 单击**保存并测试**。
 
 ## 支持的数据流
 
@@ -106,3 +106,7 @@ Caught retryable error '<some_error> or null' after <some_number> tries. Waiting
 ```
 
 当数据源命中429 - 超出速率限制HTTP错误时，这是预期中的。对于给定的错误消息，同步操作仍在继续，但需要更多时间才能完成。
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

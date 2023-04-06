@@ -47,11 +47,13 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 
 3. **状态（State）**保持**已启用（enabled）**状态
 
-4. 在**验证（Authentication）**部分启用复选框**基于令牌的身份验证（Token-Based Authentication）**
+4. 设置您的**并发限制**，并确保它等于或小于**最大并发性限制**
 
-5. 保存更改
+5. 在**验证（Authentication）**部分启用复选框**基于令牌的身份验证（Token-Based Authentication）**
 
-6. 之后会出现一次**消费者密钥（Consumer Key）**和**消费者秘密（Consumer Secret）**，复制它们。
+6. 保存更改
+
+7. 之后会出现一次**消费者密钥（Consumer Key）**和**消费者秘密（Consumer Secret）**，复制它们。
 
 #### 步骤1.4：设置角色
 
@@ -133,7 +135,11 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 
 9. 添加**语言**
 
-10. 点击设置数据源
+10. 添加**对象类型**
+
+11. 添加**开始日期**
+
+12. 点击**保存并测试**
 
 ## 支持的同步模式
 
@@ -155,3 +161,7 @@ NetSuite数据源支持以下同步模式：
 2. 如果由于并发限制导致同步失败，您可以尝试重新同步至同步成功。
 
 3. 您也可以联系NetSuite客户支持[更改您的并发限制](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_164095787873.html#:~:text=By%20default%2C%20NetSuite%20Connector%20limits,limit%2C%20contact%20NetSuite%20Customer%20Support)。
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

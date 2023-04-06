@@ -33,7 +33,7 @@
 
 6. 在**数据复制方式**中，在**根据开始日期复制**或**周期性复制**中选择。
 
-7. 点击**设置数据源**。
+7. 点击**保存并测试**。
 
 ## 支持的同步模式
 
@@ -60,6 +60,10 @@
 * [获取发货（Get Shipments）](https://developer.walmart.com/api/us/mp/fulfillment#operation/getInboundShipments)
 * [获取入库货品（Get Inbound Shipment Items）](https://developer.walmart.com/api/us/mp/fulfillment#operation/getInboundShipmentItems)
 * [所有部门（All Departments）](https://developer.walmart.com/api/us/mp/utilities#operation/getDepartmentList)
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。
 
 ## 数据类型映射
 

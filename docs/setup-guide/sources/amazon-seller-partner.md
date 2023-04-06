@@ -51,7 +51,7 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 15. **Report Options** is additional information passed to reports. Must be a valid json string.
 
-16. Click **Set up source**.
+16. Click **Save & Test**.
 
 ## Supported sync modes
 
@@ -91,6 +91,10 @@ This source is capable of syncing the following streams:
 ## Report options
 
 Make sure to configure the [required parameters](https://developer-docs.amazon.com/sp-api/docs/report-type-values) in the report options setting for the reports configured.
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
 
 ## Data type mapping
 

@@ -52,3 +52,7 @@ This Source is capable of syncing the following core Streams:
 ## Performance considerations
 
 BigCommerce has some [rate limit restrictions](https://developer.bigcommerce.com/api-docs/getting-started/best-practices).
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

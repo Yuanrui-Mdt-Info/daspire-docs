@@ -31,7 +31,7 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
-9. Click **Set up source**.
+9. Click **Save & Test**.
 
 ## Supported sync modes
 
@@ -69,6 +69,10 @@ All the reports are generated for the day before relatively to the target profil
 ## Performance considerations
 
 Information about expected report generation waiting time you may find [here](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes).
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
 
 ## Data type mapping
 

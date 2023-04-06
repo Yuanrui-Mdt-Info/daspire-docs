@@ -47,11 +47,13 @@ Daspire implements the [SuiteTalk REST Web Services](https://docs.oracle.com/en/
 
 3. **State** will keep **enabled**
 
-4. Enable checkbox **Token-Based Authentication** on _Authentication_ section
+4. Set up your **Concurrency limit**, and make sure it's equal or less than **concurrency limit**
 
-5. Save changes
+5. Enable checkbox **Token-Based Authentication** on _Authentication_ section
 
-6. After that, **Consumer Key** and **Consumer Secret** will be showed once, copy them.
+6. Save changes
+
+7. After that, **Consumer Key** and **Consumer Secret** will be showed once, copy them.
 
 #### Step 1.4: Setup Role
 
@@ -133,7 +135,11 @@ You have obtained the following parameters:
 
 9. Add **Language**
 
-10. Click Set up source
+10. Add **Object Types**
+
+11. Add **Start Date**
+
+12. Click **Save & Test**
 
 ## Supported sync modes
 
@@ -155,3 +161,7 @@ The NetSuite source connector supports the following sync modes:
 2. If sync fails due to concurrency limit, you can try resync to see if it works.
 
 3. You can also contact NetSuite customer support to [change your Concurrency Limits](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_164095787873.html#:~:text=By%20default%2C%20NetSuite%20Connector%20limits,limit%2C%20contact%20NetSuite%20Customer%20Support).
+
+## Troubleshooting
+
+Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

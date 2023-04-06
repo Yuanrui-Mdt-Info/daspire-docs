@@ -36,6 +36,8 @@ Understanding the following limitations will help you better manage your Daspire
 
 * Max number of streams that can be configured to sync in a single connection: 1K
 
+* Max number of tables that can be synced at once: 6K
+
 * Size of a single record: 100MB
 
 * Shortest sync schedule: Every 60 min

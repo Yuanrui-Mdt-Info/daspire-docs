@@ -31,7 +31,7 @@
 
 8. 您要为其获取数据的**档案ID**（可选）。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles)。
 
-9. 点击**设置数据源**。
+9. 点击**保存并测试**。
 
 ## 支持的同步模式
 
@@ -69,6 +69,10 @@
 ## 性能考虑
 
 您可以在[此处](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes)找到有关预期报告生成等待时间的信息。
+
+## 故障排除
+
+单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。
 
 ## 数据类型映射
 
