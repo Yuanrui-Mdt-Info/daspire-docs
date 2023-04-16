@@ -23,19 +23,34 @@ Daspire可以为[Shopify API](https://help.shopify.com/en/api/reference) 同步�
 
 ### 使用API密码设置
 
-1. 前往https://YOURSTORE.myshopify.com/admin/apps/private
+1. 前往https://admin.shopify.com/store/YOURSTORE ，点击侧边栏的**设置（Settings）**按钮。
+![Shopify Store Settings](/assets/images/shopify-settings.jpg "Shopify Store Settings")
 
-2. 如果未启用，则启用私有开发。
+2. 点击侧边栏的**应用程序和销售渠道（Apps and sales channels）**，然后点击**开发应用程序（Develop apps）**。
+![Shopify Develop Apps](/assets/images/shopify-develop-apps.jpg "Shopify Develop Apps")
 
-3. 创建私有应用程序。
+3. 点击**创建应用（Create an app）**创建私有应用。
+![Shopify Create an App](/assets/images/shopify-create-app.jpg "Shopify Create an App")
 
-4. 选择您要允许访问的资源。Daspire只需要读取级别的访问权限。
+4. 填写**应用名称*（App name）**并选择**应用开发者（App developer）**.
+![Shopify Create an App](/assets/images/shopify-create-app2.jpg "Shopify Create an App")
+
+5. 打开您刚刚创建的应用，点击**配置*（Configuration）**，然后点击**管理API集成（Admin API integration）**中的**配置（Configure）**。
+![Shopify Config](/assets/images/shopify-configuration.jpg "Shopify Config")
+
+4. 在**管理API访问权限（Admin API access scopes）**中，选择您要允许访问的资源。Daspire只需要读取级别的访问权限。选择完成后，点击**保存（Save）**。
 
   > **注意：** 用户界面将显示所有可能的数据源，如果它没有访问资源的权限，则会在同步时显示错误。
 
-5. Admin API部分下的密码是您将用作集成的api\_password的密码。
+![Shopify Access Scopes](/assets/images/shopify-access-scopes.jpg "Shopify Access Scopes")
 
-6. 您已准备好在Daspire中设置Shopify！
+7. 在为应用程序分配相关访问范围后，点击**API凭据（API credentials）**，然后点击**安装应用（Install app）**. 
+![Shopify API Credentials](/assets/images/shopify-api-creds.jpg "Shopify API Credentials")
+
+8. 安装应用程序后，您的**管理API访问令牌（Admin API access token）**将会显示，复制它。您的API访问令牌以 ***shpat_***开头。您将用作集成的api\_password的密码。
+![Shopify API Access Token](/assets/images/shopify-api-access-token.jpg "Shopify API Access Token")
+
+9. 您已准备好在Daspire中设置Shopify！
 
 ### 在Daspire中设置Shopify
 

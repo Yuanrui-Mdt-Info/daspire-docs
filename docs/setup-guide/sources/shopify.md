@@ -23,19 +23,34 @@ Daspire can sync data for the [Shopify API](https://help.shopify.com/en/api/refe
 
 ### Using API password to set up
 
-1. Go to https://YOURSTORE.myshopify.com/admin/apps/private
+1. Go to https://admin.shopify.com/store/YOURSTORE, click **Settings** from the side menu.
+![Shopify Store Settings](/assets/images/shopify-settings.jpg "Shopify Store Settings")
 
-2. Enable private development if it isn't enabled.
+2. Click **Apps and sales channels** from the side menu. Then click **Develop apps**.
+![Shopify Develop Apps](/assets/images/shopify-develop-apps.jpg "Shopify Develop Apps")
 
-3. Create a private application.
+3. Click **Create an app** to create a private application.
+![Shopify Create an App](/assets/images/shopify-create-app.jpg "Shopify Create an App")
 
-4. Select the resources you want to allow access to. Daspire only needs read-level access.
+4. Enter your **App name** and select the appropriate **App developer**.
+![Shopify Create an App](/assets/images/shopify-create-app2.jpg "Shopify Create an App")
+
+5. Open the App you just created, click **Configuration**. Then click **Configure** in **Admin API integration**.
+![Shopify Config](/assets/images/shopify-configuration.jpg "Shopify Config")
+
+6. In **Admin API access scopes**, select the resources you want to allow access to. Daspire only needs read-level access. Once you're done, click **Save**.
 
   > **Note:** The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource.
+  
+![Shopify Access Scopes](/assets/images/shopify-access-scopes.jpg "Shopify Access Scopes")
 
-5. The password under the Admin API section is what you'll use as the api\_password for the integration.
+7. Once you have assigned the APP relevant access scope, click the **API credentials** tab, and then click **Install app**. 
+![Shopify API Credentials](/assets/images/shopify-api-creds.jpg "Shopify API Credentials")
 
-6. You're ready to set up Shopify in Daspire!
+8. Once the app is installed, your **Admin API access token** will show, copy it. Your API access token starts with ***shpat_***. You'll use as the api\_password for the integration
+![Shopify API Access Token](/assets/images/shopify-api-access-token.jpg "Shopify API Access Token")
+
+9. You're ready to set up Shopify in Daspire!
 
 ### Set up Shopify in Daspire
 
