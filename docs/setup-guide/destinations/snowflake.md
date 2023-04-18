@@ -152,7 +152,7 @@ Enter a user name for the user, for example, *DASPIRE_USER*. Enter other details
 From the side menu, click **Admin** -> **Warehouses**, and then click **+ Warehouse**. 
 ![Snowflake Warehouses](/assets/images/snowflake-warehouse.jpg "Snowflake Warehouses")
 
-Enter a name for the role, for example, *DASPIRE_WAREHOUSE*, and select the relevant size for the warehouse. 
+Enter a name for the warehouse, for example, *DASPIRE_WAREHOUSE*, and select the relevant size for the warehouse. 
 ![Snowflake New Warehouse](/assets/images/snowflake-new-warehouse.jpg "Snowflake New Warehouse")
 
 ##### 4. Grant Daspire warehouse access
