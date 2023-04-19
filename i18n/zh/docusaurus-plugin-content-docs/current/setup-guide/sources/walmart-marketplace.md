@@ -14,10 +14,13 @@
 1. 登录您的[沃尔玛卖家后台（Walmart seller dashboard）](https://seller.walmart.com)。
 
 2. 点击**Settings** -> **API Key Management**
+![Walmart Settings](/assets/images/walmart-settings.jpg "Walmart Settings")
 
-3. 点击**Walmart Developer Portal**，您将被重定向到沃尔玛开发人员界面。
+3. 在API Integrations页面，点击**API Key Management**，您将被重定向到沃尔玛开发人员界面。
+![Walmart API Key Management](/assets/images/walmart-api-key-mgnt.jpg "Walmart API Key Management")
 
-4. 记下**Production keys**选项卡内的客户端ID（**Client ID**）和客户端密码（**Client secret**）。这些将用于在Daspire中创建该数据源。
+4. 记下 ***Production keys***选项卡内，***My API Key***部分的客户端ID（**Client ID**）和客户端密码（**Client secret**）。这些将用于在Daspire中创建该数据源。
+![Walmart API Key](/assets/images/walmart-api-key.jpg "Walmart API Key")
 
 ### 第2步：在Daspire中设置沃尔玛数据源
 

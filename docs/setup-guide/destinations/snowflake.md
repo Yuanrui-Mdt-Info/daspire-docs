@@ -18,6 +18,8 @@ By default, Snowflake allows users to connect to the service from any computer o
 
 If you have any issues connecting with Daspire, please make sure that the list of IP addresses is on the allowed list.
 
+### From the command line
+
 To determine whether a network policy is set on your account or for a specific user, execute the SHOW PARAMETERS command.
 
 **Account**
@@ -30,11 +32,21 @@ To determine whether a network policy is set on your account or for a specific u
 
 To read more please check official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/network-policies.html#)
 
+### From the UI
+
+You can do so by going to **Admin** -> **Security** from the sidebar. You can check existing Network Policies in your account.
+![Snowflake Network Policies](/assets/images/snowflake-network-policies.jpg "Snowflake Network Policies")
+
+To add a new network policy, click **+ Network Policy**, add your policy name, allowed and/or blocked IP addresses.
+![Snowflake New Network Policy](/assets/images/snowflake-new-network-policy.jpg "Snowflake New Network Policy")
+
 ## Setup guide
 
 ### Step 1: Set up Daspire-specific entities in Snowflake
 
 To set up the Snowflake destination connector, you first need to create Daspire-specific Snowflake entities (a warehouse, database, schema, user, and role) with the OWNERSHIP permission to write data into Snowflake, track costs pertaining to Daspire, and control permissions at a granular level.
+
+#### From the command line
 
 You can use the following script in a new [Snowflake worksheet](https://docs.snowflake.com/en/user-guide/ui-worksheet.html) to create the entities:
 
@@ -116,6 +128,68 @@ You can use the following script in a new [Snowflake worksheet](https://docs.sno
 ```
 
 3. Run the script using the [Worksheet page](https://docs.snowflake.com/en/user-guide/ui-worksheet.html) or [Snowlight](https://docs.snowflake.com/en/user-guide/ui-snowsight-gs.html). Make sure to select the **All Queries** checkbox.
+
+#### From the UI
+
+##### 1. Create a Daspire role
+
+From the side menu, click **Admin** -> **Users & Roles**. Click the **Roles** tab, and then click **+ Role**. 
+![Snowflake Roles](/assets/images/snowflake-roles.jpg "Snowflake Roles")
+
+Enter a name for the role, for example, *DASPIRE_ROLE*, and grant **SYSADMIN** access to the role. 
+![Snowflake New Role](/assets/images/snowflake-new-role.jpg "Snowflake New Role")
+
+##### 2. Create a Daspire user
+
+Once your Daspire role is created, switch to the **Users** tab, and then click **+ User**. 
+![Snowflake Users](/assets/images/snowflake-users.jpg "Snowflake Users")
+
+Enter a user name for the user, for example, *DASPIRE_USER*. Enter other details, and assign the role you created in step 1, for example, **DASPIRE_ROLE** to the user. 
+![Snowflake New User](/assets/images/snowflake-new-user.jpg "Snowflake New User")
+ 
+##### 3. Create a Daspire warehouse
+
+From the side menu, click **Admin** -> **Warehouses**, and then click **+ Warehouse**. 
+![Snowflake Warehouses](/assets/images/snowflake-warehouse.jpg "Snowflake Warehouses")
+
+Enter a name for the warehouse, for example, *DASPIRE_WAREHOUSE*, and select the relevant size for the warehouse. 
+![Snowflake New Warehouse](/assets/images/snowflake-new-warehouse.jpg "Snowflake New Warehouse")
+
+##### 4. Grant Daspire warehouse access
+
+Once your Daspire warehouse is created, click it, and scroll down to the **Privileges** section. Then click **+ Privilege**.
+![Snowflake Warehouse Privileges](/assets/images/snowflake-warehouse-privileges.jpg "Snowflake Warehouse Privileges")
+
+Select the Daspire role you created in step 1, then in the Privileges dropdown, select **USAGE**, and then click **Grant Privilege**.
+![Snowflake New Warehouse Privilege](/assets/images/snowflake-warehouse-new-privilege.jpg "Snowflake New Warehouse Privilege")
+
+##### 5. Create a Daspire database
+
+From the side menu, click **Data** -> **Databases**, and then click **+ Database**. 
+![Snowflake Databases](/assets/images/snowflake-databases.jpg "Snowflake Databases")
+
+Enter a name for the database, for example, *DASPIRE_DATABASE*, and create the database.
+![Snowflake New Database](/assets/images/snowflake-new-database.jpg "Snowflake New Database")
+
+##### 6. Grant Daspire database access
+
+Once your Daspire database is created, click it, and then click **+ Privilege**.
+![Snowflake Database Privileges](/assets/images/snowflake-database-privilege.jpg "Snowflake Database Privileges")
+
+Select the Daspire role you created in step 1, then in the Privileges dropdown, select **OWNERSHIP**, and then click **Grant Privilege**.
+![Snowflake Database New Privilege](/assets/images/snowflake-warehouse-new-privilege.jpg "Snowflake Database New Privilege")
+
+##### 7. Create a Daspire schema
+
+Inside your Daspire database, click **+ Schema**. 
+![Snowflake Database Schema](/assets/images/snowflake-database-schema.jpg "Snowflake Database Schema")
+
+Enter a name for the database schema, for example, *DASPIRE_SCHEMA*, and create the schema.
+![Snowflake Database New Schema](/assets/images/snowflake-database-new-schema.jpg "Snowflake Database New Schema")
+
+##### 8. Summary
+
+You have obtained all the details and correct permissions to set up Snowflake in Daspire.
 
 ### Step 2: Set up a data loading method
 

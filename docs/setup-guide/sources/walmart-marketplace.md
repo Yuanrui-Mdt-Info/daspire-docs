@@ -13,11 +13,14 @@ This page contains the setup guide and reference information for Walmart Marketp
 
 1. Log in to your [Walmart seller dashboard](https://seller.walmart.com).
 
-2. Click on **Settings** -> **API Key Management**  
+2. Click on **Settings** -> **API Key Management**.
+![Walmart Settings](/assets/images/walmart-settings.jpg "Walmart Settings")
 
-3. Click on **Walmart Developer Portal**. You will be redirected to the Walmart developer portal.
+3. Once you're on the API Integrations page, click **API Key Management**. You will be redirected to the Walmart developer portal.
+![Walmart API Key Management](/assets/images/walmart-api-key-mgnt.jpg "Walmart API Key Management")
 
-4. Note down the **Client ID** and **Client secret** on **Production keys** tab. These will be used to create the integration in Daspire.
+4. Note down the **Client ID** and **Client secret** on the ***My API Key*** section under the ***Production keys*** tab. These will be used to create the integration in Daspire.
+![Walmart API Key](/assets/images/walmart-api-key.jpg "Walmart API Key")
 
 ### Step 2: Set up the Walmart data source in Daspire
 

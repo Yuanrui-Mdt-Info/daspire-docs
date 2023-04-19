@@ -26,6 +26,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 2. 点击**设置（Setup）** » **公司（Company）** » **公司信息（Company Information）**
 
 3. 复制您的**账户ID（Account ID）**。您的帐户ID就是您的**领域（Realm）**。如果您使用普通帐户，它看起来像**1234567**，如果是测试账户，它看起来像**1234567\_SB2**
+![NetSuite Realm](/assets/images/netsuite-realm.jpg "NetSuite Realm")
 
 #### 步骤1.2：启用功能
 
@@ -38,6 +39,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 4. 启用复选框**基于令牌的身份验证（TOKEN-BASED AUTHENTICATION）**
 
 5. 保存更改
+![NetSuite Token Based Auth](/assets/images/netsuite-token-based-auth.jpg "NetSuite Token Based Auth")
 
 #### 步骤1.3：创建接口（获取Consumer Key和Consumer Secret）
 
@@ -54,6 +56,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 6. 保存更改
 
 7. 之后会出现一次**消费者密钥（Consumer Key）**和**消费者秘密（Consumer Secret）**，复制它们。
+![NetSuite Integration](/assets/images/netsuite-integration.jpg "NetSuite Integration")
 
 #### 步骤1.4：设置角色
 
@@ -64,6 +67,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 3. 向下滚动到**权限（Permissions）**部分
 
 4. 您需要手动选择选择列表中的每条记录，并在下一个选项卡上授予**全部（Full）**级别的访问权限：（事务处理、报告、列表、设置、自定义记录）。在这一点上您非常需要注意。
+![NetSuite Setup Role](/assets/images/netsuite-setup-role.jpg "NetSuite Setup Role")
 
 #### 步骤1.5：设置用户
 
@@ -78,6 +82,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 5. 从下拉列表中选择您在步骤**1.4**中创建的角色
 
 6. 保存更改
+![NetSuite Setup User](/assets/images/netsuite-setup-user.jpg "NetSuite Setup User")
 
 #### 步骤1.6：为角色创建访问令牌（Access Tokens）
 
@@ -94,6 +99,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 6. 保存更改
 
 7. 之后会显示一次**令牌ID（Token ID）**和**令牌秘密（Token Secret）**，复制它们。
+![NetSuite Access Token](/assets/images/netsuite-access-token.jpg "NetSuite Access Token")
 
 #### 步骤 1.7：获取公司的默认语言
 
@@ -102,6 +108,7 @@ Daspire使用[SuiteTalk REST Web服务](https://docs.oracle.com/en/cloud/saas/ne
 2. 单击**语言（Language）**选项卡
 
 3. 您会在这里找到公司的默认语言
+![NetSuite Default Company Language](/assets/images/netsuite-default-company-language.jpg "NetSuite Default Company Language")
 
 #### 步骤1.8：总结
 
