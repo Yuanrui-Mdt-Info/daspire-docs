@@ -54,13 +54,13 @@ This source is capable of syncing the following streams:
 * [Sponsored Display Product Ads](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Product%20ads)
 * [Sponsored Display Targetings](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Targeting)
 * [Sponsored Display Reports](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Reports)
-* [Sponsored Products Campaigns](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Campaigns)
-* [Sponsored Products Ad groups](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Ad%20groups)
-* [Sponsored Products Keywords](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Keywords)
-* [Sponsored Products Negative keywords](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Negative%20keywords)
-* [Sponsored Products Ads](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Product%20ads)
-* [Sponsored Products Targetings](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Product%20targeting)
-* [Sponsored Products Reports](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Reports)
+* [Sponsored Products Campaigns](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Campaigns)
+* [Sponsored Products Ad groups](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/AdGroups)
+* [Sponsored Products Keywords](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Keywords)
+* [Sponsored Products Negative keywords](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/NegativeKeywords)
+* [Sponsored Products Ads](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/ProductAds)
+* [Sponsored Products Targetings](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Product%20Targeting)
+* [Sponsored Products Reports](https://advertising.amazon.com/API/docs/en-us/reporting/v3/overview)
 
 ## Specific features and highlights
 

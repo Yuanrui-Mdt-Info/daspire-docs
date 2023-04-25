@@ -54,13 +54,13 @@
 * [赞助展示产品广告（Sponsored Display Product Ads）](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Product%20ads)
 * [赞助商展示目标受众（Sponsored Display Targetings）](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Targeting)
 * [赞助展示报告（Sponsored Display Reports）](https://advertising.amazon.com/API/docs/en-us/sponsored-display/3-0/openapi#/Reports)
-* [赞助产品广告系列（Sponsored Products Campaigns）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Campaigns)
-* [赞助产品广告组（Sponsored Products Ad groups）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Ad%20groups)
-* [赞助产品关键字（Sponsored Products Keywords）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Keywords)
-* [赞助产品否定关键词（Sponsored Products Negative keywords）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Negative%20keywords)
-* [赞助产品广告（Sponsored Products Ads）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Product%20ads)
-* [赞助产品目标受众（Sponsored Products Targetings）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Product%20targeting)
-* [赞助产品报告（Sponsored Products Reports）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/2-0/openapi#/Reports)
+* [赞助产品广告系列（Sponsored Products Campaigns）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Campaigns)
+* [赞助产品广告组（Sponsored Products Ad groups）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/AdGroups)
+* [赞助产品关键字（Sponsored Products Keywords）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Keywords)
+* [赞助产品否定关键词（Sponsored Products Negative keywords）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/NegativeKeywords)
+* [赞助产品广告（Sponsored Products Ads）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/ProductAds)
+* [赞助产品目标受众（Sponsored Products Targetings）](https://advertising.amazon.com/API/docs/en-us/sponsored-products/3-0/openapi/prod#/Product%20Targeting)
+* [赞助产品报告（Sponsored Products Reports）](https://advertising.amazon.com/API/docs/en-us/reporting/v3/overview)
 
 ## 注意事项
 
