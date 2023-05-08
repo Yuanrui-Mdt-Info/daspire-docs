@@ -43,6 +43,7 @@ const sidebars = {
             'setup-guide/sources/ebay',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
+            'setup-guide/sources/plaid',
             'setup-guide/sources/shopify',
             'setup-guide/sources/walmart-marketplace',
             'setup-guide/sources/woocommerce',
