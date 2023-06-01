@@ -58,13 +58,13 @@ curl --location --request POST 'https://sandbox.plaid.com/item/public_token/exch
 
 2. 输入**数据源名称**。
 
-3. 输入Plaid **API密钥（API key）**.
+3. 输入Plaid **API密钥（API key）**。
 
-4. 输入Plaid**客户端ID（Client ID）**.
+4. 输入Plaid**客户端ID（Client ID）**。
 
 5. 从**sandbox**，**development**或**production**中选择您需要同步数据的Plaid环境。
 
-6. 输入Plaid**访问令牌（Access Token）**.
+6. 输入Plaid**访问令牌（Access Token）**。
 
 7. 点击**保存并测试**。
 
