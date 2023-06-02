@@ -45,6 +45,7 @@ const sidebars = {
             'setup-guide/sources/netsuite',
             'setup-guide/sources/plaid',
             'setup-guide/sources/shopify',
+            'setup-guide/sources/shein',
             'setup-guide/sources/walmart-marketplace',
             'setup-guide/sources/woocommerce',
           ],  

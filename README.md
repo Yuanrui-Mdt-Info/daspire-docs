@@ -25,3 +25,8 @@ npm run serve
 
 ### The generated pages
 The generated pages will be in the folder named "build", please check this build, and you can deploy this folder to server as well.
+
+## Changelog
+
+### 2023.6.1 
+Add new source: Shein
