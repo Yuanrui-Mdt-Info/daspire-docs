@@ -3,6 +3,7 @@
 此页面包含Plaid的设置指南和参考信息。
 
 ## 前提条件
+
 * Plaid API密钥（API key）
 * 客户端ID（Client ID）
 * 访问令牌（Access token）

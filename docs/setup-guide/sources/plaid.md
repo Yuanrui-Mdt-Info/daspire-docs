@@ -3,6 +3,7 @@
 This page contains the setup guide and reference information for Plaid.
 
 ## Prerequisites
+
 * Plaid API key
 * Client ID
 * Access token
