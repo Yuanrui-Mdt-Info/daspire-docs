@@ -74,6 +74,13 @@ const sidebars = {
       label: 'Sync log',
       id: 'sync-log'
     },
+    {
+      type: 'category',
+      label: 'Release notes',
+      items: [
+            'release-notes/september-2023',
+          ],
+    },
   ],
 };
 
