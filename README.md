@@ -28,5 +28,49 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
-### 2023.6.1 
-Add new source: Shein
+### 2023.8.28
+Update doc for Walmart Marketplace
+### 2023.6.17
+Add doc for ShipStation, update docs for Plaid and Shein
+### 2023.6.2
+Add doc for Shein
+### 2023.5.7
+Add doc for Plaid
+### 2023.4.25
+Add screenshots for Amazon Ads and Amazon SP
+### 2023.4.18
+Add screenshots and more details for Snowflake and Walmart Marketplace
+### 2023.4.16
+Add screenshots for Shopify and NetSuite
+### 2023.4.4
+Update docs for all sources
+### 2023.3.23
+Update doc for NetSuite
+### 2023.3.13
+Update doc for Amazon Ads
+### 2023.3.10
+Minor translation update
+### 2023.2.27
+Update setup guide and translations
+### 2023.2.20
+Add Chinese translations for all pages
+### 2023.2.8
+Update doc for Shopify
+### 2023.2.3
+Add docs for eBay
+### 2023.1.13
+Add docs for Walmart Marketplace
+### 2022.12.5
+Update doc for NetSuite
+### 2022.12.5
+Update docs for Amazon Ads and MySQL
+### 2022.11.22
+Minor fixon Amazon SP link error
+### 2022.11.16
+Add docs for BigQuery, ClickHouse, Redshift, and Postgres
+### 2022.11.15
+Add docs for configurations, BigCommerce, Shopify, NetSuite, and Snowflake
+### 2022.11.14
+Add doc for sync log
+### 2022.11.9
+Add docs for key concepts, Amazon Ads, Amazon SP, MySQL source and destination
