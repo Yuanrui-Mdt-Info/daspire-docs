@@ -1,12 +1,10 @@
 # September 2023
 
-## Daspire V1.1.5
+## Daspire V2.0.0
 
 ### 🎉 New features
 
-1. New source: Feishu Base
-
-2. Increased the number of concurrent jobs from 3 to 5
+1. Increased the number of concurrent jobs from 3 to 5
 
 ### 👍 Improvements
 
