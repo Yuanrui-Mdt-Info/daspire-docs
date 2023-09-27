@@ -30,5 +30,9 @@
   "sidebar.tutorialSidebar.doc.Sync log": {
     "message": "同步日志",
     "description": "The label for the doc item Sync log in sidebar tutorialSidebar, linking to the doc sync-log"
+  },
+  "sidebar.tutorialSidebar.category.Release notes": {
+    "message": "发布版本通知",
+    "description": "The label for category Release notes in sidebar tutorialSidebar, linking to the doc release-notes"
   }
 }
