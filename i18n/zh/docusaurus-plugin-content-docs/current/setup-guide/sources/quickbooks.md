@@ -21,7 +21,7 @@ This page contains the setup guide and reference information for QuickBooks.
 
 1. Create an [Intuit Developer account](https://developer.intuit.com/app/developer/qbo/docs/get-started)
 
-2. Visit your **Intuit Developer Dashboard**.
+2. Visit your [Intuit Developer Dashboard](https://developer.intuit.com/app/developer/dashboard).
 
 3. Click **Create an application**, give your app a name, and select the scopes of the APIs you would like to access.
 
@@ -43,23 +43,27 @@ This page contains the setup guide and reference information for QuickBooks.
 
 ### Step 3: Set up QuickBooks in Daspire
 
-1. Enter the **Client ID** - The OAuth2.0 application ID you obtained in Step 2.
+1. Select **QuickBooks** from the Source list.
 
-2. Enter the **Client Secret** - The OAuth2.0 application secret you obtained in Step 2.
+2. Enter a **Source Name**.
 
-3. Enter the **Refresh Token** you obtained in Step 2.
+3. Enter the **Client ID** - The OAuth2.0 application ID you obtained in Step 2.
 
-4. Enter the **Access Token** you obtained in Step 2.
+4. Enter the **Client Secret** - The OAuth2.0 application secret you obtained in Step 2.
 
-5. Enter the **Token Expiry Date** - DateTime when the access token becomes invalid.
+5. Enter the **Refresh Token** you obtained in Step 2.
 
-6. Enter the **Realm ID** - The Labeled Company ID you'd like to replicate data for streams you obtained in Step 2.
+6. Enter the **Access Token** you obtained in Step 2.
 
-7. Enter the **Start date** - The date starting from which you'd like to replicate data.
+7. Enter the **Token Expiry Date** - DateTime when the access token becomes invalid.
 
-8. **Sandbox** - Turn on if you're going to replicate the data from the sandbox environment.
+8. Enter the **Realm ID** - The Labeled Company ID you'd like to replicate data for streams you obtained in Step 2.
 
-9. Click **Save & Test**.
+9. Enter the **Start date** - The date starting from which you'd like to replicate data.
+
+10. **Sandbox** - Turn on if you're going to replicate the data from the sandbox environment.
+
+11. Click **Save & Test**.
 
 ## Supported streams
 
