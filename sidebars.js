@@ -42,6 +42,7 @@ const sidebars = {
             'setup-guide/sources/bigcommerce',
             'setup-guide/sources/ebay',
             'setup-guide/sources/files',
+            'setup-guide/sources/facebook-marketing',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
             'setup-guide/sources/plaid',
