@@ -127,7 +127,7 @@ This source is capable of syncing the following streams:
 * [CustomConversions](https://developers.facebook.com/docs/marketing-api/reference/custom-conversion)
 * [CustomAudiences](https://developers.facebook.com/docs/marketing-api/reference/custom-audience)
 * [Images](https://developers.facebook.com/docs/marketing-api/reference/ad-image)
-* [Videos](hhttps://developers.facebook.com/docs/marketing-api/reference/video)
+* [Videos](https://developers.facebook.com/docs/marketing-api/reference/video)
 
 Daspire also supports the following Prebuilt Facebook Ad Insights Reports:
 
