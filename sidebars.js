@@ -43,6 +43,7 @@ const sidebars = {
             'setup-guide/sources/ebay',
             'setup-guide/sources/files',
             'setup-guide/sources/facebook-marketing',
+            'setup-guide/sources/google-ads',
             'setup-guide/sources/google-analytics',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
