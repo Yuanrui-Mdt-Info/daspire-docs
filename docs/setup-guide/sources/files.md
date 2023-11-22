@@ -175,7 +175,7 @@ The Stripe API uses the same [JSON Schema](https://json-schema.org/understanding
 
 In order to read large files from a remote location, this connector uses the [smart_open](https://pypi.org/project/smart-open/) library. However, it is possible to switch to either [GCSFS](https://gcsfs.readthedocs.io/en/latest/) or [S3FS](https://s3fs.readthedocs.io/en/latest/) implementations as it is natively supported by the pandas library. This choice is made possible through the optional `reader_impl` parameter.
 
-* Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/airbyte_local` folder with the same limitations as the [CSV Destination](https://docs.airbyte.com/integrations/destinations/csv) so the `URL` should also starts with `/local/`.
+* Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/daspire_local` folder, so the `URL` should also starts with `/local/`.
 
 * Please make sure that Docker Desktop has access to `/tmp` (and `/private` on a MacOS, as /tmp has a symlink that points to /private. It will not work otherwise). You allow it with "File sharing" in `Settings -> Resources -> File sharing -> add the one or two above folder` and hit the **"Apply & restart"** button.
 
