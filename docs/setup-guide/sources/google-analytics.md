@@ -49,6 +49,9 @@ This page contains the setup guide and reference information for Google Analytic
 2. Go to the [Google Analytics API dashboard](https://console.cloud.google.com/apis/api/analytics.googleapis.com/overview). Make sure you have selected the associated project for your service account, and **Enable** the API.
 ![GA4 API](/assets/images/ga4-api.jpg "GA4 API")
 
+3. Go to the [Google Analytics Data API dashboard](https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com). Make sure you have selected the associated project for your service account, and **Enable** the API.
+![GA4 Data API](/assets/images/ga4-data-api.jpg "GA4 Data API")
+
 ### Step 3: Obtain your GA4 property id
 
 1. Sign in to the [Google Analytics account](https://analytics.google.com/) as an admin.
