@@ -58,7 +58,6 @@ const sidebars = {
             'setup-guide/sources/woocommerce',
             'setup-guide/sources/quickbooks',
             'setup-guide/sources/slack',
-            'setup-guide/sources/google-analytics'
           ],
         },
         {
