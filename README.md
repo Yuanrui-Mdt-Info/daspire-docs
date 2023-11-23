@@ -29,7 +29,7 @@ The generated pages will be in the folder named "build", please check this build
 ## Changelog
 
 ### 2023.11.23
-Add docs for Facebook Marketing, Google Ads, Google Analytics 4, QuickBooks, Slack, and Stripe
+Add docs for Facebook Marketing, Files, Google Ads, Google Analytics 4, QuickBooks, Slack, and Stripe
 ### 2023.8.28
 Update doc for Walmart Marketplace
 ### 2023.6.17
