@@ -45,6 +45,7 @@ const sidebars = {
             'setup-guide/sources/facebook-marketing',
             'setup-guide/sources/google-ads',
             'setup-guide/sources/google-analytics',
+            'setup-guide/sources/instagram',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
             'setup-guide/sources/plaid',
