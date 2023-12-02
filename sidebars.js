@@ -49,6 +49,7 @@ const sidebars = {
             'setup-guide/sources/instagram',
             'setup-guide/sources/mysql',
             'setup-guide/sources/netsuite',
+            'setup-guide/sources/notion',
             'setup-guide/sources/plaid',
             'setup-guide/sources/quickbooks',
             'setup-guide/sources/shipstation',
