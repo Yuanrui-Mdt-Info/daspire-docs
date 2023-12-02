@@ -28,6 +28,8 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
+### 2023.12.2
+Add docs for GitHub
 ### 2023.11.30
 Add docs for Instagram
 ### 2023.11.29
