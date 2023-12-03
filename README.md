@@ -29,6 +29,8 @@ The generated pages will be in the folder named "build", please check this build
 ## Changelog
 
 ### 2023.12.2
+Add docs for Zendesk
+### 2023.12.2
 Add docs for GitHub, Notion, and Google Sheets
 ### 2023.11.30
 Add docs for Instagram
