@@ -29,7 +29,7 @@ The generated pages will be in the folder named "build", please check this build
 ## Changelog
 
 ### 2023.12.3
-Add docs for Zendesk
+Add docs for Zendesk, Saleforce
 ### 2023.12.2
 Add docs for GitHub, Notion, and Google Sheets
 ### 2023.11.30

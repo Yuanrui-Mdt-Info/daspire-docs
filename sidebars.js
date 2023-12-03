@@ -53,6 +53,7 @@ const sidebars = {
             'setup-guide/sources/notion',
             'setup-guide/sources/plaid',
             'setup-guide/sources/quickbooks',
+            'setup-guide/sources/salesforce',
             'setup-guide/sources/shipstation',
             'setup-guide/sources/shopify',
             'setup-guide/sources/shein',
