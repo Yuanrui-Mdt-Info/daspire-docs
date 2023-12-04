@@ -28,7 +28,7 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
-### 2023.12.3
+### 2023.12.4
 Add docs for Salesforce
 ### 2023.12.3
 Add docs for Zendesk
