@@ -94,8 +94,9 @@ const sidebars = {
       type: 'category',
       label: 'Release notes',
       items: [
-            'release-notes/september-2023',
-          ],
+        'release-notes/december-2023',
+        'release-notes/september-2023',
+      ],
     },
   ],
 };
