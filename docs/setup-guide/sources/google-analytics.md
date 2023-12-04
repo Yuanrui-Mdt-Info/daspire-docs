@@ -65,7 +65,21 @@ This page contains the setup guide and reference information for Google Analytic
 4. Click **Property details** and you will find your **Property ID** on the top right corner. This ID should be a numeric value, such as `123456789`. Copy it for later use.
 ![GA4 Property ID](/assets/images/ga4-property-id.jpg "GA4 Property ID")
 
-### Step 4: Set up GA4 in Daspire
+### Step 4: Grant Service Account GA4 property access
+
+1. Following Step 3, inside the **Admin** area of your GA4 account, click **Account Access Management**.
+![GA4 Account Access](/assets/images/ga4-account-access.jpg "GA4 Account Access")
+
+2. Click the blue **+** button in the right top corner of your screen. And click **Add Users**.
+![GA4 Add User](/assets/images/ga4-add-user.jpg "GA4 Add User")
+
+3. Enter the email address of your Service Account user you created in Step 1. You can find the email listed in [Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) in your Google Cloud Platform.
+![GA4 Service Account Email](/assets/images/ga4-service-account-email.jpg "GA4 Service Account Email")
+
+4. Assign a role to the Service Account user. Daspire only needs the **Viewer** role. And click **Add**.
+![GA4 Roles](/assets/images/ga4-roles.jpg "GA4 Roles")
+
+### Step 5: Set up GA4 in Daspire
 
 1. Select **Google Analytics 4 (GA4)** from the Source list.
 
