@@ -28,9 +28,12 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
+### 2023.12.6
+Add docs for Oracle DB
 ### 2023.12.4
 Add docs for Salesforce
 Update start here doc with user permission explanations
+Add December release notes
 ### 2023.12.3
 Add docs for Zendesk
 ### 2023.12.2
