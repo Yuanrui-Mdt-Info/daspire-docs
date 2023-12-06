@@ -91,7 +91,7 @@ ssh-keygen -t rsa -m PEM -f myuser_rsa
 
 This produces the private key in pem format, and the public key remains in the standard format used by the `authorized_keys` file on your bastion host. The public key should be added to your bastion host to whichever user you want to use with Daspire. The private key is provided via copy-and-paste to the Daspire connector configuration screen, so it may log in to the bastion.
 
-## Encryption Options
+## Encryption options
 
 Daspire has the ability to connect to the Oracle source with 3 network connectivity options:
 
