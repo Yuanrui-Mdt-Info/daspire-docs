@@ -53,6 +53,7 @@ const sidebars = {
             'setup-guide/sources/netsuite',
             'setup-guide/sources/notion',
             'setup-guide/sources/oracle-db',
+            'setup-guide/sources/paypal',
             'setup-guide/sources/plaid',
             'setup-guide/sources/quickbooks',
             'setup-guide/sources/salesforce',

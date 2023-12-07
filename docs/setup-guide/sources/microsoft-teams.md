@@ -161,4 +161,4 @@ This source is capable of syncing the following streams:
 
 1. Rate limit: This integration is restricted by normal [Microsoft Graph requests limitation](https://docs.microsoft.com/en-us/graph/throttling).
 
-4. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+2. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
