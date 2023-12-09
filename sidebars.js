@@ -47,6 +47,7 @@ const sidebars = {
             'setup-guide/sources/google-analytics',
             'setup-guide/sources/google-sheets',
             'setup-guide/sources/github',
+            'setup-guide/sources/hubspot',
             'setup-guide/sources/instagram',
             'setup-guide/sources/microsoft-teams',
             'setup-guide/sources/mysql',

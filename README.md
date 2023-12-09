@@ -28,6 +28,8 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
+### 2023.12.10
+Add docs for HubSpot
 ### 2023.12.7
 Add docs for PayPal
 ### 2023.12.6
