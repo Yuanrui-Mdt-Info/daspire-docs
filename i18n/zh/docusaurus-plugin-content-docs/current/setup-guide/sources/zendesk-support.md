@@ -1,6 +1,6 @@
-# Zendesk
+# Zendesk Support
 
-This page contains the setup guide and reference information for Zendesk.
+This page contains the setup guide and reference information for Zendesk Support.
 
 ## Features
 
@@ -36,9 +36,9 @@ There are two types of incremental sync:
 
   > CAUTION: Be sure to copy the token and save it in a secure location. You will not be able to access the token's value after you close the page.
 
-### Step 2: Set up Zendesk in Daspire
+### Step 2: Set up Zendesk Support in Daspire
 
-1. Select **Zendesk** from the Source list.
+1. Select **Zendesk Support** from the Source list.
 
 2. Enter a **Source Name**.
 
@@ -91,7 +91,7 @@ This Source is capable of syncing the following core Streams:
 
 ### Deleted records support
 
-The Zendesk integration fetches deleted records in the following streams:
+The Zendesk Support integration fetches deleted records in the following streams:
 
 | Stream | Deletion indicator field |
 | --- | --- |
