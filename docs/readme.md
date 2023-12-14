@@ -22,6 +22,22 @@ To add a user to your space:
 
 4. On the **Add new users** dialog, enter the email address of the user you want to invite to your space. Click **Send invite**.
 
+### User permissions
+
+**Administrator (owner)**
+* This role grants complete access to all sections of the space,
+including billing and payment.
+* This role has the ability to manage user permissions,
+including inviting or removing users from the account.
+* This account cannot be removed.
+
+**Administrator**
+* This role has the same permissions as the account owner. However, the account can be removed by another administrator.
+
+**User**
+* This role has access to all sections of the space, except for
+billing and payment, as well as user management.
+
 ## Understand Daspire limitations
 
 Understanding the following limitations will help you better manage your Daspire space:
