@@ -65,7 +65,9 @@ const sidebars = {
             'setup-guide/sources/stripe',
             'setup-guide/sources/walmart-marketplace',
             'setup-guide/sources/woocommerce',
+            'setup-guide/sources/zendesk-chat',
             'setup-guide/sources/zendesk-support',
+            'setup-guide/sources/zendesk-talk',
           ],
         },
         {
