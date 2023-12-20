@@ -5,7 +5,6 @@
 ## 前提条件
 
 * 亚马逊广告账号登录信息（用户名和密码）
-* 区域
 
 ## 设置指南
 
@@ -19,15 +18,15 @@
 
 2. 填写**数据源名称**。
 
-3. **验证您的亚马逊广告账户**。
+3. 在**区域**中选择从北美（**NA**）、欧洲（**EU**）或远东（**FE**）提取数据。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
 
-4. 在**区域**中选择从北美（**NA**）、欧洲（**EU**）或远东（**FE**）提取数据。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints)。
+4. 点击**验证您的亚马逊广告账户**，然后使用您的亚马逊广告账户信息登录授权。
 
 5. **报告等待时限**是接口等待为数据流品牌报告、品牌视频报告、显示报告、产品报告生成报告的最大分钟数。
 
 6. **生成报告最多重试次数**是接口尝试生成报告的最多尝试次数。
 
-7. **开始日期**（可选），用于从指定的开始日期开始生成报告。应采用年年年年-月月-日日格式且过去不超过60天。如果未指定，则使用今天的日期。特定配置文件的日期是根据其时区计算的，应在格林威治标准时间时区中指定此参数。由于生成当天的报告没有意义（指标可能会更改），因此它会生成前一天的报告（例如，如果开始日期是2022-10-11，它将使用20221010作为请求的reportDate参数）。
+7. **开始日期**（可选），用于从指定的开始日期开始生成报告。应采用`年年年年-月月-日日`格式且过去不超过`60天`。如果未指定，则使用今天的日期。该日期按照所选档案的时区进行处理。
 
 8. 您要为其获取数据的**档案ID**（可选）。更详细信息，请参阅[亚马逊文档](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles)。
 
@@ -64,15 +63,11 @@
 
 ## 注意事项
 
-所有报告都是在相对于目标配置文件的时区的前一天生成的。
+1. 所有报告都是在相对于目标配置文件的时区生成的。
 
-## 性能考虑
+2. 营销活动报告（Campaign reports）有时可能没有数据或未在记录中呈现。当在请求的日期没有与营销活动关联的点击或浏览时，可能会发生这种情况。请参阅[详细信息](https://advertising.amazon.com/API/docs/en-us/guides/reporting/v2/faq#why-is-my-report-empty)。
 
-您可以在[此处](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes)找到有关预期报告生成等待时间的信息。
-
-## 故障排除
-
-单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。
+3. 报表数据同步仅涵盖最近60天。请参阅[详细信息](https://advertising.amazon.com/API/docs/en-us/reference/1/reports#parameters)。
 
 ## 数据类型映射
 
@@ -84,3 +79,9 @@
 | `datetime` | `datetime` |
 | `array` | `array` |
 | `object` | `object` |
+
+## 性能考虑及故障排除
+
+1. 您可以在[此处](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes)找到有关预期报告生成等待时间的信息。
+
+2. 单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

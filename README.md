@@ -28,6 +28,10 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
+### 2023.12.20
+Update docs for Amazon Ads
+### 2023.12.18
+Add docs for Zendesk Chat and Zendesk Talk docs
 ### 2023.12.13
 Update docs for BigCommerce and Zendesk Support
 ### 2023.12.10
