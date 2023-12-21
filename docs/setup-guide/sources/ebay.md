@@ -3,6 +3,7 @@
 This page contains the setup guide and reference information for eBay.
 
 ## Prerequisites
+
 * eBay Store Name
 * eBay Account Login (username and password)
 
@@ -10,20 +11,19 @@ This page contains the setup guide and reference information for eBay.
 
 1. Select **eBay** from the Source list.
 
-2. Enter a **Source Name**.
+2. Enter your eBay **Store Name**.
 
-3. **Authenticate your eBay account**.
+3. **Marketplace Id** is the region of your eBay store.
 
-4. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
+4. Click **Authenticate your eBay account**.
 
-5. Click **Save & Test**.
+5. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
-## Supported sync modes
+  * If you choose **Based on Start Date**, enter a **Start date**, it is used for replicate data starting from the specified start date and an optional **End date**, any data after this date will not be replicated.
 
-The eBay data source supports the following sync modes:
+  * If you choose **Periodic Replication**, enter a number between 1-90. It is the duration in which your data will be extracted.
 
-* Full Refresh
-* Incremental
+6. Click **Save & Test**.
 
 ## Supported streams
 
@@ -39,17 +39,6 @@ This source is capable of syncing the following streams:
 * [Promotions](https://developer.ebay.com/api-docs/sell/marketing/resources/promotion/methods/getPromotions)
 * [Promotion Reports](https://developer.ebay.com/api-docs/sell/marketing/resources/promotion_report/methods/getPromotionReports)
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
-
-## Data type mapping
-
-| Integration Type | Daspire Type |
-| --- | --- |
-| `string` | `string` |
-| `int`, `float`, `number` | `number` |
-| `date` | `date` |
-| `datetime` | `datetime` |
-| `array` | `array` |
-| `object` | `object` |

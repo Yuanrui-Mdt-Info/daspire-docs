@@ -29,7 +29,7 @@ The generated pages will be in the folder named "build", please check this build
 ## Changelog
 
 ### 2023.12.21
-Update docs for Amazon SP and BigCommerce
+Update docs for Amazon SP, BigCommerce, and eBay
 ### 2023.12.20
 Update docs for Amazon Ads
 ### 2023.12.18

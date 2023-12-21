@@ -36,7 +36,7 @@
 
 1. 从数据源列表中选择**BigCommerce**。
 
-2. **开始日期**用于生成从指定开始日期开始的报告。应采用`年年年年-月月-日日`格式。
+2. **开始日期**用于生成从指定开始日期开始的数据。应采用`年年年年-月月-日日`格式。
 
 3. **店铺Hash（Store Hash）**是店铺的hash。对于https://api.bigcommerce.com/stores/HASH_CODE/v3/ ，店铺的hash是`HASH_CODE`。
 
