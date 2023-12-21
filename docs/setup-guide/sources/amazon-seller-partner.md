@@ -2,11 +2,18 @@
 
 This page contains the setup guide and reference information for Amazon Seller Partner (SP).
 
+## Features
+
+| Feature | Supported? |
+| --- | --- |
+| Full Refresh Sync | Yes |
+| Incremental Sync | Yes |
+
 ## Prerequisites
 
-* Store Name
 * Amazon SP Account
-* Region
+* Amazon Store Name
+* Amazon Store Region
 
 ## Setup guide
 
@@ -16,35 +23,28 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 3. Enter your Amazon **Store Name**.
 
-4. **Authenticate your Amazon Seller Partner Account**.
+4. Select your the **Region** of your store.
 
-5. **Max wait time for reports (in seconds)** is the maximum number of minutes the connector waits for the generation of a report for streams.
+  Marketplace availability:
 
-6. **Period In Days** will be used for stream slicing for initial full_refresh sync when no updated state is present for reports that support sliced incremental sync. 
-
-7. Select your the **Region** of your store.
-
-  > Marketplace availability:
-  >
   > * North America: United States (US), Canada (CA), Mexico (MX)
   > * Europe: Belgium (BE), Germany (DE), Spain (ES), France (FR), Italy (IT), United Kingdom (UK), Netherlands (NL), Sweden (SE), Poland (PL), Turkey (TR)
   > * Middle East: United Arab Emirates (AE), Saudi Arabia (SA), Egypt (EG)
   > * Asia Pacific: Japan (JP), India (IN), Australia (AU), Singapore (SG)
 
-8. **End Date (optional)** - any data after this date will not be replicated.
+5. Click **Authenticate your Amazon Seller Partner Account**.
 
-9. **Start Date** - Any data before this date will not be replicated.
+6. **Max wait time for reports (in seconds)** is the maximum number of minutes the connector waits for the generation of a report for streams.
+
+7. **Period In Days** will be used for stream slicing for initial full_refresh sync when no updated state is present for reports that support sliced incremental sync.
+
+8. **Start Date** - Any data before this date will not be replicated.
+
+9. **End Date (optional)** - any data after this date will not be replicated.
 
 10. **Report Options** is additional information passed to reports. Must be a valid json string.
 
 11. Click **Save & Test**.
-
-## Supported sync modes
-
-The Amazon SP data source supports the following sync modes:
-
-* Full Refresh
-* Incremental
 
 ## Supported streams
 
@@ -74,14 +74,6 @@ This source is capable of syncing the following streams:
 * [Financial Event Groups](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference#get-financesv0financialeventgroups)
 * [Financial Events](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference#get-financesv0financialevents)
 
-## Report options
-
-Make sure to configure the [required parameters](https://developer-docs.amazon.com/sp-api/docs/report-type-values) in the report options setting for the reports configured.
-
-## Troubleshooting
-
-Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
-
 ## Data type mapping
 
 | Integration Type | Daspire Type |
@@ -92,3 +84,13 @@ Max number of tables that can be synced at a time is 6,000. We advise you to adj
 | `datetime` | `datetime` |
 | `array` | `array` |
 | `object` | `object` |
+
+## Performance considerations & Troubleshooting
+
+1. Make sure to configure the [required parameters](https://developer-docs.amazon.com/sp-api/docs/report-type-values) in the report options setting for the reports configured.
+
+2. For `GET_AMAZON_FULFILLED_SHIPMENTS_DATA_GENERAL` and `GET_FLAT_FILE_RETURNS_DATA_BY_RETURN_DATE` streams maximum value for `period_in_days` 30 days and 60 days. So, for any value that exceeds the limit, the `period_in_days` will be automatically reduced to the limit for the stream.
+
+3. Information about rate limits you may find [here](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+4. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

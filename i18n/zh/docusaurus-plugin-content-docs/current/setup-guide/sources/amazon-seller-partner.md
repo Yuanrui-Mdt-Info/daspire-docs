@@ -2,11 +2,18 @@
 
 此页面包含亚马逊卖家合作伙伴 (Amazon Seller Partner / Amazon SP) 的设置指南和参考信息。
 
+## 功能概览
+
+| 功能 | 是否支持 |
+| --- | --- |
+| 完全刷新复制 | 支持 |
+| 增量复制 | 支持 |
+
 ## 前提条件
 
-* 店铺名称
 * 亚马逊卖家合作伙伴账号
-* 区域
+* 亚马逊店铺名称
+* 亚马逊店铺区域
 
 ## 设置指南
 
@@ -16,13 +23,7 @@
 
 3. 填写亚马逊**店铺名称**。
 
-4. **验证您的亚马逊广告账户**。
-
-5. **报告等待时限**是接口等待为数据流品牌报告、品牌视频报告、显示报告、产品报告生成报告的最大分钟数。
-
-6. **期间天数**持切片增量同步的报告没有更新状态时，将用于初始完全刷新同步的数据流切片。
-
-7. 选择**区域**。
+4. 选择**区域**。
 
   > 亚马逊店铺支持地区：
   >
@@ -31,20 +32,19 @@
   > * 中东：阿联酋（AE），沙特阿拉伯（SA），埃及（EG）
   > * 亚太地区：日本（JP），印度（IN），澳大利亚（AU），新加坡（SG）
 
-8. **结束日期**（可选） - 不会复制此日期之后的任何数据。
+5. 点击**验证您的亚马逊广告账户**。
 
-9. **开始日期** - 此日期之前的任何数据都不会被复制。
+6. **报告等待时限**是接口等待为数据流品牌报告、品牌视频报告、显示报告、产品报告生成报告的最大分钟数。
+
+7. **期间天数**持切片增量同步的报告没有更新状态时，将用于初始完全刷新同步的数据流切片。
+
+8. **开始日期** - 此日期之前的任何数据都不会被复制。
+
+9. **结束日期**（可选） - 不会复制此日期之后的任何数据。
 
 10. **报告选项**是传递给报告的附加信息。必须是有效的json字符串。
 
 11. 点击**保存并测试**。
-
-## 支持的同步模式
-
-亚马逊卖家合作伙伴（Amazon SP）数据源支持以下同步模式：
-
-* 完全复制
-* 增量复制
 
 ## 支持的数据流
 
@@ -74,14 +74,6 @@
 * [财务事件组（Financial Event Groups）](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference#get-financesv0financialeventgroups)
 * [财务事件（Financial Events）](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference#get-financesv0financialevents)
 
-## 报告选项
-
-确保在已配置报告的报告选项设置中配置[必需参数](https://developer-docs.amazon.com/sp-api/docs/report-type-values)。
-
-## 故障排除
-
-单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。
-
 ## 数据类型映射
 
 | 集成类型 | Daspire类型 |
@@ -92,3 +84,13 @@
 | `datetime` | `datetime` |
 | `array` | `array` |
 | `object` | `object` |
+
+## 性能考虑及故障排除
+
+1. 请确保在已配置报告的报告选项设置中配置[必需参数](https://developer-docs.amazon.com/sp-api/docs/report-type-values)。
+
+2. 对于`GET_AMAZON_FULFILLED_SHIPMENTS_DATA_GENERAL`和`GET_FLAT_FILE_RETURNS_DATA_BY_RETURN_DATE`数据流，期间天数（`period_in_days`）的最大值为30和60天。因此，对于任何超过限制的值，期间天数将自动减少到数据流的限制。
+
+3. 您可以在[此处](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)找到有关速率限制的信息。
+
+4. 单次可同步的最大表数为6千张。如果由于达到最大表数而无法获取数据架构，我们建议您调整数据源设置。

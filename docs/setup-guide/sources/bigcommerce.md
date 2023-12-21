@@ -16,6 +16,8 @@ This page contains the setup guide and reference information for BigCommerce.
 
 ## Setup guide
 
+### Step 1: Obtain BigCommerce credentials
+
 1. Navigate to your store's control panel. In the left side menu, click **Settings**. On the page opened on the right side, scroll down and find **Store-level API accounts**.
 ![BigCommerce API Accounts](/assets/images/bigcommerce-settings.jpg "BigCommerce API Accounts")
 
@@ -30,11 +32,17 @@ This page contains the setup guide and reference information for BigCommerce.
 
 5. You're ready to set up BigCommerce in Daspire!
 
-## Sync overview
+### Step 2: Set up the BigCommerce data source in Daspire
 
-The BigCommerce source supports both **Full Refresh** and **Incremental** syncs. You can choose to copy only the new or updated data, or all rows in the tables and columns you set up for replication, every time a sync is run.
+1. Select **BigCommerce** from the Source list.
 
-Daspire can sync data for the [BigCommerce API](https://developer.bigcommerce.com/api-docs/getting-started/making-requests).
+2. **Start Date** is used for replicate data starting from the specified start date. Should be in `YYYY-MM-DD` format.
+
+3. **Store Hash** is hash code of the store. For https://api.bigcommerce.com/stores/HASH_CODE/v3/, The store's hash code is `HASH_CODE`.
+
+4. Enter the **Access Token** you obtained in Step 1 for making authenticated requests.
+
+5. Click **Save & Test**.
 
 ## Output schema
 
@@ -60,10 +68,8 @@ This Source is capable of syncing the following core Streams:
 | `array` | `array` |
 | `object` | `object` |
 
-## Performance considerations
+## Performance considerations & Troubleshooting
 
-BigCommerce has some [rate limit restrictions](https://developer.bigcommerce.com/api-docs/getting-started/best-practices).
+1. BigCommerce has some [rate limit restrictions](https://developer.bigcommerce.com/api-docs/getting-started/best-practices).
 
-## Troubleshooting
-
-Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+2. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

@@ -2,6 +2,13 @@
 
 This page contains the setup guide and reference information for Amazon Ads.
 
+## Features
+
+| Feature | Supported? |
+| --- | --- |
+| Full Refresh Sync | Yes |
+| Incremental Sync | Yes |
+
 ## Prerequisites
 
 * Amazon Ads account login (username and password)
@@ -22,22 +29,17 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 4. Click **Authenticate your Amazon Ads account** and login to your Amazon Ads account.
 
-5. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams.
+5. **Source tag (optional)** is used to help you identify this source inside Daspire.
 
-6. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams.
+6. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams.
 
-7. **Start Date (optional)** is used for generating reports starting from the specified start date. Should be in `YYYY-MM-DD` format and not more than `60 days` in the past. If not specified today's date is used. The date is treated in the timezone of the processed profile.
+7. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams.
+
+8. **Start Date (optional)** is used for generating reports starting from the specified start date. Should be in `YYYY-MM-DD` format and not more than `60 days` in the past. If not specified today's date is used. The date is treated in the timezone of the processed profile.
 
 8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
-9. Click **Save & Test**.
-
-## Supported sync modes
-
-The Amazon Ads data source supports the following sync modes:
-
-* Full Refresh
-* Incremental
+10. Click **Save & Test**.
 
 ## Supported streams
 
@@ -80,7 +82,7 @@ This source is capable of syncing the following streams:
 | `array` | `array` |
 | `object` | `object` |
 
-## Performance considerations & troubleshooting
+## Performance considerations & Troubleshooting
 
 1. Information about expected report generation waiting time you may find [here](https://advertising.amazon.com/API/docs/en-us/get-started/developer-notes).
 
