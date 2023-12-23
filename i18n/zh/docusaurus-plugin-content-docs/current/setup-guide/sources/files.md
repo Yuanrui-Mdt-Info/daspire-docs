@@ -2,10 +2,6 @@
 
 This page contains the setup guide and reference information for different files.
 
-## Prerequisites
-
-* A file hosted on AWS S3, GCS, HTTPS, an SFTP server, or locally
-
 ## Features
 
 | Feature | Supported? |
@@ -17,17 +13,27 @@ This page contains the setup guide and reference information for different files
 | Replicate Glob Patterns (multiple Files)	| No |
 | Namespaces | No |
 
+## Prerequisites
+
+* A file hosted on AWS S3, GCS, HTTPS, an SFTP server, or locally
+
 ## Setup guide
 
 ### Step 1: Set up the source in Daspire
 
-1. Select **Files (CSV, JSON, Excel, Feather, Parquet)** from the Source list.
+1. Select **Files** from the Source list.
 
 2. Enter a **Source Name**.
 
-3. For **Dataset Name**, enter the name of the final table to replicate this file into (should include letters, numbers, dashes and underscores only).
+3. For **URL**, enter the URL path of the file to be replicated.
 
-4. For **File Format**, select the format of the file to replicate from the dropdown menu (Warning: some formats may be experimental. Please refer to the table of supported formats below).
+  > * When connecting to a file located in **Google Drive**, please note that you need to utilize the Download URL format: *https://drive.google.com/uc?export=download&id=[DRIVE_FILE_ID]*. `[DRIVE_FILE_ID]` should be replaced with the unique string found in the Share URL specific to Google Drive. You can find the Share URL by visiting *https://drive.google.com/file/d/[DRIVE_FILE_ID]/view?usp=sharing*.
+
+  > * When connecting to a file using **Azure Blob Storage**, please note that we account for the base URL. Therefore, you should only need to include the path to your specific file (eg `container/file.csv`).
+
+4. For **File Format**, select the format of the file to replicate from the dropdown menu
+
+  > Warning: some formats may be experimental. Please refer to the table of supported formats below.
 
 ### Step 2: Select the provider and set provider-specific configurations
 
@@ -95,13 +101,9 @@ For **Storage Provider**, use the dropdown menu to select the Storage Provider o
 
   Please set these to an existing absolute path on your machine. Colons in the path need to be replaced with a double forward slash, `//`. `LOCAL_ROOT` & `LOCAL_DOCKER_MOUNT` should be set to the same value, and `HACK_LOCAL_ROOT_PARENT` should be set to their parent directory.
 
-### Step 3: Select the provider and set provider-specific configurations
+### Step 3: Complete the source setup
 
-1. For **URL**, enter the URL path of the file to be replicated.
-
-  > When connecting to a file located in **Google Drive**, please note that you need to utilize the Download URL format: *https://drive.google.com/uc?export=download&id=[DRIVE_FILE_ID]*. `[DRIVE_FILE_ID]` should be replaced with the unique string found in the Share URL specific to Google Drive. You can find the Share URL by visiting *https://drive.google.com/file/d/[DRIVE_FILE_ID]/view?usp=sharing*.
-
-  > When connecting to a file using **Azure Blob Storage**, please note that we account for the base URL. Therefore, you should only need to include the path to your specific file (eg `container/file.csv`).
+1. For **Dataset Name**, enter the name of the final table to replicate this file into (should include letters, numbers, dashes and underscores only).
 
 2. For **Reader Options** (Optional), you may choose to enter a string in JSON format. Depending on the file format of your source, this will provide additional options and tune the Reader's behavior. Please refer to the next section for a breakdown of the possible inputs. This field may be left blank if you do not wish to configure custom Reader options.
 
@@ -130,7 +132,7 @@ For example, you can use the `{"orient" : "records"}` to change how orientation 
 
 If you need to read Excel Binary Workbook, please specify `excel_binary` format in `File Format` select.
 
-## Supported File / Stream Compression
+## Supported file / stream compression
 
 | Compression | Supported? |
 | --- | --- |
@@ -141,7 +143,7 @@ If you need to read Excel Binary Workbook, please specify `excel_binary` format 
 | Xz	| No |
 | Snappy | No |
 
-## Supported Storage Providers
+## Supported storage providers
 
 | Storage Providers | Supported? |
 | --- | --- |
@@ -152,7 +154,7 @@ If you need to read Excel Binary Workbook, please specify `excel_binary` format 
 | SSH / SCP		| Yes |
 | local filesystem	 | Yes |
 
-## Supported File Formats
+## Supported file formats
 
 | Format | Supported? |
 | --- | --- |
@@ -171,12 +173,16 @@ If you need to read Excel Binary Workbook, please specify `excel_binary` format 
 
 The Stripe API uses the same [JSON Schema](https://json-schema.org/understanding-json-schema/reference/index.html) types that Daspire uses internally (string, date-time, object, array, boolean, integer, and number), so no type conversions are performed for the Stripe integration.
 
-## Performance Considerations and Notes
+## Performance considerations and Troubleshooting
 
-In order to read large files from a remote location, this connector uses the [smart_open](https://pypi.org/project/smart-open/) library. However, it is possible to switch to either [GCSFS](https://gcsfs.readthedocs.io/en/latest/) or [S3FS](https://s3fs.readthedocs.io/en/latest/) implementations as it is natively supported by the pandas library. This choice is made possible through the optional `reader_impl` parameter.
+1. This source produces a single table for the target file as it replicates only one file at a time for the moment. Note that you should provide the `dataset_name` which dictates how the table will be identified in the destination (since `URL` can be made of complex characters).
 
-* Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/daspire_local` folder, so the `URL` should also starts with `/local/`.
+2. In order to read large files from a remote location, this connector uses the [smart_open](https://pypi.org/project/smart-open/) library. However, it is possible to switch to either [GCSFS](https://gcsfs.readthedocs.io/en/latest/) or [S3FS](https://s3fs.readthedocs.io/en/latest/) implementations as it is natively supported by the pandas library. This choice is made possible through the optional `reader_impl` parameter.
 
-* Please make sure that Docker Desktop has access to `/tmp` (and `/private` on a MacOS, as /tmp has a symlink that points to /private. It will not work otherwise). You allow it with "File sharing" in `Settings -> Resources -> File sharing -> add the one or two above folder` and hit the **"Apply & restart"** button.
+  > * Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/daspire_local` folder, so the `URL` should also starts with `/local/`.
 
-* The JSON implementation needs to be tweaked in order to produce more complex catalog and is still in an experimental state: Simple JSON schemas should work at this point but may not be well handled when there are multiple layers of nesting.
+  > * Please make sure that Docker Desktop has access to `/tmp` (and `/private` on a MacOS, as /tmp has a symlink that points to /private. It will not work otherwise). You allow it with "File sharing" in `Settings -> Resources -> File sharing -> add the one or two above folder` and hit the **"Apply & restart"** button.
+
+  > * The JSON implementation needs to be tweaked in order to produce more complex catalog and is still in an experimental state: Simple JSON schemas should work at this point but may not be well handled when there are multiple layers of nesting.
+
+3. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

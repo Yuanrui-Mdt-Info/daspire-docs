@@ -36,13 +36,15 @@ This page contains the setup guide and reference information for BigCommerce.
 
 1. Select **BigCommerce** from the Source list.
 
-2. **Start Date** is used for replicate data starting from the specified start date. Should be in `YYYY-MM-DD` format.
+2. Enter a **Source Name**.
 
-3. **Store Hash** is hash code of the store. For https://api.bigcommerce.com/stores/HASH_CODE/v3/, The store's hash code is `HASH_CODE`.
+3. **Start Date** is used for replicate data starting from the specified start date. Should be in `YYYY-MM-DD` format.
 
-4. Enter the **Access Token** you obtained in Step 1 for making authenticated requests.
+4. **Store Hash** is hash code of the store. For https://api.bigcommerce.com/stores/HASH_CODE/v3/, The store's hash code is `HASH_CODE`.
 
-5. Click **Save & Test**.
+5. Enter the **Access Token** you obtained in Step 1 for making authenticated requests.
+
+6. Click **Save & Test**.
 
 ## Output schema
 

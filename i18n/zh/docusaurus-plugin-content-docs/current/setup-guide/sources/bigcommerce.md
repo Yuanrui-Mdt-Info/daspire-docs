@@ -36,13 +36,15 @@
 
 1. 从数据源列表中选择**BigCommerce**。
 
-2. **开始日期**用于生成从指定开始日期开始的数据。应采用`年年年年-月月-日日`格式。
+2. 填写**数据源名称**。
 
-3. **店铺Hash（Store Hash）**是店铺的hash。对于https://api.bigcommerce.com/stores/HASH_CODE/v3/ ，店铺的hash是`HASH_CODE`。
+3. **开始日期**用于生成从指定开始日期开始的数据。应采用`年年年年-月月-日日`格式。
 
-4. 输入您在第1步中获得的**访问令牌**。
+4. **店铺Hash（Store Hash）**是店铺的hash。对于https://api.bigcommerce.com/stores/HASH_CODE/v3/ ，店铺的hash是`HASH_CODE`。
 
-5. 点击**保存并测试**。
+5. 输入您在第1步中获得的**访问令牌**。
+
+6. 点击**保存并测试**。
 
 ## 支持的数据流
 

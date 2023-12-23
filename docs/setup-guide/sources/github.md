@@ -2,11 +2,6 @@
 
 This page contains the setup guide and reference information for GitHub.
 
-## Prerequisites
-
-* List of GitHub repositories
-* GitHub personal access token
-
 ## Features
 
 | Feature | Supported? |
@@ -15,6 +10,11 @@ This page contains the setup guide and reference information for GitHub.
 | Full Refresh Append | Yes |
 | Incremental Sync Append | Yes |
 | Incremental Sync Append + Deduped | Yes |
+
+## Prerequisites
+
+* List of GitHub repositories
+* GitHub personal access token
 
 ## Setup guide
 
@@ -28,7 +28,6 @@ This page contains the setup guide and reference information for GitHub.
 ![GitHub personal access token](/assets/images/github-generate-new-token.jpg "GitHub personal access token")
 
   > NOTE: Your token should have at least the `repo` scope. Depending on which streams you want to sync, the user generating the token needs more permissions:
-
   > * For syncing Collaborators, the user which generates the personal access token must be a collaborator. To become a collaborator, they must be invited by an owner. If there are no collaborators, no records will be synced. Read more about access permissions [here](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github).
   > * For syncing [Teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) is only available to authenticated members of a team's organization. Personal user accounts and repositories belonging to them don't have access to Teams features. In this case no records will be synced.
   > * For syncing Projects, the repository must have the Projects feature enabled.
@@ -41,21 +40,20 @@ This page contains the setup guide and reference information for GitHub.
 
 2. Enter a **Source Name**.
 
-3. Authenticate with **Personal Access Token**. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
+3. In Authentication, choose **Personal Access Token**. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
 
-4. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/daspire2` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
+4. **Start date** - The date from which you'd like to replicate data from GitHub in the format `YYYY-MM-DDT00:00:00Z`. Only data generated on or after the start date will be replicated.
+
+  > * These streams will only sync records generated on or after the Start Date: `comments`, `commit_comment_reactions`, `commit_comments`, `commits`, `deployments`, `events`, `issue_comment_reactions`, `issue_events`, `issue_milestones`, `issue_reactions`, `issues`, `project_cards`, `project_columns`, `projects`, `pull_request_comment_reactions`, `pull_requests`, `pull_requeststats`, `releases`, `review_comments`, `reviews`, `stargazers`, `workflow_runs`, `workflows`.
+  > * The Start Date does not apply to the streams below and all data will be synced for these streams: `assignees`, `branches`, `collaborators`, `issue_labels`, `organizations`, `pull_request_commits`, `pull_request_stats`, `repositories`, `tags`, `teams`, `users`
+
+5. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/daspire2` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
 
   > CAUTION: Repositories with the wrong name or repositories that do not exist or have the wrong name format will be skipped.
 
-5. **Start date (Optional)** - The date from which you'd like to replicate data for streams. For streams which support this configuration, only data generated on or after the start date will be replicated.
+6. **Branch** (Optional) - List of GitHub repository branches to pull commits from, e.g. `daspirehq/daspire/main`. If no branches are specified for a repository, the default branch will be pulled.
 
-  > * These streams will only sync records generated on or after the Start Date: `comments`, `commit_comment_reactions`, `commit_comments`, `commits`, `deployments`, `events`, `issue_comment_reactions`, `issue_events`, `issue_milestones`, `issue_reactions`, `issues`, `project_cards`, `project_columns`, `projects`, `pull_request_comment_reactions`, `pull_requests`, `pull_requeststats`, `releases`, `review_comments`, `reviews`, `stargazers`, `workflow_runs`, `workflows`.
-
-  > * The Start Date does not apply to the streams below and all data will be synced for these streams: `assignees`, `branches`, `collaborators`, `issue_labels`, `organizations`, `pull_request_commits`, `pull_request_stats`, `repositories`, `tags`, `teams`, `users`
-
-6. **Branch (Optional)** - List of GitHub repository branches to pull commits from, e.g. `daspirehq/daspire/main`. If no branches are specified for a repository, the default branch will be pulled.
-
-7. **Max requests per hour (Optional)** - The GitHub API allows for a maximum of 5,000 requests per hour (15,000 for Github Enterprise). You can specify a lower value to limit your use of the API quota. Refer to GitHub article [Rate limits for the REST API](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api).
+7. **Page size for large streams** (Optional) - The Github connector contains several streams with a large amount of data. The page size of such streams depends on the size of your repository. We recommended that you specify values between 10 and 30.
 
 8. Click **Save & Test**.
 
@@ -138,10 +136,8 @@ This source outputs the following **incremental streams**:
   > * `teams`
   > * `users`
 
-## Performance consideration
+## Performance consideration & Troubleshooting
 
-The GitHub integration should not run into GitHub API limitations under normal usage. Refer to GitHub article [Rate limits for the REST API](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api).
+1. The GitHub integration should not run into GitHub API limitations under normal usage. Refer to GitHub article [Rate limits for the REST API](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api).
 
-## Troubleshooting
-
-Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+2. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

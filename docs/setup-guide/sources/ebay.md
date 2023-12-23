@@ -11,19 +11,21 @@ This page contains the setup guide and reference information for eBay.
 
 1. Select **eBay** from the Source list.
 
-2. Enter your eBay **Store Name**.
+2. Enter a **Source Name**.
 
-3. **Marketplace Id** is the region of your eBay store.
+3. Enter your eBay **Store Name**.
 
-4. Click **Authenticate your eBay account**.
+4. **Marketplace Id** is the region of your eBay store.
 
-5. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
+5. Click **Authenticate your eBay account**.
+
+6. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
   * If you choose **Based on Start Date**, enter a **Start date**, it is used for replicate data starting from the specified start date and an optional **End date**, any data after this date will not be replicated.
 
   * If you choose **Periodic Replication**, enter a number between 1-90. It is the duration in which your data will be extracted.
 
-6. Click **Save & Test**.
+7. Click **Save & Test**.
 
 ## Supported streams
 
