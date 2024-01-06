@@ -4,10 +4,8 @@ This page contains the setup guide and reference information for Facebook Market
 
 ## Prerequisites
 
-* Facebook Developer Account
+* Facebook Business Account
 * Facebook Ad Account ID
-* Facebook app with the Marketing API enabled
-* Facebook Marketing API Access Token
 
 ## Features
 
@@ -19,63 +17,37 @@ This page contains the setup guide and reference information for Facebook Market
 
 ## Setup guide
 
-### Step 1: Create a Facebook app
+### Step 1: Obtain your Facebook Ad account ID number
 
-1. Navigate to [Meta for Developers](https://developers.facebook.com/apps/) and follow the steps provided in the [Facebook documentation](https://developers.facebook.com/docs/development/create-an-app/) to create a Facebook app.
+1. Obtain your **Facebook Ad Account ID Number**: open your Meta Ads Manager. The Ad Account ID number is in the Account dropdown menu or in your browser's address bar. Refer to the [Facebook docs for more information](https://www.facebook.com/business/help/1492627900875762).
 
-2. While creating the app, when you are prompted for "What do you want your app to do?", select **Other**.
-![Facebook App Use Case](/assets/images/facebook-app-usecase.jpg "Facebook App Use Case")
-
-3. Set the app type to **Business** when prompted.
-![Facebook App Type](/assets/images/facebook-app-type.jpg "Facebook App Type")
-
-4. Give your app a name, add a contact email, and click **Create app**.
-![Facebook Create App](/assets/images/facebook-create-app.jpg "Facebook Create App")
-
-### Step 2: Obtain Facebook credentials
-
-1. From your App’s Dashboard, find **Marketing API**. And Click **Set up**.
-![Facebook Marketing API](/assets/images/facebook-marketing-api.jpg "Facebook Marketing API")
-
-2. Inside Marketing API, click **Tools**.
-![Facebook Marketing API Tools](/assets/images/facebook-marketing-api-tools.jpg "Facebook Marketing AP Tools")
-
-3. Select all the available **Token Permissions** (ads_management, ads_read, read_insights). And then click **Get token**. Copy the generated token for later use.
-![Facebook Marketing API Token](/assets/images/facebook-marketing-api-token.jpg "Facebook Marketing API Token")
-
-4. Request a **rate limit increase**: Facebook heavily throttles API tokens generated from Facebook apps with the default Standard Access tier, making it infeasible to use the token for syncs with Airbyte. You'll need to request an upgrade to Advanced Access for your app on the following permissions:
-
-  > * Ads Management Standard Access
-  > * ads_read
-  > * Ads_management
-
-  See the [Facebook documentation on Authorization](https://developers.facebook.com/docs/marketing-api/overview/authorization/#access-levels) to request Advanced Access to the relevant permissions.
-
-5. Obtain your **Facebook Ad Account ID Number**: open your Meta Ads Manager. The Ad Account ID number is in the Account dropdown menu or in your browser's address bar. Refer to the [Facebook docs for more information](https://www.facebook.com/business/help/1492627900875762).
-
-### Step 3: Set up Facebook Marketing in Daspire
+### Step 2: Set up Facebook Marketing in Daspire
 
 1. Select **Facebook Marketing** from the Source list.
 
 2. Enter a **Source Name**.
 
-3. Enter the **Access Token** you obtained in Step 2.
+3. Click **Authenticate with your Facebook Marketing account** and sign in with your Facebook Business account.
 
-4. Enter the **Account ID** you obtained in Step 2.
+4. Enter the **Account ID** you obtained in Step 1.
 
-5. (Optional) For **Start Date**, enter the date programmatically in the `YYYY-MM-DDTHH:mm:ssZ` format. If not set then all data will be replicated for usual streams and only last 2 years for insight streams.
+5. For **Start Date**, enter the date in the `YYYY-MM-DDTHH:mm:ssZ` format. If not set then all data will be replicated for usual streams and only last 2 years for insight streams.
 
   > Note: Insight tables are only able to pull data from the last 37 months. If you are syncing insight tables and your start date is older than 37 months, your sync will fail.
 
-6. (Optional) For **End Date**, enter the date programmatically in the `YYYY-MM-DDTHH:mm:ssZ` format. This is the date until which you'd like to replicate data for all Incremental streams. All data generated between the start date and this end date will be replicated. Not setting this option will result in always syncing the latest data.
+6. For **End Date**, enter the date in the `YYYY-MM-DDTHH:mm:ssZ` format. This is the date until which you'd like to replicate data for all Incremental streams. All data generated between the start date and this end date will be replicated. Not setting this option will result in always syncing the latest data.
 
-7. (Optional) Toggle the **Include Deleted Campaigns, Ads, and AdSets** button to include data from deleted Campaigns, Ads, and AdSets.
+7. (Optional) Toggle the **Include Deleted** button to include data from deleted Campaigns, Ads, and AdSets.
 
   > The Facebook Marketing API does not have a concept of deleting records in the same way that a database does. While you can archive or delete an ad campaign, the API maintains a record of the campaign. Toggling the Include Deleted button lets you replicate records for campaigns or ads even if they were archived or deleted from the Facebook platform.
 
 8. (Optional) Toggle the **Fetch Thumbnail Images** button to fetch the `thumbnail_url` and store the result in `thumbnail_data_url` for each [Ad Creative](https://developers.facebook.com/docs/marketing-api/creative/).
 
-9. (Optional) In the **Custom Insights** section, you may provide a list of ad statistics entries. Each entry should have a unique name and can contain fields, breakdowns or action_breakdowns. Fields refer to the different data points you can collect from an ad, while breakdowns and action_breakdowns let you segment this data for more detailed insights. Click on Add to create a new entry in this list.
+9. For **Page Size of Requests**, you can specify the number of records per page for paginated responses. Most users do not need to set this field unless specific issues arise or there are unique use cases that require tuning the connector's settings. The default value is set to retrieve 100 records per page.
+
+10. For **Insights Window Lookback**, you may set a window in days to revisit data during syncing to capture updated conversion data from the API. Facebook allows for attribution windows of up to 28 days, during which time a conversion can be attributed to an ad. If you have set a custom attribution window in your Facebook account, please set the same value here. Otherwise, you may leave it at the default value of 28. For more information on action attributions, please refer to the [Meta Help Center](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
+
+11. In the **Custom Insights** section, you may provide a list of ad statistics entries. Each entry should have a unique name and can contain fields, breakdowns or action_breakdowns. Fields refer to the different data points you can collect from an ad, while breakdowns and action_breakdowns let you segment this data for more detailed insights. Click on Add to create a new entry in this list.
 
   > To retrieve specific fields from Facebook Ads Insights combined with other breakdowns, you can choose which fields and breakdowns to sync. However, please note that not all fields can be requested, and many are only functional when combined with specific other fields. For example, the breakdown app_id is only supported with the total_postbacks field. For more information on the breakdown limitations, refer to the Facebook documentation.
 
@@ -106,10 +78,6 @@ This page contains the setup guide and reference information for Facebook Market
   x. (Optional) For **Custom Insights Lookback Window**, you may set a window in days to revisit data during syncing to capture updated conversion data from the API. Facebook allows for attribution windows of up to 28 days, during which time a conversion can be attributed to an ad. If you have set a custom attribution window in your Facebook account, please set the same value here. Otherwise, you may leave it at the default value of 28. For more information on action attributions, please refer to the [Meta Help Center](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
 
   > Note: Additional data streams for your Facebook Marketing connector are dynamically generated according to the Custom Insights you specify. If you have an existing Facebook Marketing source and you decide to update or remove some of your Custom Insights, you must also adjust the connections that sync to these streams. Specifically, you should either disable these connections or refresh the source schema associated with them to reflect the changes.
-
-10. (Optional) For **Page Size of Requests**, you can specify the number of records per page for paginated responses. Most users do not need to set this field unless specific issues arise or there are unique use cases that require tuning the connector's settings. The default value is set to retrieve 100 records per page.
-
-11. (Optional) For **Insights Window Lookback**, you may set a window in days to revisit data during syncing to capture updated conversion data from the API. Facebook allows for attribution windows of up to 28 days, during which time a conversion can be attributed to an ad. If you have set a custom attribution window in your Facebook account, please set the same value here. Otherwise, you may leave it at the default value of 28. For more information on action attributions, please refer to the [Meta Help Center](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
 
 12. Click **Save & Test**.
 
