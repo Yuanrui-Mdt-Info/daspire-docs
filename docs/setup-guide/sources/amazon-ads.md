@@ -11,7 +11,7 @@ This page contains the setup guide and reference information for Amazon Ads.
 
 ## Prerequisites
 
-* Amazon Ads account login (username and password)
+* Amazon Ads account login (email and password)
 
 ## Setup guide
 
@@ -29,15 +29,15 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 4. Click **Authenticate your Amazon Ads account** and login to your Amazon Ads account.
 
-5. **Source tag (optional)** is used to help you identify this source inside Daspire.
+5. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams. Default is 60 minutes.
 
-6. **Report Wait Timeout** is the maximum number of minutes the connector waits for the generation of a report for streams.
+6. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams. Default is 5.
 
-7. **Report Generation Maximum Retries** is the maximum number of attempts the connector tries to generate a report for streams.
+7. **Start Date** (Optional) is used for generating reports starting from the specified start date. Should be in `YYYY-MM-DD` format and not more than `60 days` in the past. If not specified, today's date is used. The date is treated in the timezone of the processed profile.
 
-8. **Start Date (optional)** is used for generating reports starting from the specified start date. Should be in `YYYY-MM-DD` format and not more than `60 days` in the past. If not specified today's date is used. The date is treated in the timezone of the processed profile.
+8. **Source Identifier** (Optional) is the identification to help you identify your Amazon Ads source in Daspire.
 
-8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
+9. **Profile IDs** (Optional) you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
 10. Click **Save & Test**.
 
