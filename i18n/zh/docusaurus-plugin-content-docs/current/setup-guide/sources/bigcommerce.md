@@ -38,11 +38,11 @@
 
 2. 填写**数据源名称**。
 
-3. **开始日期**用于生成从指定开始日期开始的数据。应采用`年年年年-月月-日日`格式。
+3. **店铺散列（Store Hash）**是店铺的散列。对于https://api.bigcommerce.com/stores/HASH_CODE/v3/ ，店铺的散列是`HASH_CODE`。
 
-4. **店铺Hash（Store Hash）**是店铺的hash。对于https://api.bigcommerce.com/stores/HASH_CODE/v3/ ，店铺的hash是`HASH_CODE`。
+4. 输入您在第1步中获得的**访问令牌**。
 
-5. 输入您在第1步中获得的**访问令牌**。
+5. **开始日期**用于生成从指定开始日期开始的数据。应采用`年年年年-月月-日日`格式。
 
 6. 点击**保存并测试**。
 
