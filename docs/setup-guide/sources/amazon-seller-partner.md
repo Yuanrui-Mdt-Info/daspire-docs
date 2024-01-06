@@ -34,15 +34,15 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 5. Click **Authenticate your Amazon Seller Partner Account**.
 
-6. **Max wait time for reports (in seconds)** is the maximum number of minutes the connector waits for the generation of a report for streams.
+6. **Start Date and Time** - The start date and time for syncing data, should not be more than 60 days in the past. In the format of YYYY-MM-DDTHH:MM:SSZ. Any data before this date will not be replicated.
 
-7. **Period In Days** will be used for stream slicing for initial full_refresh sync when no updated state is present for reports that support sliced incremental sync.
+7. **End Date and Time** - The end date and time for syncing data. In the format of YYYY-MM-DDTHH:MM:SSZ. Any data after this date will not be replicated.
 
-8. **Start Date** - Any data before this date will not be replicated.
+8. **Period In Days** - It will be used for stream slicing for initial `full_refresh` sync when no updated state is present for reports that support sliced incremental sync.
 
-9. **End Date (optional)** - any data after this date will not be replicated.
+9. **Max Wait Time for Reports (in seconds)** - Sometimes report can take up to 30 minutes to generate. This will set the limit for how long to wait for a successful report.
 
-10. **Report Options** is additional information passed to reports. Must be a valid json string.
+10. **Report Options** - Additional information passed to reports. This varies by report type. Must be a valid JSON string. (e.g. {"GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT": {"reportPeriod": "WEEK"}}, {"GET_SOME_REPORT": {"custom": "true"}})
 
 11. Click **Save & Test**.
 
