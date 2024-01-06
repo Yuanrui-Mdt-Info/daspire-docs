@@ -13,9 +13,9 @@ This page contains the setup guide and reference information for eBay.
 
 2. Enter a **Source Name**.
 
-3. Enter your eBay **Store Name**.
+3. Select **eBay Marketplace ID**. It is the region of your eBay store.
 
-4. **Marketplace Id** is the region of your eBay store.
+4. Enter your eBay **Store Name**.
 
 5. Click **Authenticate your eBay account**.
 
