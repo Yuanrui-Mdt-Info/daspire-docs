@@ -13,8 +13,8 @@ This page contains the setup guide and reference information for GitHub.
 
 ## Prerequisites
 
-* List of GitHub repositories
-* GitHub personal access token
+* GitHub LogIn or Personal Access Token
+* List of GitHub Repositories
 
 ## Setup guide
 
@@ -40,20 +40,23 @@ This page contains the setup guide and reference information for GitHub.
 
 2. Enter a **Source Name**.
 
-3. In Authentication, choose **Personal Access Token**. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
+3. For **Authentication**, choose one of the following:
 
-4. **Start date** - The date from which you'd like to replicate data from GitHub in the format `YYYY-MM-DDT00:00:00Z`. Only data generated on or after the start date will be replicated.
+  > * Click **Authenticate your GitHub account** and sign in to your GitHub account.
+  > * Enter your **Personal Access Token**. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
+
+4. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/another-repo` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
+
+  > CAUTION: Repositories with the wrong name or repositories that do not exist or have the wrong name format will be skipped.
+
+5. **Start Date and Time** - The date from which you'd like to replicate data from GitHub in the format `YYYY-MM-DDT00:00:00Z`. Only data generated on or after the start date will be replicated.
 
   > * These streams will only sync records generated on or after the Start Date: `comments`, `commit_comment_reactions`, `commit_comments`, `commits`, `deployments`, `events`, `issue_comment_reactions`, `issue_events`, `issue_milestones`, `issue_reactions`, `issues`, `project_cards`, `project_columns`, `projects`, `pull_request_comment_reactions`, `pull_requests`, `pull_requeststats`, `releases`, `review_comments`, `reviews`, `stargazers`, `workflow_runs`, `workflows`.
   > * The Start Date does not apply to the streams below and all data will be synced for these streams: `assignees`, `branches`, `collaborators`, `issue_labels`, `organizations`, `pull_request_commits`, `pull_request_stats`, `repositories`, `tags`, `teams`, `users`
 
-5. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/daspire2` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
-
-  > CAUTION: Repositories with the wrong name or repositories that do not exist or have the wrong name format will be skipped.
-
 6. **Branch** (Optional) - List of GitHub repository branches to pull commits from, e.g. `daspirehq/daspire/main`. If no branches are specified for a repository, the default branch will be pulled.
 
-7. **Page size for large streams** (Optional) - The Github connector contains several streams with a large amount of data. The page size of such streams depends on the size of your repository. We recommended that you specify values between 10 and 30.
+7. **Page Size for Large Streams** (Optional) - The Github integration contains several streams with a large amount of data. The page size of such streams depends on the size of your repository. We recommended that you specify values between 10 and 30.
 
 8. Click **Save & Test**.
 
