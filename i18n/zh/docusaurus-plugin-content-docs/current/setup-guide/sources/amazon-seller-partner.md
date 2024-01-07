@@ -42,7 +42,7 @@
 
 9. **报告等待时限（以秒为单位）** - 有时报告最多可能需要30分钟才能生成。这个设置将限制等待成功报告的时间。
 
-10. **报告选项** - 传递给报告的附加信息。因报告类型而异，必须是有效的JSON字符串。（比如{"GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT": {"reportPeriod": "WEEK"}}, {"GET_SOME_REPORT": {"custom": "true"}}）
+10. **报告选项** - 传递给报告的附加信息。因报告类型而异，必须是有效的JSON字符串。（比如`{"GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT": {"reportPeriod": "WEEK"}}`, `{"GET_SOME_REPORT": {"custom": "true"}}`）
 
 11. 点击**保存并测试**。
 
