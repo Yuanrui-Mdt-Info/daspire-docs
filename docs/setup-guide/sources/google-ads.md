@@ -20,19 +20,19 @@ This page contains the setup guide and reference information for Google Ads.
 
 2. Enter a **Source Name**.
 
-3. Click **Sign in with Google** to authenticate your Google Ads account. In the pop-up, select the appropriate Google account and click Continue to proceed.
+3. Click **Authenticate your Google account** to authenticate your Google Ads account.
 
 4. Enter a comma-separated list of the **Customer ID(s)** for your account. These IDs are 10-digit numbers that uniquely identify your account. To find your Customer ID, please follow [Google's instructions](https://support.google.com/google-ads/answer/1704344).
 
-5. (Optional) Enter a **Start Date** in `YYYY-MM-DD` format. The data added on and after this date will be replicated. Default start date is 2 years ago.
+5. Enter a **Start Date** in `YYYY-MM-DD` format. The data added on and after this date will be replicated. Default start date is 2 years ago.
 
-6. (Optional) You can use the **Custom GAQL Queries** field to enter a custom query using Google Ads Query Language. Click Add and enter your query, as well as the desired name of the table for this data in the destination. Multiple queries can be provided. For more information on formulating these queries, refer to our guide below.
+6. (Optional) Enter an **End Date** in `YYYY-MM-DD` format. Any data added before this date will not be replicated. Leaving this field blank will replicate all data from the start date onward.
 
-7. (Required for Manager accounts) If accessing your account through a Google Ads Manager account, you must enter the [Customer ID](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid) of the Manager account.
+7. (Optional) Enter a **Conversion Window**. This is the number of days after an ad interaction during which a conversion is recorded in Google Ads. For more information on this topic, refer to the [Google Ads Help Center](https://support.google.com/google-ads/answer/3123169?hl=en). This field defaults to 14 days.
 
-8. (Optional) Enter a **Conversion Window**. This is the number of days after an ad interaction during which a conversion is recorded in Google Ads. For more information on this topic, refer to the [Google Ads Help Center](https://support.google.com/google-ads/answer/3123169?hl=en). This field defaults to 14 days.
+8. (Required for Manager accounts) If accessing your account through a **Google Ads Manager** account, you must enter the [Customer ID](https://developers.google.com/google-ads/api/docs/concepts/call-structure#cid) of the Manager account.
 
-9. (Optional) Enter an **End Date** in `YYYY-MM-DD` format. Any data added after this date will not be replicated. Leaving this field blank will replicate all data from the start date onward.
+9. (Optional) You can use the **Custom GAQL Queries** field to enter a custom query using Google Ads Query Language. Click Add and enter your query, as well as the desired name of the table for this data in the destination. Multiple queries can be provided.
 
 10. Click **Save & Test**.
 
