@@ -27,7 +27,8 @@ This page contains the setup guide and reference information for GitHub.
 3. Click **Generate new token**, select **scopes** which define the access for the token, and click **Generate token**.
 ![GitHub personal access token](/assets/images/github-generate-new-token.jpg "GitHub personal access token")
 
-  > NOTE: Your token should have at least the `repo` scope. Depending on which streams you want to sync, the user generating the token needs more permissions:
+  NOTE: Your token should have at least the `repo` scope. Depending on which streams you want to sync, the user generating the token needs more permissions:
+
   > * For syncing Collaborators, the user which generates the personal access token must be a collaborator. To become a collaborator, they must be invited by an owner. If there are no collaborators, no records will be synced. Read more about access permissions [here](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github).
   > * For syncing [Teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) is only available to authenticated members of a team's organization. Personal user accounts and repositories belonging to them don't have access to Teams features. In this case no records will be synced.
   > * For syncing Projects, the repository must have the Projects feature enabled.
@@ -42,17 +43,17 @@ This page contains the setup guide and reference information for GitHub.
 
 3. For **Authentication**, choose one of the following:
 
-  > * For **OAuth** authentication, click **Authenticate your GitHub account** and sign in to your GitHub account.
-  > * For **Personal Access Token** authentication, enter the Personal Access Token you obtained in Step 1. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
+    * For **OAuth** authentication, click **Authenticate your GitHub account** and sign in to your GitHub account.
+    * For **Personal Access Token** authentication, enter the Personal Access Token you obtained in Step 1. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
 
 4. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/another-repo` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
 
-  > CAUTION: Repositories with the wrong name or repositories that do not exist or have the wrong name format will be skipped.
+  CAUTION: Repositories with the wrong name or repositories that do not exist or have the wrong name format will be skipped.
 
 5. **Start Date and Time** - The date from which you'd like to replicate data from GitHub in the format `YYYY-MM-DDT00:00:00Z`. Only data generated on or after the start date will be replicated.
 
-  > * These streams will only sync records generated on or after the Start Date: `comments`, `commit_comment_reactions`, `commit_comments`, `commits`, `deployments`, `events`, `issue_comment_reactions`, `issue_events`, `issue_milestones`, `issue_reactions`, `issues`, `project_cards`, `project_columns`, `projects`, `pull_request_comment_reactions`, `pull_requests`, `pull_requeststats`, `releases`, `review_comments`, `reviews`, `stargazers`, `workflow_runs`, `workflows`.
-  > * The Start Date does not apply to the streams below and all data will be synced for these streams: `assignees`, `branches`, `collaborators`, `issue_labels`, `organizations`, `pull_request_commits`, `pull_request_stats`, `repositories`, `tags`, `teams`, `users`
+    * These streams will only sync records generated on or after the Start Date: `comments`, `commit_comment_reactions`, `commit_comments`, `commits`, `deployments`, `events`, `issue_comment_reactions`, `issue_events`, `issue_milestones`, `issue_reactions`, `issues`, `project_cards`, `project_columns`, `projects`, `pull_request_comment_reactions`, `pull_requests`, `pull_requeststats`, `releases`, `review_comments`, `reviews`, `stargazers`, `workflow_runs`, `workflows`.
+    * The Start Date does not apply to the streams below and all data will be synced for these streams: `assignees`, `branches`, `collaborators`, `issue_labels`, `organizations`, `pull_request_commits`, `pull_request_stats`, `repositories`, `tags`, `teams`, `users`
 
 6. **Branch** (Optional) - List of GitHub repository branches to pull commits from, e.g. `daspirehq/daspire/main`. If no branches are specified for a repository, the default branch will be pulled.
 
@@ -111,33 +112,33 @@ This source outputs the following **incremental streams**:
 
 1. Only 4 streams (`comments`, `commits`, `issues` and `review comments`) from the listed above streams are pure incremental meaning that they:
 
-  > * read only new records;
-  > * output only new records.
+    * read only new records;
+    * output only new records.
 
 2. Streams `workflow_runs` and `worflow_jobs` is almost pure incremental:
 
-  > * read new records and some portion of old records (in past 30 days);
-  > * the `workflow_jobs` depends on the `workflow_runs` to read the data, so they both follow the same logic docs;
-  > * output only new records.
+    * read new records and some portion of old records (in past 30 days);
+    * the `workflow_jobs` depends on the `workflow_runs` to read the data, so they both follow the same logic docs;
+    * output only new records.
 
 3. Other 19 incremental streams are also incremental but with one difference, they:
 
-  > * read all records;
-  > * output only new records. Please, consider this behaviour when using those 19 incremental streams because it may affect you API call limits.
+    * read all records;
+    * output only new records. Please, consider this behaviour when using those 19 incremental streams because it may affect you API call limits.
 
 4. Sometimes for large streams specifying very distant `start_date` in the past may result in keep on getting error from GitHub instead of records. In this case Specifying more recent `start_date` may help. The "Start date" configuration option does not apply to the streams below, because the GitHub API does not include dates which can be used for filtering:
 
-  > * `assignees`
-  > * `branches`
-  > * `collaborators`
-  > * `issue_labels`
-  > * `organizations`
-  > * `pull_request_commits`
-  > * `pull_request_stats`
-  > * `repositories`
-  > * `tags`
-  > * `teams`
-  > * `users`
+    * `assignees`
+    * `branches`
+    * `collaborators`
+    * `issue_labels`
+    * `organizations`
+    * `pull_request_commits`
+    * `pull_request_stats`
+    * `repositories`
+    * `tags`
+    * `teams`
+    * `users`
 
 ## Performance consideration & Troubleshooting
 

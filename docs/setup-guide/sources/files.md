@@ -27,7 +27,7 @@ This page contains the setup guide and reference information for different Files
 
 3. For **File Format**, select the format of the file to replicate from the dropdown menu
 
-  > Warning: some formats may be experimental. Please refer to the table of supported formats below.
+  Warning: some formats may be experimental. Please refer to the table of supported formats below.
 
 ### Step 2: Select the provider and set provider-specific configurations
 
@@ -60,8 +60,8 @@ For **Storage Provider**, use the dropdown menu to select the Storage Provider o
 
   If you are accessing **private storage**, you must also provide one of the following security credentials with the necessary permissions:
 
-  > * SAS Token: Find more information [here](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
-  > * Shared Key: Find more information [here](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key).
+    * SAS Token: Find more information [here](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
+    * Shared Key: Find more information [here](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key).
 
 #### SSH: Secure Shell / SCP: Secure Copy Protocol / SFTP: Secure File Transfer Protocol
 
@@ -85,13 +85,13 @@ For **Storage Provider**, use the dropdown menu to select the Storage Provider o
 
 * Storage
 
-  > Note the local storage URL for reading must start with the local mount `/local/`.
+  Note the local storage URL for reading must start with the local mount `/local/`.
 
   Please note that if you are replicating data from a locally stored file on Windows OS, you will need to open the `.env` file in your local Daspire root folder and change the values for:
 
-  > * `LOCAL_ROOT`
-  > * `LOCAL_DOCKER_MOUNT`
-  > * `HACK_LOCAL_ROOT_PARENT`
+    * `LOCAL_ROOT`
+    * `LOCAL_DOCKER_MOUNT`
+    * `HACK_LOCAL_ROOT_PARENT`
 
   Please set these to an existing absolute path on your machine. Colons in the path need to be replaced with a double forward slash, `//`. `LOCAL_ROOT` & `LOCAL_DOCKER_MOUNT` should be set to the same value, and `HACK_LOCAL_ROOT_PARENT` should be set to their parent directory.
 
@@ -99,14 +99,14 @@ For **Storage Provider**, use the dropdown menu to select the Storage Provider o
 
 1. For **URL**, enter the URL path of the file to be replicated.
 
-  > * When connecting to a file located in **Google Drive**, please note that you need to utilize the Download URL format: *https://drive.google.com/uc?export=download&id=[DRIVE_FILE_ID]*. `[DRIVE_FILE_ID]` should be replaced with the unique string found in the Share URL specific to Google Drive. You can find the Share URL by visiting *https://drive.google.com/file/d/[DRIVE_FILE_ID]/view?usp=sharing*.
-  > * When connecting to a file using **Azure Blob Storage**, please note that we account for the base URL. Therefore, you should only need to include the path to your specific file (eg `container/file.csv`).
+    * When connecting to a file located in **Google Drive**, please note that you need to utilize the Download URL format: *https://drive.google.com/uc?export=download&id=[DRIVE_FILE_ID]*. `[DRIVE_FILE_ID]` should be replaced with the unique string found in the Share URL specific to Google Drive. You can find the Share URL by visiting *https://drive.google.com/file/d/[DRIVE_FILE_ID]/view?usp=sharing*.
+    * When connecting to a file using **Azure Blob Storage**, please note that we account for the base URL. Therefore, you should only need to include the path to your specific file (eg `container/file.csv`).
 
 2. For **Dataset Name**, enter the name of the final table to replicate this file into (should include letters, numbers, dashes and underscores only).
 
 3. For **Reader Options**, you may choose to enter a string in JSON format. Depending on the file format of your source, this will provide additional options and tune the Reader's behavior. Please refer to the next section for a breakdown of the possible inputs. This field may be left blank if you do not wish to configure custom Reader options.
 
-  > Normally, Daspire tries to infer the data type from the source, but you can use `reader_options` to force specific data types. If you input `{"dtype":"string"}`, all columns will be forced to be parsed as strings. If you only want a specific column to be parsed as a string, simply use `{"dtype" : {"column name": "string"}}`.
+  Normally, Daspire tries to infer the data type from the source, but you can use `reader_options` to force specific data types. If you input `{"dtype":"string"}`, all columns will be forced to be parsed as strings. If you only want a specific column to be parsed as a string, simply use `{"dtype" : {"column name": "string"}}`.
 
 4. Click **Save & Test**.
 
@@ -177,8 +177,8 @@ The Stripe API uses the same [JSON Schema](https://json-schema.org/understanding
 
 2. In order to read large files from a remote location, this connector uses the [smart_open](https://pypi.org/project/smart-open/) library. However, it is possible to switch to either [GCSFS](https://gcsfs.readthedocs.io/en/latest/) or [S3FS](https://s3fs.readthedocs.io/en/latest/) implementations as it is natively supported by the pandas library. This choice is made possible through the optional `reader_impl` parameter.
 
-  > * Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/daspire_local` folder, so the `URL` should also starts with `/local/`.
-  > * Please make sure that Docker Desktop has access to `/tmp` (and `/private` on a MacOS, as /tmp has a symlink that points to /private. It will not work otherwise). You allow it with "File sharing" in `Settings -> Resources -> File sharing -> add the one or two above folder` and hit the **"Apply & restart"** button.
-  > * The JSON implementation needs to be tweaked in order to produce more complex catalog and is still in an experimental state: Simple JSON schemas should work at this point but may not be well handled when there are multiple layers of nesting.
+    * Note that for local filesystem, the file probably have to be stored somewhere in the `/tmp/daspire_local` folder, so the `URL` should also starts with `/local/`.
+    * Please make sure that Docker Desktop has access to `/tmp` (and `/private` on a MacOS, as /tmp has a symlink that points to /private. It will not work otherwise). You allow it with "File sharing" in `Settings -> Resources -> File sharing -> add the one or two above folder` and hit the **"Apply & restart"** button.
+    * The JSON implementation needs to be tweaked in order to produce more complex catalog and is still in an experimental state: Simple JSON schemas should work at this point but may not be well handled when there are multiple layers of nesting.
 
 3. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.

@@ -21,8 +21,8 @@ This page contains the setup guide and reference information for eBay.
 
 6. In **Data Replication Schedule**, choose an option between **Based on Start Date** or **Periodic Replication**.
 
-  > * If you choose **Based on Start Date**, enter a **Start date**, it is used for replicate data starting from the specified start date and an optional **End date**, any data after this date will not be replicated.
-  > * If you choose **Periodic Replication**, enter a number between 1-90. It is the duration in which your data will be extracted.
+    * If you choose **Based on Start Date**, enter a **Start date**, it is used for replicate data starting from the specified start date and an optional **End date**, any data after this date will not be replicated.
+    * If you choose **Periodic Replication**, enter a number between 1-90. It is the duration in which your data will be extracted.
 
 7. Click **Save & Test**.
 

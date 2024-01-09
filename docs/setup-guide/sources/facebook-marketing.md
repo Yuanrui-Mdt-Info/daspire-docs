@@ -33,13 +33,13 @@ This page contains the setup guide and reference information for Facebook Market
 
 5. For **Start Date**, enter the date in the `YYYY-MM-DDTHH:mm:ssZ` format. If not set then all data will be replicated for usual streams and only last 2 years for insight streams.
 
-  > Note: Insight tables are only able to pull data from the last 37 months. If you are syncing insight tables and your start date is older than 37 months, your sync will fail.
+  Note: Insight tables are only able to pull data from the last 37 months. If you are syncing insight tables and your start date is older than 37 months, your sync will fail.
 
 6. For **End Date**, enter the date in the `YYYY-MM-DDTHH:mm:ssZ` format. This is the date until which you'd like to replicate data for all Incremental streams. All data generated between the start date and this end date will be replicated. Not setting this option will result in always syncing the latest data.
 
 7. (Optional) Toggle the **Include Deleted** button to include data from deleted Campaigns, Ads, and AdSets.
 
-  > The Facebook Marketing API does not have a concept of deleting records in the same way that a database does. While you can archive or delete an ad campaign, the API maintains a record of the campaign. Toggling the Include Deleted button lets you replicate records for campaigns or ads even if they were archived or deleted from the Facebook platform.
+  The Facebook Marketing API does not have a concept of deleting records in the same way that a database does. While you can archive or delete an ad campaign, the API maintains a record of the campaign. Toggling the Include Deleted button lets you replicate records for campaigns or ads even if they were archived or deleted from the Facebook platform.
 
 8. (Optional) Toggle the **Fetch Thumbnail Images** button to fetch the `thumbnail_url` and store the result in `thumbnail_data_url` for each [Ad Creative](https://developers.facebook.com/docs/marketing-api/creative/).
 
@@ -49,7 +49,7 @@ This page contains the setup guide and reference information for Facebook Market
 
 11. In the **Custom Insights** section, you may provide a list of ad statistics entries. Each entry should have a unique name and can contain fields, breakdowns or action_breakdowns. Fields refer to the different data points you can collect from an ad, while breakdowns and action_breakdowns let you segment this data for more detailed insights. Click on Add to create a new entry in this list.
 
-  > To retrieve specific fields from Facebook Ads Insights combined with other breakdowns, you can choose which fields and breakdowns to sync. However, please note that not all fields can be requested, and many are only functional when combined with specific other fields. For example, the breakdown app_id is only supported with the total_postbacks field. For more information on the breakdown limitations, refer to the Facebook documentation.
+  To retrieve specific fields from Facebook Ads Insights combined with other breakdowns, you can choose which fields and breakdowns to sync. However, please note that not all fields can be requested, and many are only functional when combined with specific other fields. For example, the breakdown app_id is only supported with the total_postbacks field. For more information on the breakdown limitations, refer to the Facebook documentation.
 
   To configure Custom Insights:
 
@@ -65,9 +65,9 @@ This page contains the setup guide and reference information for Facebook Market
 
   vi. (Optional) For **Action Report Time**, enter the action report time you want to configure. This value determines the timing used to report action statistics. For example, if a user sees an ad on Jan 1st but converts on Jan 2nd, this value will determine how the action is reported.
 
-  > * impression: Actions are attributed to the time the ad was viewed (Jan 1st).
-  > * conversion: Actions are attributed to the time the action was taken (Jan 2nd).
-  > * mixed: Click-through actions are attributed to the time the ad was viewed (Jan 1st), and view-through actions are attributed to the time the action was taken (Jan 2nd).
+    * impression: Actions are attributed to the time the ad was viewed (Jan 1st).
+    * conversion: Actions are attributed to the time the action was taken (Jan 2nd).
+    * mixed: Click-through actions are attributed to the time the ad was viewed (Jan 1st), and view-through actions are attributed to the time the action was taken (Jan 2nd).
 
   vii. (Optional) For **Time Increment**, you may provide a value in days by which to aggregate statistics. The sync will be chunked into intervals of this size. For example, if you set this value to 7, the sync will be chunked into 7-day intervals. The default value is 1 day.
 
@@ -77,7 +77,7 @@ This page contains the setup guide and reference information for Facebook Market
 
   x. (Optional) For **Custom Insights Lookback Window**, you may set a window in days to revisit data during syncing to capture updated conversion data from the API. Facebook allows for attribution windows of up to 28 days, during which time a conversion can be attributed to an ad. If you have set a custom attribution window in your Facebook account, please set the same value here. Otherwise, you may leave it at the default value of 28. For more information on action attributions, please refer to the [Meta Help Center](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
 
-  > Note: Additional data streams for your Facebook Marketing connector are dynamically generated according to the Custom Insights you specify. If you have an existing Facebook Marketing source and you decide to update or remove some of your Custom Insights, you must also adjust the connections that sync to these streams. Specifically, you should either disable these connections or refresh the source schema associated with them to reflect the changes.
+  Note: Additional data streams for your Facebook Marketing connector are dynamically generated according to the Custom Insights you specify. If you have an existing Facebook Marketing source and you decide to update or remove some of your Custom Insights, you must also adjust the connections that sync to these streams. Specifically, you should either disable these connections or refresh the source schema associated with them to reflect the changes.
 
 12. Click **Save & Test**.
 

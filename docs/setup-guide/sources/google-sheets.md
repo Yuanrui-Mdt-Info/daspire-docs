@@ -13,12 +13,12 @@ This page contains the setup guide and reference information for Google Sheets.
 
 * Google Sheets Link
 * For OAuth authentication:
-  > * A Google Workspace account with access to the Google Sheets
+    * A Google Workspace account with access to the Google Sheets
 * For Service Account Key authentication:
-  > * Service Account Key with access to the Google Sheets you want to replicate
-  > * Google Cloud Console access
-  > * A Google Cloud Platform (GCP) project
-  > * Enable the Google Sheets API in your GCP project
+    * Service Account Key with access to the Google Sheets you want to replicate
+    * Google Cloud Console access
+    * A Google Cloud Platform (GCP) project
+    * Enable the Google Sheets API in your GCP project
 
 ## Setup guide
 
@@ -83,8 +83,8 @@ NOTE: If your Google Sheets is viewable by anyone with its link, no further acti
 
 3. For **Authentication**, choose one of the following:
 
-  > * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google account with access to the Google Sheets you want to sync.
-  > * For **Service Account Key Authenication**, enter the Service Account JSON Key you obtained from Step 1.
+    * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google account with access to the Google Sheets you want to sync.
+    * For **Service Account Key Authenication**, enter the Service Account JSON Key you obtained from Step 1.
 
 4. For **Google Sheets Link**, enter the link to the Google Sheets you obtained in Step 4.
 
@@ -106,8 +106,8 @@ Each sheet in the selected Google Sheets is synced as a separate stream. Each se
 
 1. The Google API rate limits are:
 
-  * 300 read requests per minute per project
-  * 60 requests per minute per user per project
+    * 300 read requests per minute per project
+    * 60 requests per minute per user per project
 
   Daspire batches requests to the API in order to efficiently pull data and respect these rate limits. We recommend not using the same user or service account for more than 3 instances of the Google Sheets source integration to ensure high transfer speeds.
 

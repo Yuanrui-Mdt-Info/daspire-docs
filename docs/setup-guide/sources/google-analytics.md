@@ -14,12 +14,12 @@ This page contains the setup guide and reference information for Google Analytic
 
 * Google Analytics Property ID
 * For OAuth authentication:
-  > * A Google Analytics account with access to the GA4 property you want to sync
+    * A Google Analytics account with access to the GA4 property you want to sync
 * For Service Account Key authentication:
-  > * Google Service Account JSON Key with access to the Google Sheets you want to replicate
-  > * Google Cloud Console access
-  > * A Google Cloud Platform (GCP) project
-  > * Enable the Google Sheets API in your GCP project
+    * Google Service Account JSON Key with access to the Google Sheets you want to replicate
+    * Google Cloud Console access
+    * A Google Cloud Platform (GCP) project
+    * Enable the Google Sheets API in your GCP project
 
 ## Setup guide
 
@@ -92,14 +92,14 @@ This page contains the setup guide and reference information for Google Analytic
 
 3. For **Authentication**, choose one of the following:
 
-  > * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google Analytics account with access to the GA4 property you want to sync.
-  > * For **Service Account Key Authenication**, enter the Service Account JSON Key you obtained from Step 1.
+    * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google Analytics account with access to the GA4 property you want to sync.
+    * For **Service Account Key Authenication**, enter the Service Account JSON Key you obtained from Step 1.
 
 4. Enter the **GA4 Property ID** you obtained from Step 3.
 
 5. In the **Start Date** field, enter a date in the format `YYYY-MM-DD`. All data added from this date onward will be replicated. Note that this setting is not applied to custom Cohort reports.
 
-  > Note: If the start date is not provided, the default value will be used, which is 2 years from the initial sync.
+  Note: If the start date is not provided, the default value will be used, which is 2 years from the initial sync.
 
 6. (Optional) In the **Data Request Time Increment in Days** field, you can specify the interval in days (ranging from `1` to `364`) used when requesting data from the Google Analytics API. The bigger this value is, the faster the sync will be, but the more likely that sampling will be applied to your data, potentially causing inaccuracies in the returned results. We recommend setting this to `1` unless you have a hard requirement to make the sync faster at the expense of accuracy. This field does not apply to custom Cohort reports. See the Data Sampling section below for more context on this field.
 

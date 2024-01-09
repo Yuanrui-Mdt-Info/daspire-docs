@@ -27,10 +27,10 @@ This page contains the setup guide and reference information for Amazon Seller P
 
   Marketplace availability:
 
-  > * North America: United States (US), Canada (CA), Mexico (MX)
-  > * Europe: Belgium (BE), Germany (DE), Spain (ES), France (FR), Italy (IT), United Kingdom (UK), Netherlands (NL), Sweden (SE), Poland (PL), Turkey (TR)
-  > * Middle East: United Arab Emirates (AE), Saudi Arabia (SA), Egypt (EG)
-  > * Asia Pacific: Japan (JP), India (IN), Australia (AU), Singapore (SG)
+    * North America: United States (US), Canada (CA), Mexico (MX)
+    * Europe: Belgium (BE), Germany (DE), Spain (ES), France (FR), Italy (IT), United Kingdom (UK), Netherlands (NL), Sweden (SE), Poland (PL), Turkey (TR)
+    * Middle East: United Arab Emirates (AE), Saudi Arabia (SA), Egypt (EG)
+    * Asia Pacific: Japan (JP), India (IN), Australia (AU), Singapore (SG)
 
 5. Click **Authenticate your Amazon Seller Partner Account**.
 
