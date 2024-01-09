@@ -2,12 +2,6 @@
 
 This page contains the setup guide and reference information for Google Analytics 4 (GA4).
 
-## Prerequisites
-
-* A Google Analytics account with access to the GA4 property you want to sync
-* Google Service Account JSON Key
-* Google Analytics Property ID
-
 ## Features
 
 | Feature | Supported? |
@@ -16,9 +10,16 @@ This page contains the setup guide and reference information for Google Analytic
 | Incremental Sync | Yes |
 | Namespaces | No |
 
+## Prerequisites
+
+* Google Analytics Property ID
+* One of the following:
+  > * A Google Analytics account with access to the GA4 property you want to sync
+  > * Google Service Account JSON Key
+
 ## Setup guide
 
-### Step 1: Create a GA4 Service Account for authentication
+### Step 1: Create a GA4 Service Account for authentication (skip this step for OAuth authentication)
 
 1. Sign in to the Google Account you are using for GA as an admin.
 
@@ -41,7 +42,7 @@ This page contains the setup guide and reference information for Google Analytic
 
 8. Select **JSON** as the Key type. Then click Create. This will generate and download the JSON key file that you'll use for authentication.
 
-### Step 2: Enable the Google Analytics APIs
+### Step 2: Enable the Google Analytics APIs (skip this step for OAuth authentication)
 
 1. Go to the [Google Analytics Reporting API dashboard](https://console.developers.google.com/apis/api/analyticsreporting.googleapis.com/overview). Make sure you have selected the associated project for your service account, and **Enable** the API. You can also set quotas and check usage.
 ![GA4 Reporting API](/assets/images/ga4-reporting-api.jpg "GA4 Reporting API")
@@ -65,7 +66,7 @@ This page contains the setup guide and reference information for Google Analytic
 4. Click **Property details** and you will find your **Property ID** on the top right corner. This ID should be a numeric value, such as `123456789`. Copy it for later use.
 ![GA4 Property ID](/assets/images/ga4-property-id.jpg "GA4 Property ID")
 
-### Step 4: Grant Service Account GA4 property access
+### Step 4: Grant Service Account GA4 property access (skip this step for OAuth authentication)
 
 1. Following Step 3, inside the **Admin** area of your GA4 account, click **Account Access Management**.
 ![GA4 Account Access](/assets/images/ga4-account-access.jpg "GA4 Account Access")
@@ -85,17 +86,20 @@ This page contains the setup guide and reference information for Google Analytic
 
 2. Enter a **Source Name**.
 
-3. Select **Service Account Key Authenication** dropdown list and enter **Service Account JSON Key** you obtained from Step 1.
+3. For **Authentication**, choose one of the following:
+
+  > * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google Analytics account with access to the GA4 property you want to sync.
+  > * For **Service Account Key Authenication**authentication, enter the Service Account JSON Key you obtained from Step 1.
 
 4. Enter the **GA4 Property ID** you obtained from Step 3.
 
-5. (Optional) In the **Start Date** field, enter a date in the format `YYYY-MM-DD`. All data added from this date onward will be replicated. Note that this setting is not applied to custom Cohort reports.
+5. In the **Start Date** field, enter a date in the format `YYYY-MM-DD`. All data added from this date onward will be replicated. Note that this setting is not applied to custom Cohort reports.
 
-  > Note: If the start date is not provided, the default value will be used, which is two years from the initial sync.
+  > Note: If the start date is not provided, the default value will be used, which is 2 years from the initial sync.
 
-6. (Optional) In the **Custom Reports** field, you may optionally provide a JSON array describing any custom reports you want to sync from GA4. See the Custom Reports section below for more information on formulating these reports.
+6. (Optional) In the **Data Request Time Increment in Days** field, you can specify the interval in days (ranging from `1` to `364`) used when requesting data from the Google Analytics API. The bigger this value is, the faster the sync will be, but the more likely that sampling will be applied to your data, potentially causing inaccuracies in the returned results. We recommend setting this to `1` unless you have a hard requirement to make the sync faster at the expense of accuracy. This field does not apply to custom Cohort reports. See the Data Sampling section below for more context on this field.
 
-7. (Optional) In the **Data Request Interval (Days)** field, you can specify the interval in days (ranging from 1 to 364) used when requesting data from the Google Analytics API. The bigger this value is, the faster the sync will be, but the more likely that sampling will be applied to your data, potentially causing inaccuracies in the returned results. We recommend setting this to 1 unless you have a hard requirement to make the sync faster at the expense of accuracy. This field does not apply to custom Cohort reports. See the Data Sampling section below for more context on this field.
+7. (Optional) In the **Custom Reports** field, you may optionally provide a JSON array describing any custom reports you want to sync from GA4. See the Custom Reports section below for more information on formulating these reports.
 
 8. Click **Save & Test**.
 
@@ -164,7 +168,15 @@ This source is capable of syncing the following streams:
 
 ## Integration-specific features
 
-### Custom Reports
+### Data sampling
+
+Data sampling in GA4 refers to the process of estimating analytics data when the amount of data in an account exceeds Google's predefined compute thresholds. To mitigate the chances of data sampling being applied to the results, the Data Request Interval field allows users to specify the interval used when requesting data from the Google Analytics API.
+
+By setting the interval to `1` day, users can reduce the data processed per request, minimizing the likelihood of data sampling and ensuring more accurate results. While larger time intervals (up to `364` days) can speed up the sync, we recommend choosing a smaller value to prioritize data accuracy unless there is a specific need for faster synchronization at the expense of some potential inaccuracies. Please note that this field does not apply to custom Cohort reports.
+
+Refer to the [Google Analytics documentation](https://support.google.com/analytics/topic/13384306?sjid=2450288706152247916-NA) for more information on data sampling.
+
+### Custom reports
 
 Custom reports in GA4 allow for flexibility in querying specific data tailored to your needs. You can define the following components:
 
@@ -232,14 +244,6 @@ By specifying a cohort with a 7-day range and pivoting on the city dimension, th
 ]
 ```
 
-### Data Sampling and Data Request Intervals
-
-Data sampling in GA4 refers to the process of estimating analytics data when the amount of data in an account exceeds Google's predefined compute thresholds. To mitigate the chances of data sampling being applied to the results, the Data Request Interval field allows users to specify the interval used when requesting data from the Google Analytics API.
-
-By setting the interval to 1 day, users can reduce the data processed per request, minimizing the likelihood of data sampling and ensuring more accurate results. While larger time intervals (up to 364 days) can speed up the sync, we recommend choosing a smaller value to prioritize data accuracy unless there is a specific need for faster synchronization at the expense of some potential inaccuracies. Please note that this field does not apply to custom Cohort reports.
-
-Refer to the [Google Analytics documentation](https://support.google.com/analytics/topic/13384306?sjid=2450288706152247916-NA) for more information on data sampling.
-
 ## Data type mapping
 
 | Integration Type | Daspire Type |
@@ -249,7 +253,7 @@ Refer to the [Google Analytics documentation](https://support.google.com/analyti
 | `array` | `array` |
 | `object` | `object` |
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 1. The Google Analytics integration is subject to Google Analytics Data API quotas. Please refer to [Google's documentation](https://developers.google.com/analytics/devguides/reporting/data/v1/quotas) for specific breakdowns on these quotas.
 

@@ -2,10 +2,6 @@
 
 This page contains the setup guide and reference information for Google Ads.
 
-## Prerequisites
-
-* A [Google Ads Account](https://support.google.com/google-ads/answer/6366720) linked to a [Google Ads Manager account](https://support.google.com/google-ads/answer/7459601)
-
 ## Features
 
 | Feature | Supported? |
@@ -13,6 +9,10 @@ This page contains the setup guide and reference information for Google Ads.
 | Full Refresh Sync | Yes |
 | Incremental Sync | Yes |
 | Namespaces | No |
+
+## Prerequisites
+
+* A [Google Ads Account](https://support.google.com/google-ads/answer/6366720) linked to a [Google Ads Manager account](https://support.google.com/google-ads/answer/7459601)
 
 ## Setup guide
 
@@ -73,7 +73,7 @@ This source is capable of syncing the following streams:
 * [keyword_view](https://developers.google.com/google-ads/api/fields/v14/keyword_view)
 * [ad_group_ad_legacy](https://developers.google.com/google-ads/api/fields/v14/ad_group_ad)
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 1. This source is constrained by the [Google Ads API limits](https://developers.google.com/google-ads/api/docs/best-practices/quotas).
 

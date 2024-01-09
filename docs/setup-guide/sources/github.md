@@ -18,7 +18,7 @@ This page contains the setup guide and reference information for GitHub.
 
 ## Setup guide
 
-### Step 1: Obtain GitHub personal access token
+### Step 1: Obtain GitHub personal access token (skip this step for OAuth authentication)
 
 1. Sign in to your GitHub account.
 
@@ -42,8 +42,8 @@ This page contains the setup guide and reference information for GitHub.
 
 3. For **Authentication**, choose one of the following:
 
-  > * Click **Authenticate your GitHub account** and sign in to your GitHub account.
-  > * Enter your **Personal Access Token**. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
+  > * For **OAuth** authentication, click **Authenticate your GitHub account** and sign in to your GitHub account.
+  > * For **Personal Access Token** authentication, enter the Personal Access Token you obtained in Step 1. To load balance your API quota consumption across multiple API tokens, input multiple tokens separated with `,`.
 
 4. **GitHub Repositories** - Enter a list of GitHub organizations/repositories, e.g. `daspirehq/daspire` for single repository, `daspirehq/daspire` `daspirehq/another-repo` for multiple repositories. If you want to specify the organization to receive data from all its repositories, then you should specify it according to the following example: `daspirehq/*`.
 

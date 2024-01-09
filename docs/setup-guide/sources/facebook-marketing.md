@@ -2,11 +2,6 @@
 
 This page contains the setup guide and reference information for Facebook Marketing.
 
-## Prerequisites
-
-* Facebook Business Account
-* Facebook Ad Account ID
-
 ## Features
 
 | Feature | Supported? |
@@ -14,6 +9,11 @@ This page contains the setup guide and reference information for Facebook Market
 | Full Refresh Sync | Yes |
 | Incremental Sync | Yes |
 | Namespaces | No |
+
+## Prerequisites
+
+* Facebook Business Account
+* Facebook Ad Account ID
 
 ## Setup guide
 
@@ -131,9 +131,9 @@ You can segment the Ad Insights table into parts based on the following informat
 
 For more information, see the [Facebook Insights API documentation](https://developers.facebook.com/docs/marketing-api/reference/adgroup/insights/).
 
-## Facebook Marketing Attribution Reporting
+### Facebook Marketing Attribution Reporting
 
-The Facebook Marketing connector uses the `lookback_window` parameter to repeatedly read data from the last `<lookback_window>` days during an Incremental sync. This means some data will be synced twice (or possibly more often) despite the cursor value being up to date, in order to capture updated ads conversion data from Facebook. You can change this date window by adjusting the `lookback_window` parameter when setting up the source, up to a maximum of 28 days. Smaller values will result in fewer duplicates, while larger values provide more accurate results. For a deeper understanding of the purpose and role of the attribution window, refer to [this Meta article](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
+The Facebook Marketing integration uses the `lookback_window` parameter to repeatedly read data from the last `<lookback_window>` days during an Incremental sync. This means some data will be synced twice (or possibly more often) despite the cursor value being up to date, in order to capture updated ads conversion data from Facebook. You can change this date window by adjusting the `lookback_window` parameter when setting up the source, up to a maximum of 28 days. Smaller values will result in fewer duplicates, while larger values provide more accurate results. For a deeper understanding of the purpose and role of the attribution window, refer to [this Meta article](https://www.facebook.com/business/help/458681590974355?id=768381033531365).
 
 ## Data type mapping
 
@@ -144,6 +144,6 @@ The Facebook Marketing connector uses the `lookback_window` parameter to repeate
 | `array` | `array` |
 | `object` | `object` |
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
