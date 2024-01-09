@@ -13,9 +13,13 @@ This page contains the setup guide and reference information for Google Analytic
 ## Prerequisites
 
 * Google Analytics Property ID
-* One of the following:
+* For OAuth authentication:
   > * A Google Analytics account with access to the GA4 property you want to sync
-  > * Google Service Account JSON Key
+* For Service Account Key authentication:
+  > * Google Service Account JSON Key with access to the Google Sheets you want to replicate
+  > * Google Cloud Console access
+  > * A Google Cloud Platform (GCP) project
+  > * Enable the Google Sheets API in your GCP project
 
 ## Setup guide
 
@@ -89,7 +93,7 @@ This page contains the setup guide and reference information for Google Analytic
 3. For **Authentication**, choose one of the following:
 
   > * For **OAuth** authentication, click **Authenticate via Google (OAuth)** and sign in to your Google Analytics account with access to the GA4 property you want to sync.
-  > * For **Service Account Key Authenication**authentication, enter the Service Account JSON Key you obtained from Step 1.
+  > * For **Service Account Key Authenication**, enter the Service Account JSON Key you obtained from Step 1.
 
 4. Enter the **GA4 Property ID** you obtained from Step 3.
 

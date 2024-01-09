@@ -17,11 +17,16 @@ There are two types of incremental sync:
 
 ## Prerequisites
 
-* A private HubSpot app with Access Token, OR
+* For OAuth authentication:
+  * HubSpot account
+* For API Key authentication:
+  * HubSpot Super Admin permissions
+* For Private App authentication:
+  * A private HubSpot app with Access Token
 
 ## Setup guide
 
-### Step 1: Create a HubSpot App
+### Step 1: Create a HubSpot App (skip this step for OAuth authentication)
 
 Follow these [instructions](https://developers.hubspot.com/docs/api/private-apps) or the below steps to create a HubSpot App and obtain the Access Token needed to set up the source in Daspire.
 
@@ -37,7 +42,7 @@ Follow these [instructions](https://developers.hubspot.com/docs/api/private-apps
 
 5. Click the **Scopes** tab. Select the Read checkbox for each scope you want your private app to be able to access.
 
-  > NOTE: Daspire needs the following Scopes to be able to sync all the streams listed below.
+  NOTE: Daspire needs the following Scopes to be able to sync all the streams listed below.
 
 | Stream | Scope |
 | --- | --- |
@@ -77,7 +82,11 @@ Follow these [instructions](https://developers.hubspot.com/docs/api/private-apps
 
 2. Enter a **Source Name**.
 
-3. To authenticate using a Private App, enter the **Access Token** for your HubSpot account you obtained in Step 1.
+3. For **Authentication**, choose one of the following:
+
+    * For **OAuth** authentication, click **Authenticate your HubSpot account** and sign in to your HubSpot account.
+    * For **API key** authentication, enter your HubSpot API key. See the [Hubspot docs](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) if you need help finding this key.
+    * For **Private App** authentication, enter the **Access Token** for your HubSpot account you obtained in Step 1.
 
 4. For **Start date**, enter the date in the following format: `yyyy-mm-ddThh:mm:ssZ`. The data added on and after this date will be replicated.
 
@@ -132,83 +141,79 @@ This source is capable of syncing the following streams:
 
 1. Objects in the `engagements` stream can have one of the following types: `note`, `email`, `task`, `meeting`, `call`. Depending on the type of engagement, different properties are set for that object in the `engagements_metadata` table in the destination:
 
-  * A `call` engagement has a corresponding `engagements_metadata` object with non-null values in the `toNumber`, `fromNumber`, `status`, `externalId`, `durationMilliseconds`, `externalAccountId`, `recordingUrl`, `body`, and `disposition` columns.
-  * An `email` engagement has a corresponding `engagements_metadata` object with non-null values in the `subject`, `html`, and `text` columns. In addition, there will be records in four related tables, `engagements_metadata_from`, `engagements_metadata_to`, `engagements_metadata_cc`, `engagements_metadata_bcc`.
-  * A `meeting` engagement has a corresponding `engagements_metadata` object with non-null values in the `body`, `startTime`, `endTime`, and `title` columns.
-  * A `note` engagement has a corresponding `engagements_metadata` object with non-null values in the `body` column.
-  * A `task` engagement has a corresponding `engagements_metadata` object with non-null values in the `body`, `status`, and `forObjectType` columns.
+    * A `call` engagement has a corresponding `engagements_metadata` object with non-null values in the `toNumber`, `fromNumber`, `status`, `externalId`, `durationMilliseconds`, `externalAccountId`, `recordingUrl`, `body`, and `disposition` columns.
+    * An `email` engagement has a corresponding `engagements_metadata` object with non-null values in the `subject`, `html`, and `text` columns. In addition, there will be records in four related tables, `engagements_metadata_from`, `engagements_metadata_to`, `engagements_metadata_cc`, `engagements_metadata_bcc`.
+    * A `meeting` engagement has a corresponding `engagements_metadata` object with non-null values in the `body`, `startTime`, `endTime`, and `title` columns.
+    * A `note` engagement has a corresponding `engagements_metadata` object with non-null values in the `body` column.
+    * A `task` engagement has a corresponding `engagements_metadata` object with non-null values in the `body`, `status`, and `forObjectType` columns.
 
 2. The `engagements` stream uses two different APIs based on the length of time since the last sync and the number of records which Daspire hasn't yet synced.
 
-  * `EngagementsRecent` if the following two criteria are met:
-    * The last sync was performed within the last 30 days
-    * Fewer than 10,000 records are being synced
-  * `EngagementsAll` if either of these criteria are not met.
+    * `EngagementsRecent` if the following two criteria are met:
+      * The last sync was performed within the last 30 days
+      * Fewer than 10,000 records are being synced
+    * `EngagementsAll` if either of these criteria are not met.
 
   Because of this, the `engagements` stream can be slow to sync if it hasn't synced within the last 30 days and/or is generating large volumes of new data. We therefore recommend scheduling frequent syncs.
 
-## Performance considerations
+## Performance considerations & Troubleshooting
 
 1. Rate limiting
 
-The integration is restricted by normal [HubSpot rate limitations](https://developers.hubspot.com/docs/api/usage-details).
+  The integration is restricted by normal [HubSpot rate limitations](https://developers.hubspot.com/docs/api/usage-details).
 
-## Troubleshooting
+2. **Enabling streams:** Some streams, such as `workflows``, need to be enabled before they can be read using an integration authenticated using an API Key. If reading a stream that is not enabled, a log message returned to the output and the sync operation will only sync the other streams available.
 
-1. **Enabling streams:** Some streams, such as `workflows``, need to be enabled before they can be read using an integration authenticated using an API Key. If reading a stream that is not enabled, a log message returned to the output and the sync operation will only sync the other streams available.
-
-Example of the output message when trying to read `workflows` stream with missing permissions for the API Key:
-```
-{
-    "type": "LOG",
-    "log": {
-        "level": "WARN",
-        "message": "Stream `workflows` cannot be proceed. This API Key (EXAMPLE_API_KEY) does not have proper permissions! (requires any of [automation-access])"
-    }
-}
-```
-
-2. **Unnesting top level properties:** Since version 1.5.0, in order to not make the users query their destinations for complicated json fields, we duplicate most of nested data as top level fields.
-
-For instance:
-```
-{
-  "id": 1,
-  "updatedAt": "2020-01-01",
-  "properties": {
-    "hs_note_body": "World's best boss",
-    "hs_created_by": "Michael Scott"
+  Example of the output message when trying to read `workflows` stream with missing permissions for the API Key:
+  ```
+  {
+      "type": "LOG",
+      "log": {
+          "level": "WARN",
+          "message": "Stream `workflows` cannot be proceed. This API Key (EXAMPLE_API_KEY) does not have proper permissions! (requires any of [automation-access])"
+      }
   }
-}
-```
-becomes
-```
-{
+  ```
+
+3. **Unnesting top level properties:** Since version 1.5.0, in order to not make the users query their destinations for complicated json fields, we duplicate most of nested data as top level fields.
+
+  For instance:
+  ```
+  {
     "id": 1,
     "updatedAt": "2020-01-01",
     "properties": {
       "hs_note_body": "World's best boss",
       "hs_created_by": "Michael Scott"
-    },
-    "properties_hs_note_body": "World's best boss",
-    "properties_hs_created_by": "Michael Scott"
-}
-```
+    }
+  }
+  ```
+  becomes
+  ```
+  {
+      "id": 1,
+      "updatedAt": "2020-01-01",
+      "properties": {
+        "hs_note_body": "World's best boss",
+        "hs_created_by": "Michael Scott"
+      },
+      "properties_hs_note_body": "World's best boss",
+      "properties_hs_created_by": "Michael Scott"
+  }
+  ```
 
-3. **403 Forbidden Error**
+4. **403 Forbidden Error**
 
-  * Hubspot has **scopes** for each API call.
+    * Hubspot has **scopes** for each API call.
 
-  * Each stream is tied to a scope and will need access to that scope to sync data.
+    * Each stream is tied to a scope and will need access to that scope to sync data.
 
-  * Review the Hubspot OAuth scope documentation [here](https://developers.hubspot.com/docs/api/working-with-oauth#scopes).
+    * Review the Hubspot OAuth scope documentation [here](https://developers.hubspot.com/docs/api/working-with-oauth#scopes).
 
-  * Additional permissions:
+    * Additional permissions:
 
-      * `feedback_submissions`: Service Hub Professional account
+        * `feedback_submissions`: Service Hub Professional account
+        * `marketing_emails`: Market Hub Starter account
+        * `workflows`: Sales, Service, and Marketing Hub Professional accounts
 
-      * `marketing_emails`: Market Hub Starter account
-
-      * `workflows`: Sales, Service, and Marketing Hub Professional accounts
-
-4. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
+5. Max number of tables that can be synced at a time is 6,000. We advise you to adjust your settings if it fails to fetch schema due to max number of tables reached.
