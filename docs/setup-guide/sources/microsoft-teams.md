@@ -14,9 +14,6 @@ This page contains the setup guide and reference information for Microsoft Teams
 ## Prerequisites
 
 * An Azure account that has an active subscription
-* Application (client) ID
-* Directory (tenant) ID
-* Client secrets
 
 The [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/overview) uses OAuth for authentication. Microsoft Graph exposes granular permissions that control the access that apps have to resources, like users, groups, and mail. When a user signs in to your app they, or, in some cases, an administrator, are given a chance to consent to these permissions. If the user consents, your app is given access to the resources and APIs that it has requested. For apps that don't take a signed-in user, permissions can be pre-consented to by an administrator when the app is installed.
 
@@ -127,9 +124,18 @@ Follow these [instructions](https://docs.microsoft.com/en-us/graph/auth-v2-servi
 
 2. Enter a **Source Name**.
 
-3. Enter **Application (client) ID**, **Directory (tenant) ID**, and **Client secrets** you obtained in Step 1.
+3. For **Authentication**, choose one of the following:
 
-4. Click **Save & Test**.
+    * For **OAuth** authentication:
+      * Enter the **Directory (tenant) ID** you obtained in Step 1.
+      * Click **Authenticate your Microsoft Teams account** and sign in to your Microsoft Teams account.
+
+    * For **Authenticate with Client ID and Secret**:
+      * Enter **Directory (tenant) ID**, **Application (client) ID**, and **Client secrets** you obtained in Step 1.
+
+4. For **Period**, the supported values are: `D7`, `D30`, `D90`, and `D180`. Specifies the length of time over which the Team Device Report stream is aggregated.
+
+5. Click **Save & Test**.
 
 ## Supported streams
 
@@ -157,7 +163,7 @@ This source is capable of syncing the following streams:
 | `array` | `array` |
 | `object` | `object` |
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 1. Rate limit: This integration is restricted by normal [Microsoft Graph requests limitation](https://docs.microsoft.com/en-us/graph/throttling).
 
