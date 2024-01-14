@@ -5,12 +5,7 @@
 ## 前提条件
 
 * MySQL服务器`8.0`、`5.7`或`5.6`。
-* 创建一个专用的只读Daspire用户，可以访问复制所需的所有表。
-* 主机
-* 端口
-* 数据库
-* 用户名
-* 密码
+* 创建一个专用的只读Daspire用户，可以访问复制所需的所有表
 
 ## 功能
 
@@ -29,6 +24,8 @@ MySQL源代码不会改变数据库中的模式。但是，根据连接到此数
 
 ## 设置指南
 
+### 第1步：设置MySQL
+
 **1. 确保您的数据库可以从运行Daspire的机器上访问**
 
 这取决于您的网络设置。验证Daspire是否能够连接到您的MySQL最简单方法是通过用户界面中的检查连接工具。
@@ -40,28 +37,56 @@ MySQL源代码不会改变数据库中的模式。但是，根据连接到此数
 要创建专用数据库用户，您可以在数据库运行以下命令：
 
 ```
-CREATE USER 'daspire'@'%' IDENTIFIED BY 'your_password_here'; 
+CREATE USER 'daspire'@'%' IDENTIFIED BY 'your_password_here';
 ```
 
 `标准`和`CDC`复制方法之间的正确权限集不同。对于`标准`复制方法，只需要`选择（SELECT）`权限。
 
 ```
 GRANT SELECT ON <database name>.* TO 'daspire'@'%';
-``` 
+```
 
 对于`CDC`复制方法，需要`选择（SELECT）`、`重新加载（RELOAD）`、`显示数据库（SHOW DATABASES）`、`复制从站（REPLICATION SLAVE）`、`复制客户端（REPLICATION CLIENT）`权限。
 
 ```
-GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'daspire'@'%'; 
+GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'daspire'@'%';
 ```
 
 **3. 设置CDC**
 
-这不适用于`标准`复制方式。这个选项是必选的如果您选择`CDC`复制方法。请阅读下面的[CDC部分](#change-data-capture-cdc)了解更多。
+这不适用于`标准`复制方式。这个选项是必选的如果您选择`CDC`复制方法。请阅读下面的CDC部分了解更多。
 
 **4. 设置完成**
 
 您的数据库用户现在应该可以使用Daspire了。
+
+### 第1步：在Daspire中设置MySQL数据源
+
+1. 从数据源列表中选择**MySQL**。
+
+2. 填写**数据源名称**。
+
+3. 填写数据库的**主机名**。
+
+4. 填写要连接的**端口**。
+
+5. 填写**数据库**的名称。
+
+5. 填写用于访问数据库的**用户名**。
+
+6. （可选）填写与用户名关联的**密码**。
+
+7. （可选）填写**JDBC URL参数** - 连接到数据库时要传递给JDBC URL字符串的附加属性，格式为由符号“&”分隔的“key=value”对。
+
+8. 选择是否使用**SSL连接**加密数据。
+
+9. 选择**SSL模式**进行连接。
+
+10. 选择**复制方式**。
+
+11. 选择**SSH隧道方法**。
+
+12. 点击**保存并测试**。
 
 ## CDC
 
@@ -135,9 +160,9 @@ Daspire能够通过SSH隧道连接到MySQL实例。您可能想要这样做的�
 
 2. `SSH隧道方式`默认为`无隧道`（即直接连接）。如果您想使用SSH隧道，请选择`SSH密钥认证`或`密码认证`。
 
-  * 如果您将使用RSA私钥作为建立SSH隧道的秘密，请选择`密钥认证`（有关生成此密钥的更多信息，请参见下文）。
+    * 如果您将使用RSA私钥作为建立SSH隧道的秘密，请选择`密钥认证`（有关生成此密钥的更多信息，请参见下文）。
 
-  * 如果您将使用密码作为建立SSH隧道的秘密，请选择`密码认证`。
+    * 如果您将使用密码作为建立SSH隧道的秘密，请选择`密码认证`。
 
 3. `SSH隧道跳转服务器主机`是指Daspire将要连接的中间（堡垒）服务器。这应该是主机名或IP地址。
 
@@ -200,7 +225,7 @@ ssh-keygen -t rsa -m PEM -f myuser_rsa
 
 注意：如果您没有在此列表中看到类型，则可认为它已被强制转换为字符串。
 
-## 故障排除
+## 性能考虑及故障排除
 
 1. 将MySQL的日期时间字段中的值映射到其他关系数据存储可能会出现问题。MySQL允许日期/时间为零值，而不是其他数据存储可能不接受的NULL。要解决此问题，您可以在源设置`zerodatetimebehavior=Converttonull`的JDBC接口中传递以下键值对。
 

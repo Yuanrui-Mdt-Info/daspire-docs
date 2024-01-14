@@ -5,12 +5,7 @@ This page contains the setup guide and reference information for MySQL.
 ## Prerequisites
 
 * MySQL Server `8.0`, `5.7`, or `5.6`.
-* Create a dedicated read-only Daspire user with access to all tables needed for replication.
-* Host
-* Port
-* Database
-* Username
-* Password
+* Create a dedicated read-only Daspire user with access to all tables needed for replication
 
 ## Features
 
@@ -29,6 +24,8 @@ The MySQL source does not alter the schema present in your database. Depending o
 
 ## Setup guide
 
+### Step 1: Set up your MySQL
+
 **1. Make sure your database is accessible from the machine running Daspire**
 
 This is dependent on your networking setup. The easiest way to verify if Daspire is able to connect to your MySQL instance is via the check connection tool in the UI.
@@ -40,28 +37,56 @@ This step is optional but highly recommended to allow for better permission cont
 To create a dedicated database user, run the following commands against your database:
 
 ```
-CREATE USER 'daspire'@'%' IDENTIFIED BY 'your_password_here'; 
+CREATE USER 'daspire'@'%' IDENTIFIED BY 'your_password_here';
 ```
 
-The right set of permissions differ between the `STANDARD` and `CDC` replication method. For `STANDARD` replication method, only `SELECT` permission is required.
+The right set of permissions differ between the `Standard` and `CDC` replication method. For `Standard` replication method, only `SELECT` permission is required.
 
 ```
 GRANT SELECT ON <database name>.* TO 'daspire'@'%';
-``` 
+```
 
 For `CDC` replication method, `SELECT`, `RELOAD`, `SHOW DATABASES`, `REPLICATION SLAVE`, `REPLICATION CLIENT` permissions are required.
 
 ```
-GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'daspire'@'%'; 
+GRANT SELECT, RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'daspire'@'%';
 ```
 
 **3. Set up CDC**
 
-For `STANDARD` replication method this is not applicable. If you select the `CDC` replication method then only this is required. Please read the [section on CDC](#change-data-capture-cdc) below for more information.
+For `Standard` replication method this is not applicable. If you select the `CDC` replication method then only this is required. Please read the section on CDC below for more information.
 
 **4. That's it!**
 
 Your database user should now be ready for use with Daspire.
+
+### Step 2: Set up MySQL in Daspire
+
+1. Select **MySQL** from the Source list.
+
+2. Enter a **Source Name**.
+
+3. Enter the **Host** of your database.
+
+4. Enter the **Port** to connect to.
+
+5. Enter the **Database** name.
+
+6. Enter the **Username** used to access the database.
+
+7. (Optional) Enter the **Password** associated with the Username.
+
+8. (Optional) Enter the **JDBC URL Params**. It is the additional properties to pass to the JDBC URL string when connecting to the database formatted as `key=value` pairs separated by the symbol `&`.
+
+9. Toggle on whether to Encrypt data using **SSL Connection**.
+
+10. Select **SSL Modes** for connection.
+
+11. Select **Replication Method**.
+
+12. Select **SSH Tunnel Method**.
+
+13. Click **Save & Test**.
 
 ## Change Data Capture (CDC)
 
@@ -135,9 +160,9 @@ Using this feature requires additional configuration, when creating the source. 
 
 2. `SSH Tunnel Method` defaults to `No Tunnel` (meaning a direct connection). If you want to use an SSH Tunnel choose `SSH Key Authentication` or `Password Authentication`.
 
-  * Choose `Key Authentication` if you will be using an RSA private key as your secret for establishing the SSH Tunnel (see below for more information on generating this key).
+    * Choose `Key Authentication` if you will be using an RSA private key as your secret for establishing the SSH Tunnel (see below for more information on generating this key).
 
-  * Choose `Password Authentication` if you will be using a password as your secret for establishing the SSH Tunnel.
+    * Choose `Password Authentication` if you will be using a password as your secret for establishing the SSH Tunnel.
 
 3. `SSH Tunnel Jump Server Host` refers to the intermediate (bastion) server that Daspire will connect to. This should be a hostname or an IP Address.
 
@@ -200,7 +225,7 @@ This produces the private key in pem format, and the public key remains in the s
 
 Note: If you do not see a type in this list, assume that it is coerced into a string.
 
-## Troubleshooting
+## Performance consideration & Troubleshooting
 
 1. There may be problems with mapping values in MySQL's datetime field to other relational data stores. MySQL permits zero values for date/time instead of NULL which may not be accepted by other data stores. To work around this problem, you can pass the following key value pair in the JDBC connector of the source setting `zerodatetimebehavior=Converttonull`.
 
