@@ -28,6 +28,8 @@ The generated pages will be in the folder named "build", please check this build
 
 ## Changelog
 
+### 2023.12.24
+Add docs for TikTok Marketing
 ### 2023.12.13
 Update docs for BigCommerce and Zendesk Support
 ### 2023.12.10
