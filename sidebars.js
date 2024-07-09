@@ -63,6 +63,8 @@ const sidebars = {
             'setup-guide/sources/shein',
             'setup-guide/sources/slack',
             'setup-guide/sources/stripe',
+            'setup-guide/sources/tiktok-marketing',
+            'setup-guide/sources/twilio',
             'setup-guide/sources/walmart-marketplace',
             'setup-guide/sources/woocommerce',
             'setup-guide/sources/zendesk-chat',
