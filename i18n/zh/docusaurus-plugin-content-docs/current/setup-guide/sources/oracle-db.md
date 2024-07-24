@@ -32,7 +32,7 @@ This step is optional but highly recommended to allow for better permission cont
 To create a dedicated database user, run the following commands against your database:
 
 ```
-CREATE USER airbyte IDENTIFIED BY <your_password_here>;
+CREATE USER daspire IDENTIFIED BY <your_password_here>;
 GRANT CREATE SESSION TO daspire;
 ```
 

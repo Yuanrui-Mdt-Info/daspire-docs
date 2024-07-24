@@ -43,7 +43,7 @@ This page contains the setup guide and reference information for Facebook Market
 3. Select all the available **Token Permissions** (ads_management, ads_read, read_insights). And then click **Get token**. Copy the generated token for later use.
 ![Facebook Marketing API Token](/assets/images/facebook-marketing-api-token.jpg "Facebook Marketing API Token")
 
-4. Request a **rate limit increase**: Facebook heavily throttles API tokens generated from Facebook apps with the default Standard Access tier, making it infeasible to use the token for syncs with Airbyte. You'll need to request an upgrade to Advanced Access for your app on the following permissions:
+4. Request a **rate limit increase**: Facebook heavily throttles API tokens generated from Facebook apps with the default Standard Access tier, making it infeasible to use the token for syncs with Daspire. You'll need to request an upgrade to Advanced Access for your app on the following permissions:
 
   > * Ads Management Standard Access
   > * ads_read

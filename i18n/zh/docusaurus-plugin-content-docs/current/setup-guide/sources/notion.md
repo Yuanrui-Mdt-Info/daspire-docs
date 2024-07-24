@@ -74,7 +74,7 @@ If you are authenticating via Access Token, you will need to manually share each
 
 3. Copy and paste the **Client ID**, **Client Secret** and **Access Token** you acquired after setting up your public integration.
 
-4. (Optional) You may optionally provide a **Start Date** in the format: `YYYY-MM-DDTHH:mm:ss.SSSZ`. When using incremental syncs, only data generated after this date will be replicated. If left blank, Airbyte will set the start date two years from the current date by default.
+4. (Optional) You may optionally provide a **Start Date** in the format: `YYYY-MM-DDTHH:mm:ss.SSSZ`. When using incremental syncs, only data generated after this date will be replicated. If left blank, Daspire will set the start date two years from the current date by default.
 
 5. Click **Save & Test**.
 
