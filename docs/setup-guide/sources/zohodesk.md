@@ -1,4 +1,4 @@
-# **Zoho Desk - Setup Guide**
+# Zoho Desk
 
 ## **Overview**
 
