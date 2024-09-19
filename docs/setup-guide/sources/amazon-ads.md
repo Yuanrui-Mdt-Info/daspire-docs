@@ -31,7 +31,9 @@ Create an Amazon user with access to [Amazon Ads account](https://advertising.am
 
 8. **Profile IDs (optional)** you want to fetch data for. See [Amazon docs](https://advertising.amazon.com/API/docs/en-us/concepts/authorization/profiles) for more details.
 
-9. Click **Save & Test**.
+9. **Attribution Window (optional)** is the number of days after the click date that the click is considered to be eligible for attribution. Attribution is the measurement of conversion events, or customer behaviors that occur following an ad interaction. These behaviors measure the success of an ad campaign based on advertiser goals. [Learn more](https://advertising.amazon.com/help/GX7KDKHMWQYMJ385).
+
+10. Click **Save & Test**.
 
 ## Supported sync modes
 

@@ -37,7 +37,9 @@ This page contains the setup guide and reference information for Amazon Seller P
 
 10. **Report Options** is additional information passed to reports. Must be a valid json string.
 
-11. Click **Save & Test**.
+11. **Lookback Window in days (optional)** - Determines how far back in time to fetch data during each sync. Ensures you capture recent data updates or delayed reporting.
+
+12. Click **Save & Test**.
 
 ## Supported sync modes
 
