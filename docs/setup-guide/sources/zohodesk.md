@@ -12,7 +12,7 @@ The Zoho Desk Connector allows you to sync data from Zoho Desk from different mo
 
 ### **Authentication**
 
-[INSERT HERE ZOHO DESK OAUTH CONCENT SCREENSHOT]
+![Zoho Desk OAuth](/assets/images/zohodesk-oauth.png)
 
 1. Click on the "**Authenticate with Zoho Desk**" button.
 2. You'll be redirected to Zoho Desk to authorize the connection.
@@ -25,7 +25,7 @@ The Zoho Desk Connector allows you to sync data from Zoho Desk from different mo
    - In Zoho Desk, go to **Setup > Developer Space > API**
    - Copy the **Organization ID (OrgID)** displayed there
 
-![Zoho Desk Organization ID](/assets/images/zoho-desk-org-id.png)
+![Zoho Desk Organization ID](/assets/images/zohodesk-org-id.png)
 
 2. **Limit**: It determines the number of rows to fetch per request. Adjust this only if you need to control the amount of data fetched per request.
 
