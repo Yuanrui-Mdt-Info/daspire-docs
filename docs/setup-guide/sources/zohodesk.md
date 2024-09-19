@@ -12,7 +12,7 @@ The Zoho Desk Connector allows you to sync data from Zoho Desk from different mo
 
 ### **Authentication**
 
-![Zoho Desk OAuth](/assets/images/zohodesk-oauth.png)
+![Zoho Desk OAuth](/assets/images/zohodesk-oauth.jpeg)
 
 1. Click on the "**Authenticate with Zoho Desk**" button.
 2. You'll be redirected to Zoho Desk to authorize the connection.
