@@ -1,6 +1,7 @@
 ---
 id: readme
-slug: /
+title : Daspire ETL Documentation
+description : Optimize your e-commerce business with Daspire ETL. Streamline data, gain actionable insights, and boost performance. Start your free trial today!
 ---
 # Start Here
 

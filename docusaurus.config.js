@@ -6,13 +6,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Daspire',
+  title: 'Quick Start Guide',
   tagline: 'Daspire is ETL platform',
   url: 'https://docs.daspire.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -60,7 +60,8 @@ const config = {
         //title: 'Daspire',
         logo: {
           alt: 'Daspire logo',
-          src: 'img/logo-dark.png',
+          src: 'img/logo-light.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
