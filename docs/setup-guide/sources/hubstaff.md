@@ -10,7 +10,7 @@ The Hubstaff Connector allows you to sync data from Hubstaff including organizat
 
 ## Configuration Steps
 
-### Authenticatio
+### Authentication
 
 1. Click on the "**Authenticate with Hubstaff**" button.
 2. You'll be redirected to Hubstaff to authorize the connection.
