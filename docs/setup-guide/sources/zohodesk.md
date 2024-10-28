@@ -21,13 +21,12 @@ The Zoho Desk Connector allows you to sync data from Zoho Desk from different mo
 
 ### **Configure Connector Settings**
 
-1. **Organization ID**: The identifier of the organization to access. To find your Organization ID:
+1. **Organization ID**: The Organization ID is the identifier of the organization to access. Once authorized, you will be able to select the organization you want to sync data from. You can also find your Organization ID:
    - In Zoho Desk, go to **Setup > Developer Space > API**
    - Copy the **Organization ID (OrgID)** displayed there
 
 ![Zoho Desk Organization ID](/assets/images/zohodesk-org-id.png)
 
-2. **Limit**: It determines the number of rows to fetch per request. Adjust this only if you need to control the amount of data fetched per request.
 
 ## **Supported Data Streams**
 
