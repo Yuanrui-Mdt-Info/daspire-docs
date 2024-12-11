@@ -135,7 +135,6 @@
         "name": "Google BigQuery",
         "description": "Google BigQuery is a fully-managed, serverless data warehouse that enables super-fast SQL queries using the same technology powering Google search.",
         "logo_url": "/integrations/google-bigquery.svg",
-        "release_date": "2024-01-01",
         "status": "upcoming",
         "alias": ["Google BigQuery", "BigQuery", "Google Cloud BigQuery"],
         "type": "destination",
