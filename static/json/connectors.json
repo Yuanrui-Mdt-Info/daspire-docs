@@ -4,7 +4,7 @@
         "name": "Amazon Ads",
         "description": "Amazon Advertising platform that provides pay-per-click advertising services for Amazon sellers, allowing programmatic buying of display and video ads across Amazon's ecosystem including Amazon.com, Fire TV, IMDb, Kindle, and third-party platforms.",
         "logo_url": "https://airbyte-icons.s3.amazonaws.com/amazonads.svg",
-        "release_date": "2025-01-15",
+        "release_date": "2024-01-15",
         "status": "released",
         "alias": ["AMS", "Amazon Marketing Services", "Amazon PPC", "Amazon DSP"],
         "type": "source",
